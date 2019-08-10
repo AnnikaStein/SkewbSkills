@@ -1,0 +1,576 @@
+R L R
+w
+R L R'
+w
+R L U
+w
+R L U'
+w
+R L B
+w
+R L B'
+w
+R L' R
+w
+R L' R'
+w
+R L' U
+w
+R L' U'
+w
+R L' B
+w
+R L' B'
+w
+R U R
+w
+R U R'
+w
+R U L
+w
+R U L'
+w
+R U B
+w
+R U B'
+w
+R U' R
+w
+R U' R'
+w
+R U' L
+w
+R U' L'
+w
+R U' B
+w
+R U' B'
+w
+R B R
+w
+R B R'
+w
+R B L
+w
+R B L'
+w
+R B U
+w
+R B U'
+w
+R B' R
+w
+R B' R'
+w
+R B' L
+w
+R B' L'
+w
+R B' U
+w
+R B' U'
+w
+R' L R
+w
+R' L R'
+w
+R' L U
+w
+R' L U'
+w
+R' L B
+w
+R' L B'
+w
+R' L' R
+w
+R' L' R'
+w
+R' L' U
+w
+R' L' U'
+w
+R' L' B
+w
+R' L' B'
+w
+R' U R
+w
+R' U R'
+w
+R' U L
+w
+R' U L'
+w
+R' U B
+w
+R' U B'
+w
+R' U' R
+w
+R' U' R'
+w
+R' U' L
+w
+R' U' L'
+w
+R' U' B
+w
+R' U' B'
+w
+R' B R
+w
+R' B R'
+w
+R' B L
+w
+R' B L'
+w
+R' B U
+w
+R' B U'
+w
+R' B' R
+w
+R' B' R'
+w
+R' B' L
+w
+R' B' L'
+w
+R' B' U
+w
+R' B' U'
+w
+L R L
+w
+L R L'
+w
+L R U
+w
+L R U'
+w
+L R B
+w
+L R B'
+w
+L R' L
+w
+L R' L'
+w
+L R' U
+w
+L R' U'
+w
+L R' B
+w
+L R' B'
+w
+L U R
+w
+L U R'
+w
+L U L
+w
+L U L'
+w
+L U B
+w
+L U B'
+w
+L U' R
+w
+L U' R'
+w
+L U' L
+w
+L U' L'
+w
+L U' B
+w
+L U' B'
+w
+L B R
+w
+L B R'
+w
+L B L
+w
+L B L'
+w
+L B U
+w
+L B U'
+w
+L B' R
+w
+L B' R'
+w
+L B' L
+w
+L B' L'
+w
+L B' U
+w
+L B' U'
+w
+L' R L
+w
+L' R L'
+w
+L' R U
+w
+L' R U'
+w
+L' R B
+w
+L' R B'
+w
+L' R' L
+w
+L' R' L'
+w
+L' R' U
+w
+L' R' U'
+w
+L' R' B
+w
+L' R' B'
+w
+L' U R
+w
+L' U R'
+w
+L' U L
+w
+L' U L'
+w
+L' U B
+w
+L' U B'
+w
+L' U' R
+w
+L' U' R'
+w
+L' U' L
+w
+L' U' L'
+w
+L' U' B
+w
+L' U' B'
+w
+L' B R
+w
+L' B R'
+w
+L' B L
+w
+L' B L'
+w
+L' B U
+w
+L' B U'
+w
+L' B' R
+w
+L' B' R'
+w
+L' B' L
+w
+L' B' L'
+w
+L' B' U
+w
+L' B' U'
+w
+U R L
+w
+U R L'
+w
+U R U
+w
+U R U'
+w
+U R B
+w
+U R B'
+w
+U R' L
+w
+U R' L'
+w
+U R' U
+w
+U R' U'
+w
+U R' B
+w
+U R' B'
+w
+U L R
+w
+U L R'
+w
+U L U
+w
+U L U'
+w
+U L B
+w
+U L B'
+w
+U L' R
+w
+U L' R'
+w
+U L' U
+w
+U L' U'
+w
+U L' B
+w
+U L' B'
+w
+U B R
+w
+U B R'
+w
+U B L
+w
+U B L'
+w
+U B U
+w
+U B U'
+w
+U B' R
+w
+U B' R'
+w
+U B' L
+w
+U B' L'
+w
+U B' U
+w
+U B' U'
+w
+U' R L
+w
+U' R L'
+w
+U' R U
+w
+U' R U'
+w
+U' R B
+w
+U' R B'
+w
+U' R' L
+w
+U' R' L'
+w
+U' R' U
+w
+U' R' U'
+w
+U' R' B
+w
+U' R' B'
+w
+U' L R
+w
+U' L R'
+w
+U' L U
+w
+U' L U'
+w
+U' L B
+w
+U' L B'
+w
+U' L' R
+w
+U' L' R'
+w
+U' L' U
+w
+U' L' U'
+w
+U' L' B
+w
+U' L' B'
+w
+U' B R
+w
+U' B R'
+w
+U' B L
+w
+U' B L'
+w
+U' B U
+w
+U' B U'
+w
+U' B' R
+w
+U' B' R'
+w
+U' B' L
+w
+U' B' L'
+w
+U' B' U
+w
+U' B' U'
+w
+B R L
+w
+B R L'
+w
+B R U
+w
+B R U'
+w
+B R B
+w
+B R B'
+w
+B R' L
+w
+B R' L'
+w
+B R' U
+w
+B R' U'
+w
+B R' B
+w
+B R' B'
+w
+B L R
+w
+B L R'
+w
+B L U
+w
+B L U'
+w
+B L B
+w
+B L B'
+w
+B L' R
+w
+B L' R'
+w
+B L' U
+w
+B L' U'
+w
+B L' B
+w
+B L' B'
+w
+B U R
+w
+B U R'
+w
+B U L
+w
+B U L'
+w
+B U B
+w
+B U B'
+w
+B U' R
+w
+B U' R'
+w
+B U' L
+w
+B U' L'
+w
+B U' B
+w
+B U' B'
+w
+B' R L
+w
+B' R L'
+w
+B' R U
+w
+B' R U'
+w
+B' R B
+w
+B' R B'
+w
+B' R' L
+w
+B' R' L'
+w
+B' R' U
+w
+B' R' U'
+w
+B' R' B
+w
+B' R' B'
+w
+B' L R
+w
+B' L R'
+w
+B' L U
+w
+B' L U'
+w
+B' L B
+w
+B' L B'
+w
+B' L' R
+w
+B' L' R'
+w
+B' L' U
+w
+B' L' U'
+w
+B' L' B
+w
+B' L' B'
+w
+B' U R
+w
+B' U R'
+w
+B' U L
+w
+B' U L'
+w
+B' U B
+w
+B' U B'
+w
+B' U' R
+w
+B' U' R'
+w
+B' U' L
+w
+B' U' L'
+w
+B' U' B
+w
+B' U' B'
+w

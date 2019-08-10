@@ -1,0 +1,190 @@
+21.07.2019 (1.0.1):
+    Features:
+        First Layer Trainer Dialog:
+            Widgets:
+                QSlider --> Scramble Length
+                QPushButton --> generate a new scramble + colour to start with
+                QLabel --> shows the scramble in monospace
+                QLabel --> shows the colour to start with
+                QLabel --> shows a logo
+            Functionality:
+                load all scrambles when program is started and keep them available
+                    during the runtime of the program by using lists / containers
+                    as constants throughout the whole execution
+                decide how many moves the scramble shall consist of with a slider
+                generate scrambles and all starting colours for this scramble
+                scrambles are ordered (backwards)
+                scrambles make sense and are not of the form x x' or x x
+                when the end of all scrambles of a given length has been
+                    reached, start all over again
+                window title and icon are included
+                favicon.ico has been generated online using
+                    https://www.icoconverter.com/
+                exe-File has been generated using the following cmd-line:
+                    pyinstaller -w -F -i favicon.ico MainWindow.py
+                    in venv\Scripts
+                shortcut of the exe-File has been generated in the same folder
+                    and has been attached to the taskbar
+    py-Files:
+        ScrambleGen.py (only to be used once, generates all possible
+            scrambles with white or any colour to start with)
+            no classes, no functions, no methods
+        MainWindow.py (shows the dialog with all current Widgets)
+            class Window(QDialog)
+                def __init__(self)
+                def ReadAllScrambles(self):
+                def CreateLayout(self):
+                def changescrlen(self):
+                def ScramblePlusColour(self):
+    txt-Files:
+        scrambles, scrambles1, scrambles1w, ... , scrambles7, scrambles7w
+        (w indicates only white, other ones use all starting colours)
+    pictures:
+        logo.pdn
+        logo.png
+        logo-Kopie.pdn
+        logogreen.png
+        logogreenicon.png
+        logoicon.png --> copied and transformed to favicon.ico
+        logored.png
+        logoredicon.png
+
+22.07.2019 (1.0.2):
+    Features:
+        First Layer Trainer (central widget):
+            New Widgets:
+                QLabel --> shows copyright symbol and creators name
+                QWidget --> centralWidget of QMainWindow, with gridlayout attached to it
+                QCheckBox --> checks if scrambles shall be given out in random order or not
+                QCheckBox --> checks if all colours shall be used as a starting colour
+
+            Added Functionality:
+                Font of groupBox changed to Sansserif, 13
+                added label showing the creators name and copyright symbol
+                added tooltip for the scramble length deciding slider, the button and
+                    both checkboxes
+                added shortcut (Qt.Key_Space) to the scramblegenbutton
+                uses QMainWindow instead of QDialog for later purposes and puts
+                    all previous widgets and the grid layout into self.central
+                    and defines self.central as self.setCentralWidget
+                added two checkboxes
+                changed the functionality of the method changescrlen:
+                    if self.shufflescrchecker is enabled, copy the list as always but shuffle it
+                        before it is given back as self.scramblelist
+                    if self.anycolourchecker is enabled, proceed as always, but if not, use the
+                        scrambles with "w" in [filename].txt
+                because cmd did not work properly with python installation, I used
+                    pyinstaller -w -F -i favicon.ico MainWindow.py
+                    in PyCharm local Terminal, now there is the latest exe-File in SkewbSkills\dist
+                    the previous version has been stored in SkewbSkills\Version 1.0
+                if you want to use the exe-File, make sure all files (png, txt, etc.) are
+                    located in the same folder as the exe, otherwise, there will occur a
+                    messagebox showing an error
+    py-Files:
+        ScrambleGen.py
+        MainWindow.py
+            class Window(QMainWindow)
+                def __init__(self)
+                def ReadAllScrambles(self):
+                def CreateLayout(self):
+                def changescrlen(self):
+                def ScramblePlusColour(self):
+    txt-Files:
+        no changes at all
+    pictures:
+        no changes at all
+
+25.07.2019 (1.0.3):
+    Features:
+        First Layer Trainer (central widget):
+            New Widgets:
+                QWidget --> shows the scramble by drawing several polygons
+            Added Functionality:
+                clarified in tooltip of the shuffle-checkbox that shuffling might take some time
+                defined a function threeswap that performs 3-cycles with elements of a list
+                added class ScrambleDrawing (QWidget) that will show the scramble
+                created a function ShowScramble in WindowFLT that uses the solved position /
+                    index / sticker / colour - combination; splits the current scramble into moves;
+                    performs permutations inside the list of colours / numbers and triggers the
+                    ScrambleDrawing with the new (permuted) list; draws objects with specified
+                    colour; now working correctly
+                ScramblePlusColour triggers ShowScramble, which itself triggers the ScrambleDrawing
+        Start Window Skewb Skills (central widget):
+            New Widgets:
+                QPushButton --> starts the FLT
+                QPushButton --> starts the AT
+                QPushButton --> starts the CS
+                QPushButton --> starts the Q
+                QLabel --> shows a logo
+                QLabel --> shows info about the creator
+            Added Functionality:
+                added Start-Menu in which you can choose between several modes to practice
+                buttons shown in Start-Menu can be triggered with shortcuts as well
+                clicking one button of the Start-Menu closes itself and opens the corresponding
+                    window with the desired functionality
+    py-Files:
+        ScrambleGen.py
+        MainWindow.py
+            class StartWindow(QMainWindow)
+                def __init__(self)
+                def CreateLayout(self):
+                def StartFirstLayerTrainer(self):
+                def StartAlgTrainer(self):
+                def StartCompSim(self):
+                def StartQuiz(self):
+            class WindowFLT(QMainWindow)
+                def __init__(self)
+                def ReadAllScrambles(self):
+                def CreateLayout(self):
+                def changescrlen(self):
+                def ScramblePlusColour(self):
+                def ShowScramble(self, scramble):
+            class ScrambleDrawing(QWidget):
+                def __init__(self, stickers):
+                def paintEvent(self, QPaintEvent):
+                def drawScr(self, painter, s):
+            def threeswap(listname,i,j,k):
+    txt-Files:
+        no changes at all
+    pictures:
+        no changes at all
+
+25.07.2019 (1.0.3):
+    Features:
+        First Layer Trainer (central widget):
+            New Widgets:
+                none
+            Added Functionality:
+                scramble is now shown with FUR corner in front to be able to display FCN (Fixed
+                    Corner Notation)
+        Start Window Skewb Skills (central widget):
+            New Widgets:
+                none
+            Added Functionality:
+                none
+    py-Files:
+        ScrambleGen.py
+        MainWindow.py
+            class StartWindow(QMainWindow)
+                def __init__(self)
+                def CreateLayout(self):
+                def StartFirstLayerTrainer(self):
+                def StartAlgTrainer(self):
+                def StartCompSim(self):
+                def StartQuiz(self):
+            class WindowFLT(QMainWindow)
+                def __init__(self)
+                def ReadAllScrambles(self):
+                def CreateLayout(self):
+                def changescrlen(self):
+                def ScramblePlusColour(self):
+                def ShowScramble(self, scramble):
+            class ScrambleDrawing(QWidget):
+                def __init__(self, stickers):
+                def paintEvent(self, QPaintEvent):
+                def drawScr(self, painter, s):
+            def threeswap(listname,i,j,k):
+    txt-Files:
+        no changes at all
+    pictures:
+        no changes at all
