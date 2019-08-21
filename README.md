@@ -8,6 +8,8 @@ SkewbSkills is free to use for all skewbers out there (!) and has been created b
 + practice algs for the last two layers
 + practice programming with python and qt. ;)
 
+![SkewbSkills Logo](logogreen.png)
+
 # What's new?
 You can now download and use the first version of SkewbSkills! Browse through the source code on [github](https://github.com/AnnikaStein/SkewbSkills) or simply run the
 executable and have fun! More info on how to install your own copy of SkewbSkills down below.
