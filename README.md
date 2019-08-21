@@ -1,8 +1,12 @@
 # SkewbSkills
 Practice and learn skewb algs, first layer and more!
 
-This description intends to show you how to use SkewbSkills. SkewbSkills is free to use
-for all skewbers out there! 
+This description intends to show you how to use SkewbSkills and give a quick overview on the development process.
+
+SkewbSkills is free to use for all skewbers out there (!) and has been created by Annika Stein (also known as HugaCuba on social media such as YouTube or Instagram) to
++ practice the first layer
++ practice algs for the last two layers
++ practice programming with python and qt. ;)
 
 # What's new?
 You can now download and use the first version of SkewbSkills! Browse through the source code or simply run the
@@ -61,7 +65,12 @@ should only contain the scramble itself, ending with the last move. If you do no
 (because it can only read and use the scrambles provided in the form mentioned earlier).
 
 # Credits
+As I am just starting out Python (and PyQt5), I had a lot of input from various online sources.
 I learned a lot from [this playlist](https://www.youtube.com/playlist?list=PL1FgJUcJJ03uO70zDLDF3oaTu6s2QLOPa)
-by Parwiz Forogh. I also used [this project](https://github.com/enkore/qt-stop-watch.py/blob/master/qt-stop-watch.py) by enkore
+by Parwiz Forogh and also used [this project](https://github.com/enkore/qt-stop-watch.py/blob/master/qt-stop-watch.py) by enkore
 to get the stopwatch running. Also thanks to Mattheo de Wit, who created a similar (but web-based) [application!](https://yutu58.github.io/?fbclid=IwAR2cVMBE9LneUZ1J0XpDWPcTV2XjGsCDmXmTCIu4qhWUh7EJIDhA-f0eNTY)
+This was a big influence on how the L2L-Trainer should work.
+
+When reading the LICENSE doc, you might find out that you are not only free to use the program, but also the source code.
+This is to ensure everyone can learn something, of course I appreciate every suggestion for improvement!
 
