@@ -9,7 +9,7 @@ SkewbSkills is free to use for all skewbers out there (!) and has been created b
 + practice programming with python and qt. ;)
 
 # What's new?
-You can now download and use the first version of SkewbSkills! Browse through the source code or simply run the
+You can now download and use the first version of SkewbSkills! Browse through the source code on [github](https://github.com/AnnikaStein/SkewbSkills) or simply run the
 executable and have fun! More info on how to install your own copy of SkewbSkills down below.
 
 # What's planned?
@@ -25,11 +25,14 @@ executable and have fun! More info on how to install your own copy of SkewbSkill
 + Make SkewbSkills available to more platforms than Windows
 
 # Installation
-Take the zip-files, containing the .exe, some pictures and .txt files. Do not move the .txt-files out of the directory, they contain the scrambles.
-Using my pictures is not necessary, but they are included for design purposes.
+Download the zip-file, containing the .exe, some pictures and .txt files. Do not move the .txt-files out of the directory, they contain the scrambles.
+Actually, using my pictures is not necessary, but they are included for design purposes.
 
 To open the program, extract the zip-folder and open "MainWindow.exe", either by using the executable itself, by defining
 a shortcut (which is pretty nice if you want to put the program on your desktop or the taskbar), or by running the MainWindow.py-code (for those of you that have a python interpreter set up).
+
+*Note*: since the .exe is really new and not many people use it, you might have to allow your computer to execute it. This also
+applies to antivirus software if you use some.
 
 # Usage
 ## Starting Window
@@ -42,8 +45,8 @@ There's a slider to define the length of the scrambles, you can choose between 1
 shuffled, use the checkbox "Shuffle scrambles". The checkbox "Use all colours" allows SkewbSkills to show you various colours so that
 you can practice to start the first layer with every color (to become CN). When you're ready with the customization, press
 "Generate Scramble + Colour" (or Space). A new scramble appears, both as a label containing the scramble sequence, and with a drawing.
-"Small warning": the more moves you select, the larger the files are that contain the scramble. Therefore, it might take a little until
-the process is completed.
+*Small warning*: the more moves you select, the larger the files are that contain the scrambles. Therefore, it might take a little until
+the process is completed. In further versions, this should not be the case anymore.
 
 ## L2L Alg Trainer
 Select all the alg sets that you'd like to practice. SkewbSkills is going to shuffle (randomize) the order in which they appear.
@@ -71,6 +74,6 @@ by Parwiz Forogh and also used [this project](https://github.com/enkore/qt-stop-
 to get the stopwatch running. Also thanks to Mattheo de Wit, who created a similar (but web-based) [application!](https://yutu58.github.io/?fbclid=IwAR2cVMBE9LneUZ1J0XpDWPcTV2XjGsCDmXmTCIu4qhWUh7EJIDhA-f0eNTY)
 This was a big influence on how the L2L-Trainer should work.
 
-When reading the LICENSE doc, you might find out that you are not only free to use the program, but also the source code.
-This is to ensure everyone can learn something, of course I appreciate every suggestion for improvement!
+When reading the [LICENSE](https://github.com/AnnikaStein/SkewbSkills/blob/master/LICENSE) doc, you might find out that you are not only free to use the program, but also the source code.
+This is to ensure everyone can learn something, of course I appreciate every suggestion for improvement, as I might actually be the one to learn something through this project! :)
 
