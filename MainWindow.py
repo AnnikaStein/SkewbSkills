@@ -1,6 +1,7 @@
 import random
 import sys
-from PyQt5.QtWidgets import QLCDNumber, QAction, QApplication, QWidget, QMainWindow, QCheckBox, QPushButton, QLabel, QSlider, QGroupBox, QHBoxLayout, QVBoxLayout, QGridLayout
+from PyQt5.QtWidgets import QLCDNumber, QAction, QApplication, QWidget,\
+    QMainWindow, QCheckBox, QPushButton, QLabel, QSlider, QGroupBox, QVBoxLayout, QGridLayout
 from PyQt5 import QtGui
 from PyQt5.QtCore import Qt, QPoint, QTimer, pyqtSlot
 
@@ -59,34 +60,32 @@ class StartWindow(QMainWindow):
         self.firstlayerbut.setToolTip("Generates scrambles from 1 up to 7 moves and random "
                                           "colours to start the first layer with, if you wish.")
         self.firstlayerbut.clicked.connect(self.StartFirstLayerTrainer)
-        #self.firstlayerbut.setShortcut(QtGui.QKeySequence(Qt.Key_F))
         gridLayout.addWidget(self.firstlayerbut, 0, 0)
 
         # button to start the alg trainer
         self.algbut = QPushButton("Alg Trainer (or press A)", self)
         self.algbut.setMinimumHeight(80)
-        self.algbut.setToolTip("Shows you L2L-cases (and corresponding algs if needed).\n"
-                               "Follows a flashcard principle, define piles of cases you know "
-                               "or want to work on.")
+        self.algbut.setToolTip("Shows you L2L-cases (scramble + drawing) to the sets you choose.\n"
+                               "With timer function.")
         self.algbut.clicked.connect(self.StartAlgTrainer)
-        #self.algbut.setShortcut(QtGui.QKeySequence(Qt.Key_A))
         gridLayout.addWidget(self.algbut, 0, 1)
 
+        # ToDo:
+        '''
         # button to start the comp sim
         self.compsimbut = QPushButton("Comp Sim (or press C)", self)
         self.compsimbut.setMinimumHeight(80)
         self.compsimbut.setToolTip("Starts the competition simulation in a new window.")
         self.compsimbut.clicked.connect(self.StartCompSim)
-        #self.compsimbut.setShortcut(QtGui.QKeySequence(Qt.Key_C))
         gridLayout.addWidget(self.compsimbut, 1, 0)
-
+                
         # button to start the quiz
-        self.firstlayerbut = QPushButton("Quiz (or press Q)", self)
-        self.firstlayerbut.setMinimumHeight(80)
-        self.firstlayerbut.setToolTip("Starts a new quiz window.")
-        self.firstlayerbut.clicked.connect(self.StartQuiz)
-        #self.firstlayerbut.setShortcut(QtGui.QKeySequence(Qt.Key_Q))
-        gridLayout.addWidget(self.firstlayerbut, 1, 1)
+        self.quizbut = QPushButton("Quiz (or press Q)", self)
+        self.quizbut.setMinimumHeight(80)
+        self.quizbut.setToolTip("Starts a new quiz window.")
+        self.quizbut.clicked.connect(self.StartQuiz)
+        gridLayout.addWidget(self.quizbut, 1, 1)
+        '''
 
         # this label shows a picture
         self.scrpic = QLabel(self)
@@ -113,13 +112,14 @@ class StartWindow(QMainWindow):
     def StartAlgTrainer(self):
         self.close()
         self.windowL2LT.showMaximized()
-
+    # ToDo:
+    '''
     def StartCompSim(self):
         pass
 
     def StartQuiz(self):
         pass
-
+    '''
 class WindowFLT(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -136,6 +136,8 @@ class WindowFLT(QMainWindow):
         self.setGeometry(self.left, self.top, self.width, self.height)
 
         self.ReadAllScrambles()
+
+        # ToDo: add help menu etc.
 
         mainMenu = self.menuBar()
         funcMenu = mainMenu.addMenu('Practice Mode')
@@ -167,6 +169,9 @@ class WindowFLT(QMainWindow):
         # all possible starting colours, the next few lines of code generate a list of all lines
         # in the scrambles.txt-File and append groups of two elements of this list to the
         # final scramblelist
+        # ToDo:
+        # simplify the scramble files by only using each sequence once, without saving
+        # the colours in the file
         self.scramble1list = []
         self.kombiscramblelist = []
         datei = open('scrambles1.txt', 'r', encoding='utf-8')
@@ -402,7 +407,9 @@ class WindowFLT(QMainWindow):
         self.central.setLayout(vbox)
 
     def changescrlen(self):
-
+        # ToDo: faster way to get the scrambles (do not use the huge files but only put in the
+        #  scrambles once per scramble length and generate a random colour while the main program
+        #  is running)
         scrlen = self.scrlenslider.value()
 
         if scrlen == 1:
@@ -520,7 +527,7 @@ class WindowFLT(QMainWindow):
         self.scramblelist.pop()
         self.scramblelabel.setText(scramblezumanzeigen[0])
 
-        # rufe hier nun die Funktion auf, die den ausgewählten Scramble zeichnet
+        # generate scramble drawing
 
         self.ShowScramble(scramblezumanzeigen[0])
 
@@ -621,12 +628,14 @@ class WindowFLT(QMainWindow):
         self.close()
         self.windowL2LT = WindowL2LT()
         self.windowL2LT.showMaximized()
-
+    # ToDo: other practicing modes
+    '''
     def StartCompSim(self):
         pass
 
     def StartQuiz(self):
         pass
+    '''
 
 class WindowL2LT(QMainWindow):
     def __init__(self, parent=None):
@@ -649,28 +658,26 @@ class WindowL2LT(QMainWindow):
         self.mainMenu = self.menuBar()
         self.funcMenu = self.mainMenu.addMenu('Practice Mode')
         self.l2lMenu = self.mainMenu.addMenu('L2L Functions')
-        # fileMenu = mainMenu.addMenu('File')
-        # editMenu = mainMenu.addMenu('Edit')
-        # viewMenu = mainMenu.addMenu('View')
-        # searchMenu = mainMenu.addMenu('Search')
-        # toolsMenu = mainMenu.addMenu('Tools')
-        # helpMenu = mainMenu.addMenu('Help')
-
+        # ToDo: include a help or readme button, generate new window containing some info
+        '''
+        self.helpMenu = self.mainMenu.addMenu('Help')
+        
+        self.readmebut = QAction('Open Readme', self)
+        self.readmebut.triggered.connect(self.StartReadme)
+        self.helpMenu.addAction(self.readmebut)
+        '''
         self.fltButton = QAction('First Layer Trainer', self)
         self.fltButton.setShortcut('F')
-        #fltButton.setStatusTip('First Layer Trainer')
         self.fltButton.triggered.connect(self.StartFirstLayerTrainer)
         self.funcMenu.addAction(self.fltButton)
 
         self.l2ltButton = QAction('Last 2 Layer Alg Trainer', self)
         self.l2ltButton.setShortcut('A')
-        #l2ltButton.setStatusTip('Last 2 Layer Alg Trainer')
         self.l2ltButton.triggered.connect(self.StartAlgTrainer)
         self.funcMenu.addAction(self.l2ltButton)
 
         self.l2ltEnterButton = QAction('Generate Scramble', self)
         self.l2ltEnterButton.setShortcut(Qt.Key_Return)
-        #l2ltEnterButton.setStatusTip('Generate Scramble')
         self.l2ltEnterButton.triggered.connect(self.ScramblePlusColour)
         self.l2lMenu.addAction(self.l2ltEnterButton)
 
@@ -1304,7 +1311,7 @@ class WindowL2LT(QMainWindow):
         self.close()
         self.windowL2LT = WindowL2LT()
         self.windowL2LT.showMaximized()
-
+    '''
     def StartCompSim(self):
         # ToDo
         pass
@@ -1312,6 +1319,7 @@ class WindowL2LT(QMainWindow):
     def StartQuiz(self):
         # ToDo
         pass
+    '''
 
 class ScrambleDrawing(QWidget):
     def __init__(self, stickers):
