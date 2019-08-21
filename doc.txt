@@ -188,3 +188,69 @@
         no changes at all
     pictures:
         no changes at all
+
+25.07.2019 (1.0.3):
+    Features:
+        Alg Trainer (central widget):
+            New Widgets:
+                QCheckBoxes for every type of L2L-Alg
+                QPushButton: Generate Scramble
+                QLabel: Info 'bout me :)
+                QLabel: shows the scramble
+                QWidget: showing a drawing of the scramble
+                MenuBar containing Practice Mode, with the two options FLT or L2LT
+            Added Functionality:
+                Shortcuts to the practice modes work again with the menubar
+        First Layer Trainer (central widget):
+            New Widgets:
+                MenuBar containing Practice Mode, with the two options FLT or L2LT
+            Added Functionality:
+                Shortcuts to the practice modes work again with the menubar
+        Start Window Skewb Skills (central widget):
+            New Widgets:
+                MenuBar containing Practice Mode, with the two options FLT or L2LT
+            Added Functionality:
+                Shortcuts to the practice modes work again with the menubar
+    py-Files:
+        ScrambleGen.py
+        MainWindow.py
+            class StartWindow(QMainWindow)
+                def __init__(self)
+                def CreateLayout(self):
+                def StartFirstLayerTrainer(self):
+                def StartAlgTrainer(self):
+                def StartCompSim(self):
+                def StartQuiz(self):
+            class WindowFLT(QMainWindow)
+                def __init__(self)
+                def ReadAllScrambles(self):
+                def CreateLayout(self):
+                def changescrlen(self):
+                def ScramblePlusColour(self):
+                def ShowScramble(self, scramble):
+                def StartFirstLayerTrainer(self):
+                def StartAlgTrainer(self):
+                def StartCompSim(self):
+                def StartQuiz(self):
+            class WindowL2LT(QMainWindow):
+                def __init__(self): (ready)
+                def ReadAllScrambles(self): (ready, but the scrambles need to be done separately)
+                def CreateLayout(self): (ready)
+                def changescrlen(self): (ready)
+                def ScramblePlusColour(self): (ready)
+                def ShowScramble(self, scramble): (ready)
+                def StartFirstLayerTrainer(self):
+                def StartAlgTrainer(self):
+                def StartCompSim(self):
+                def StartQuiz(self):
+            class ScrambleDrawing(QWidget):
+                def __init__(self, stickers):
+                def paintEvent(self, QPaintEvent):
+                def drawScr(self, painter, s):
+            def threeswap(listname,i,j,k):
+            def fourswap(listname,i,j,k,l):
+            def corrcol(list,i):
+    txt-Files:
+        no changes at all
+    pictures:
+        no changes at all
