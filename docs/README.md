@@ -4,7 +4,7 @@ Practice and learn skewb algs, first layer and more!
 This file intends to show you how to use SkewbSkills.
 
 # Installation
-Take the zip.-file, unzip it and start the .exe. Do not move the .txt-files out of the directory, they contain the scrambles.
+Take the files of the release, containing the .exe, some pictures and .txt files. Do not move the .txt-files out of the directory, they contain the scrambles.
 Using my pictures is not necessary, but they are included for design purposes. 
 
 # Usage
