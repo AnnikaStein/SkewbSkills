@@ -8,6 +8,18 @@ for all skewbers out there!
 You can now download and use the first version of SkewbSkills! Browse through the source code or simply run the
 executable and have fun! More info on how to install your own copy of SkewbSkills down below.
 
+# What's planned?
++ Improve the way the scrambles are generated / processed to reduce the file sizes
++ Make video on how to install and use SkewbSkills
++ Add other practicing modes, or modify the current ones:
+   + I'd like the user to identify his / her weak algs and put them on a special pile to work on particularly
+   + add timer to the first layer trainer
+   + add quiz where you only see three faces and have to identify the case
+   + add competition sim where you get five scrambles, but only four times a day ;)
+   + add statistics for every L2L case that shows improvement
+   + function to identify which cases you know, where you can put in your own algs and keep track of the cases you know
++ Make SkewbSkills available to more platforms than Windows
+
 # Installation
 Take the zip-files, containing the .exe, some pictures and .txt files. Do not move the .txt-files out of the directory, they contain the scrambles.
 Using my pictures is not necessary, but they are included for design purposes.
