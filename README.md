@@ -1,11 +1,19 @@
 # SkewbSkills
 Practice and learn skewb algs, first layer and more!
 
-This file intends to show you how to use SkewbSkills.
+This description intends to show you how to use SkewbSkills. SkewbSkills is free to use
+for all skewbers out there! 
+
+# What's new?
+You can now download and use the first version of SkewbSkills! Browse through the source code or simply run the
+executable and have fun! More info on how to install your own copy of SkewbSkills down below.
 
 # Installation
 Take the zip-files, containing the .exe, some pictures and .txt files. Do not move the .txt-files out of the directory, they contain the scrambles.
-Using my pictures is not necessary, but they are included for design purposes. 
+Using my pictures is not necessary, but they are included for design purposes.
+
+To open the program, extract the zip-folder and open "MainWindow.exe", either by using the executable itself, by defining
+a shortcut (which is pretty nice if you want to put the program on your desktop or the taskbar), or by running the MainWindow.py-code (for those of you that have a python interpreter set up).
 
 # Usage
 ## Starting Window
@@ -31,7 +39,7 @@ using the "Reset" button (or press "R").
 ## Your own algs
 If you find that you'd like other scrambles to be displayed than the current ones, open any of the .txt-Docs and modify the
 scrambles to your liking. If you want to keep track of which scrambles generate which case, see
-https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo/edit#gid=1743463298
+[this document](https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo/edit#gid=1743463298)
 (credits: Elias Malomgré and Carter Cucala). I use the same terms for the cases to indicate them, as well as the same order.
 When modifying the scrambles in the .txt-Files, note that the very last character of the file must be one space in the line of the
 last scramble. So do not make any additional line break after the last scramble, but end the line of the last scramble with a space.
@@ -39,6 +47,6 @@ In almost the same manner, do not use a space or anything else to end the previo
 should only contain the scramble itself, ending with the last move.
 
 # Credits
-I learned a lot from this playlist: https://www.youtube.com/playlist?list=PL1FgJUcJJ03uO70zDLDF3oaTu6s2QLOPa
-by Parwiz Forogh. I also used https://github.com/enkore/qt-stop-watch.py/blob/master/qt-stop-watch.py by enkore
+I learned a lot from [this playlist](https://www.youtube.com/playlist?list=PL1FgJUcJJ03uO70zDLDF3oaTu6s2QLOPa)
+by Parwiz Forogh. I also used [this project](https://github.com/enkore/qt-stop-watch.py/blob/master/qt-stop-watch.py) by enkore
 to get the stopwatch running.
