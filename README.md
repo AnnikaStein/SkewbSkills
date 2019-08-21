@@ -33,20 +33,23 @@ the process is completed.
 Select all the alg sets that you'd like to practice. SkewbSkills is going to shuffle (randomize) the order in which they appear.
 Use the "Generate L2L Scramble" Button or press Return to generate a scramble. A drawing of the scramble appears. All scrambles are
 performed with the White/Red/Green Corner on top/front. Start the timer with the "Start" Button or press Space. After starting the
-timer, you can stop it again by clicking the same button ("Stop") or pressing Space again. You can than reset the timer to zero by
+timer, you can stop it again by clicking the same button ("Pause") or pressing Space again. You can than reset the timer to zero by
 using the "Reset" button (or press "R").
 
 ## Your own algs
-If you find that you'd like other scrambles to be displayed than the current ones, open any of the .txt-Docs and modify the
+You do not need to change anything on any file anymore once you've extracted the folder. But:
+if you find that you'd like other scrambles to be displayed than the current ones, open any of the .txt-Docs and modify the
 scrambles to your liking. If you want to keep track of which scrambles generate which case, see
 [this document](https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo/edit#gid=1743463298)
 (credits: Elias Malomgré and Carter Cucala). I use the same terms for the cases to indicate them, as well as the same order.
 When modifying the scrambles in the .txt-Files, note that the very last character of the file must be one space in the line of the
 last scramble. So do not make any additional line break after the last scramble, but end the line of the last scramble with a space.
 In almost the same manner, do not use a space or anything else to end the previous scrambles. All lines that are not the last line
-should only contain the scramble itself, ending with the last move.
+should only contain the scramble itself, ending with the last move. If you do not apply the steps above, your program might crash
+(because it can only read and use the scrambles provided in the form mentioned earlier).
 
 # Credits
 I learned a lot from [this playlist](https://www.youtube.com/playlist?list=PL1FgJUcJJ03uO70zDLDF3oaTu6s2QLOPa)
 by Parwiz Forogh. I also used [this project](https://github.com/enkore/qt-stop-watch.py/blob/master/qt-stop-watch.py) by enkore
-to get the stopwatch running.
+to get the stopwatch running. Also thanks to Mattheo de Wit, who created a similar (but web-based) [application!](https://yutu58.github.io/?fbclid=IwAR2cVMBE9LneUZ1J0XpDWPcTV2XjGsCDmXmTCIu4qhWUh7EJIDhA-f0eNTY)
+
