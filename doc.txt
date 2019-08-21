@@ -1,4 +1,4 @@
-21.07.2019 (1.0.1):
+21.07.2019:
     Features:
         First Layer Trainer Dialog:
             Widgets:
@@ -49,7 +49,7 @@
         logored.png
         logoredicon.png
 
-22.07.2019 (1.0.2):
+22.07.2019:
     Features:
         First Layer Trainer (central widget):
             New Widgets:
@@ -94,7 +94,7 @@
     pictures:
         no changes at all
 
-25.07.2019 (1.0.3):
+25.07.2019:
     Features:
         First Layer Trainer (central widget):
             New Widgets:
@@ -149,7 +149,7 @@
     pictures:
         no changes at all
 
-25.07.2019 (1.0.3):
+26.07.2019:
     Features:
         First Layer Trainer (central widget):
             New Widgets:
@@ -189,24 +189,28 @@
     pictures:
         no changes at all
 
-25.07.2019 (1.0.3):
+21.08.2019:
     Features:
         Alg Trainer (central widget):
             New Widgets:
                 QCheckBoxes for every type of L2L-Alg
                 QPushButton: Generate Scramble
+                QPushButton: Start / Stop Timer
+                QPushButton: Reset Timer
                 QLabel: Info 'bout me :)
                 QLabel: shows the scramble
                 QWidget: showing a drawing of the scramble
-                MenuBar containing Practice Mode, with the two options FLT or L2LT
+                MenuBar containing Practice Mode, with the two options FLT or L2LT;
+                    also containing L2L Functions (currently only Return-Shortcut to generate scr.)
             Added Functionality:
                 Shortcuts to the practice modes work again with the menubar
+                start stop timer with button or spacebar, reset with button or 'R' key
         First Layer Trainer (central widget):
             New Widgets:
                 MenuBar containing Practice Mode, with the two options FLT or L2LT
             Added Functionality:
                 Shortcuts to the practice modes work again with the menubar
-        Start Window Skewb Skills (central widget):
+        Starting Window Skewb Skills (central widget):
             New Widgets:
                 MenuBar containing Practice Mode, with the two options FLT or L2LT
             Added Functionality:
@@ -219,8 +223,6 @@
                 def CreateLayout(self):
                 def StartFirstLayerTrainer(self):
                 def StartAlgTrainer(self):
-                def StartCompSim(self):
-                def StartQuiz(self):
             class WindowFLT(QMainWindow)
                 def __init__(self)
                 def ReadAllScrambles(self):
@@ -230,19 +232,24 @@
                 def ShowScramble(self, scramble):
                 def StartFirstLayerTrainer(self):
                 def StartAlgTrainer(self):
-                def StartCompSim(self):
-                def StartQuiz(self):
             class WindowL2LT(QMainWindow):
-                def __init__(self): (ready)
-                def ReadAllScrambles(self): (ready, but the scrambles need to be done separately)
-                def CreateLayout(self): (ready)
-                def changescrlen(self): (ready)
-                def ScramblePlusColour(self): (ready)
-                def ShowScramble(self, scramble): (ready)
+                def __init__(self):
+                def ReadAllScrambles(self):
+                def CreateLayout(self):
+                def changescrlen(self):
+                def ScramblePlusColour(self):
+                def display(self):
+                @pyqtSlot()
+                def tick(self):
+                @pyqtSlot()
+                def do_start(self):
+                @pyqtSlot()
+                def do_pause(self):
+                @pyqtSlot()
+                def do_reset(self):
+                def ShowScramble(self, scramble):
                 def StartFirstLayerTrainer(self):
                 def StartAlgTrainer(self):
-                def StartCompSim(self):
-                def StartQuiz(self):
             class ScrambleDrawing(QWidget):
                 def __init__(self, stickers):
                 def paintEvent(self, QPaintEvent):
@@ -251,6 +258,9 @@
             def fourswap(listname,i,j,k,l):
             def corrcol(list,i):
     txt-Files:
-        no changes at all
+        New files for the L2L-scrambles, indicated by the type of the case (pi, peanut, l4c, l5c)
+            and more detailed description (+ xyz-perm or whatever)
+        l4c,l4c,p3s,phu,phzpure,pi3s,pihu,pihz,pio,piswirl,pivu,piwat,pix,pizconj,po,
+        pswirl,pvu,pwat,px,pzconj .txt
     pictures:
         no changes at all
