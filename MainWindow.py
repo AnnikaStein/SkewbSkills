@@ -20,26 +20,31 @@ class StartWindow(QMainWindow):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-        mainMenu = self.menuBar()
-        funcMenu = mainMenu.addMenu('Practice Mode')
+        self.mainMenu = self.menuBar()
+        self.funcMenu = self.mainMenu.addMenu('Practice Mode')
         #fileMenu = mainMenu.addMenu('File')
         #editMenu = mainMenu.addMenu('Edit')
         #viewMenu = mainMenu.addMenu('View')
         #searchMenu = mainMenu.addMenu('Search')
         #toolsMenu = mainMenu.addMenu('Tools')
-        #helpMenu = mainMenu.addMenu('Help')
+        self.helpMenu = self.mainMenu.addMenu('Help')
 
-        fltButton = QAction('First Layer Trainer', self)
-        fltButton.setShortcut('F')
-        fltButton.setStatusTip('First Layer Trainer')
-        fltButton.triggered.connect(self.StartFirstLayerTrainer)
-        funcMenu.addAction(fltButton)
+        self.fltButton = QAction('First Layer Trainer', self)
+        self.fltButton.setShortcut('F')
+        self.fltButton.setStatusTip('First Layer Trainer')
+        self.fltButton.triggered.connect(self.StartFirstLayerTrainer)
+        self.funcMenu.addAction(self.fltButton)
 
-        l2ltButton = QAction('Last 2 Layer Alg Trainer', self)
-        l2ltButton.setShortcut('A')
-        l2ltButton.setStatusTip('Last 2 Layer Alg Trainer')
-        l2ltButton.triggered.connect(self.StartAlgTrainer)
-        funcMenu.addAction(l2ltButton)
+        self.l2ltButton = QAction('Last 2 Layer Alg Trainer', self)
+        self.l2ltButton.setShortcut('A')
+        self.l2ltButton.setStatusTip('Last 2 Layer Alg Trainer')
+        self.l2ltButton.triggered.connect(self.StartAlgTrainer)
+        self.funcMenu.addAction(self.l2ltButton)
+
+        self.helpbut = QAction('How to use it?', self)
+        self.helpbut.setShortcut('H')
+        self.helpbut.triggered.connect(self.do_h)
+        self.helpMenu.addAction(self.helpbut)
 
         self.central = QWidget()
         self.CreateLayout()
@@ -47,6 +52,10 @@ class StartWindow(QMainWindow):
         self.windowFLT = WindowFLT()
         self.windowL2LT = WindowL2LT()
         self.show()
+
+    def do_h(self):
+        self.helpwindow = Help()
+        self.helpwindow.show()
 
     def CreateLayout(self):
         # starting to define the layout of the CentralWidget
@@ -95,7 +104,7 @@ class StartWindow(QMainWindow):
 
         # this label shows some info about the creator
         self.creatorlabel = QLabel(self)
-        self.creatorlabel.setText("© Annika Stein")
+        self.creatorlabel.setText("© 2019, Annika Stein")
         self.creatorlabel.setMinimumHeight(50)
         gridLayout.addWidget(self.creatorlabel, 2, 1)
 
@@ -137,32 +146,131 @@ class WindowFLT(QMainWindow):
 
         self.ReadAllScrambles()
 
-        # ToDo: add help menu etc.
-
-        mainMenu = self.menuBar()
-        funcMenu = mainMenu.addMenu('Practice Mode')
-        # fileMenu = mainMenu.addMenu('File')
+        self.mainMenu = self.menuBar()
+        self.funcMenu = self.mainMenu.addMenu('Practice Mode')
+        self.fltMenu = self.mainMenu.addMenu('FLT Functions')
         # editMenu = mainMenu.addMenu('Edit')
         # viewMenu = mainMenu.addMenu('View')
         # searchMenu = mainMenu.addMenu('Search')
         # toolsMenu = mainMenu.addMenu('Tools')
-        # helpMenu = mainMenu.addMenu('Help')
+        self.helpMenu = self.mainMenu.addMenu('Help')
 
-        fltButton = QAction('First Layer Trainer', self)
-        fltButton.setShortcut('F')
-        fltButton.setStatusTip('First Layer Trainer')
-        fltButton.triggered.connect(self.StartFirstLayerTrainer)
-        funcMenu.addAction(fltButton)
+        self.fltButton = QAction('First Layer Trainer', self)
+        self.fltButton.setShortcut('F')
+        self.fltButton.setStatusTip('First Layer Trainer')
+        self.fltButton.triggered.connect(self.StartFirstLayerTrainer)
+        self.funcMenu.addAction(self.fltButton)
 
-        l2ltButton = QAction('Last 2 Layer Alg Trainer', self)
-        l2ltButton.setShortcut('A')
-        l2ltButton.setStatusTip('Last 2 Layer Alg Trainer')
-        l2ltButton.triggered.connect(self.StartAlgTrainer)
-        funcMenu.addAction(l2ltButton)
+        self.l2ltButton = QAction('Last 2 Layer Alg Trainer', self)
+        self.l2ltButton.setShortcut('A')
+        self.l2ltButton.setStatusTip('Last 2 Layer Alg Trainer')
+        self.l2ltButton.triggered.connect(self.StartAlgTrainer)
+        self.funcMenu.addAction(self.l2ltButton)
+
+        self.fltEnterButton = QAction('Generate Scramble + Colour', self)
+        self.fltEnterButton.setShortcut(Qt.Key_Return)
+        self.fltEnterButton.triggered.connect(self.ScramblePlusColour)
+        self.fltMenu.addAction(self.fltEnterButton)
+
+        self.fltSpaceBut = QAction('Start / Pause Timer', self)
+        self.fltSpaceBut.setShortcut(Qt.Key_Space)
+        self.fltSpaceBut.triggered.connect(self.whattodowithspace)
+        self.fltMenu.addAction(self.fltSpaceBut)
+
+        self.fltButR = QAction('Reset Timer', self)
+        self.fltButR.setShortcut('R')
+        self.fltButR.triggered.connect(self.do_reset)
+        self.fltMenu.addAction(self.fltButR)
+
+        self.fltBut1 = QAction('Scramble Length: 1', self)
+        self.fltBut1.setShortcut('1')
+        self.fltBut1.triggered.connect(self.do_1)
+        self.fltMenu.addAction(self.fltBut1)
+        self.fltBut2 = QAction('Scramble Length: 2', self)
+        self.fltBut2.setShortcut('2')
+        self.fltBut2.triggered.connect(self.do_2)
+        self.fltMenu.addAction(self.fltBut2)
+        self.fltBut3 = QAction('Scramble Length: 3', self)
+        self.fltBut3.setShortcut('3')
+        self.fltBut3.triggered.connect(self.do_3)
+        self.fltMenu.addAction(self.fltBut3)
+        self.fltBut4 = QAction('Scramble Length: 4', self)
+        self.fltBut4.setShortcut('4')
+        self.fltBut4.triggered.connect(self.do_4)
+        self.fltMenu.addAction(self.fltBut4)
+        self.fltBut5 = QAction('Scramble Length: 5', self)
+        self.fltBut5.setShortcut('5')
+        self.fltBut5.triggered.connect(self.do_5)
+        self.fltMenu.addAction(self.fltBut5)
+        self.fltBut6 = QAction('Scramble Length: 6', self)
+        self.fltBut6.setShortcut('6')
+        self.fltBut6.triggered.connect(self.do_6)
+        self.fltMenu.addAction(self.fltBut6)
+        self.fltBut7 = QAction('Scramble Length: 7', self)
+        self.fltBut7.setShortcut('7')
+        self.fltBut7.triggered.connect(self.do_7)
+        self.fltMenu.addAction(self.fltBut7)
+
+        self.fltButS = QAction('Shuffle Scrambles', self)
+        self.fltButS.setShortcut('S')
+        self.fltButS.triggered.connect(self.do_s)
+        self.fltMenu.addAction(self.fltButS)
+        self.fltButC = QAction('Use all colours', self)
+        self.fltButC.setShortcut('C')
+        self.fltButC.triggered.connect(self.do_c)
+        self.fltMenu.addAction(self.fltButC)
+
+        self.helpbut = QAction('How to use it?', self)
+        self.helpbut.setShortcut('H')
+        self.helpbut.triggered.connect(self.do_h)
+        self.helpMenu.addAction(self.helpbut)
 
         self.central = QWidget()
         self.CreateLayout()
         self.setCentralWidget(self.central)
+
+    def do_h(self):
+        self.helpwindow = Help()
+        self.helpwindow.show()
+
+    def do_1(self):
+        self.scrlenslider.setValue(1)
+
+    def do_2(self):
+        self.scrlenslider.setValue(2)
+
+    def do_3(self):
+        self.scrlenslider.setValue(3)
+
+    def do_4(self):
+        self.scrlenslider.setValue(4)
+
+    def do_5(self):
+        self.scrlenslider.setValue(5)
+
+    def do_6(self):
+        self.scrlenslider.setValue(6)
+
+    def do_7(self):
+        self.scrlenslider.setValue(7)
+
+    def do_s(self):
+        if self.shufflescrchecker.isChecked():
+            self.shufflescrchecker.setChecked(False)
+        else:
+            self.shufflescrchecker.setChecked(True)
+
+    def do_c(self):
+        if self.anycolourchecker.isChecked():
+            self.anycolourchecker.setChecked(False)
+        else:
+            self.anycolourchecker.setChecked(True)
+
+    def whattodowithspace(self):
+        if self.start.text() == "Start (SPACE)":
+            self.do_start()
+        else:
+            self.do_pause()
 
     def ReadAllScrambles(self):
         # with a given file that consists of all scrambles to a given number of moves and
@@ -353,7 +461,7 @@ class WindowFLT(QMainWindow):
                                          "colours.\nIf you only want to practice on a single "
                                          "colour (e.g. white), do not activate this checkbox.")
         self.anycolourchecker.stateChanged.connect(self.changescrlen)
-        self.gridLayout.addWidget(self.anycolourchecker, 0, 1)
+        self.gridLayout.addWidget(self.anycolourchecker, 0, 2)
 
         # slider to define the scramble length
         self.scrlenslider = QSlider(Qt.Horizontal)
@@ -363,42 +471,63 @@ class WindowFLT(QMainWindow):
         self.scrlenslider.setTickPosition(QSlider.TicksBelow)
         self.scrlenslider.setTickInterval(1)
         self.scrlenslider.setToolTip("Change the scramble length from 1 on the left to 7 on the right.")
-        self.gridLayout.addWidget(self.scrlenslider, 1, 0)
+        self.gridLayout.addWidget(self.scrlenslider, 0, 1)
         self.scrlenslider.setMinimumWidth(70)
         self.scrlenslider.valueChanged.connect(self.changescrlen)
 
         # button to generate a scramble and a random colour to start the first layer with
-        self.scramblegenbutton = QPushButton("Generate Scramble + Colour\n (or press Spacebar)", self)
+        self.scramblegenbutton = QPushButton("Generate Scramble + Colour\n(RETURN)", self)
         self.scramblegenbutton.setMinimumHeight(80)
         self.scramblegenbutton.setToolTip("Generates a scramble of the defined length and "
                                      "a random colour to start the first layer with.")
         self.scramblegenbutton.clicked.connect(self.ScramblePlusColour)
-        self.scramblegenbutton.setShortcut(QtGui.QKeySequence(Qt.Key_Space))
-        self.gridLayout.addWidget(self.scramblegenbutton, 1, 1)
+        self.gridLayout.addWidget(self.scramblegenbutton, 1, 0)
 
         # this label shows the scramble
         self.scramblelabel = QLabel(self)
         self.scramblelabel.setMinimumHeight(50)
         self.scramblelabel.setText('')
         self.scramblelabel.setFont(QtGui.QFont("Monospace", 20))
-        self.gridLayout.addWidget(self.scramblelabel, 2, 0)
+        self.gridLayout.addWidget(self.scramblelabel, 1, 1)
 
         # this label shows the colour
         self.colourlabel = QLabel(self)
         self.colourlabel.setMinimumHeight(50)
         self.colourlabel.setStyleSheet('background-color : transparent')
-        self.gridLayout.addWidget(self.colourlabel, 2, 1)
+        self.gridLayout.addWidget(self.colourlabel, 1, 2)
 
         self.scrpic = QLabel(self)
         self.scrpic.setMinimumHeight(50)
         self.scrpic.setPixmap(QtGui.QPixmap("logogreen").scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
-        self.gridLayout.addWidget(self.scrpic, 10, 0)
+        self.gridLayout.addWidget(self.scrpic, 4, 0)
+
+        self.start = QPushButton("Start (SPACE)", self)
+        self.start.setMinimumHeight(50)
+        self.start.setToolTip("Starts (or stops) the timer.")
+        self.start.clicked.connect(self.do_start)
+        self.gridLayout.addWidget(self.start, 3, 0)
+
+        self.reset = QPushButton("Reset (R)", self)
+        self.reset.setMinimumHeight(50)
+        self.reset.setToolTip("Resets the timer.")
+        self.reset.clicked.connect(self.do_reset)
+        self.gridLayout.addWidget(self.reset, 3, 2)
+
+        self.lcd = QLCDNumber(self)
+        self.lcd.setSmallDecimalPoint(True)
+        self.lcd.setDigitCount(10)
+        self.gridLayout.addWidget(self.lcd, 3, 1)
+        self.timer = QTimer()
+        self.timer.setInterval(2 ** 6)
+        self.timer.timeout.connect(self.tick)
+
+        self.do_reset()
 
         # this label shows some info about the creator
         self.creatorlabel = QLabel(self)
-        self.creatorlabel.setText("© Annika Stein")
+        self.creatorlabel.setText("© 2019, Annika Stein")
         self.creatorlabel.setMinimumHeight(50)
-        self.gridLayout.addWidget(self.creatorlabel, 3, 1)
+        self.gridLayout.addWidget(self.creatorlabel, 4, 2)
 
         self.central.groupBox.setLayout(self.gridLayout)
         
@@ -617,7 +746,37 @@ class WindowFLT(QMainWindow):
         # draws the scramble by drawing several polygons corresponding to the scramble
         self.drawscrwidget = ScrambleDrawing(stickercol)
         self.drawscrwidget.setMinimumHeight(430)
-        self.gridLayout.addWidget(self.drawscrwidget, 3, 0)
+        self.gridLayout.addWidget(self.drawscrwidget, 2, 1)
+
+    def display(self):
+        # shows the current time (since zero / or zero itself) on the lcd
+        self.lcd.display("%d:%05.2f" % (self.time // 60, self.time % 60))
+
+    @pyqtSlot()
+    def tick(self):
+        # currently update the time, every 2**6/1000 ms, show it on the lcd
+        self.time += 2**6/1000
+        self.display()
+
+    @pyqtSlot()
+    def do_start(self):
+        self.timer.start()
+        self.start.setText("Pause (SPACE)")
+        self.start.clicked.disconnect()
+        self.start.clicked.connect(self.do_pause)
+
+    @pyqtSlot()
+    def do_pause(self):
+        self.timer.stop()
+        self.start.setText("Start (SPACE)")
+        self.start.clicked.disconnect()
+        self.start.clicked.connect(self.do_start)
+
+    @pyqtSlot()
+    def do_reset(self):
+        # set time of the stopwatch back to zero, show the current time on the lcd
+        self.time = 0
+        self.display()
 
     def StartFirstLayerTrainer(self):
         self.close()
@@ -658,14 +817,8 @@ class WindowL2LT(QMainWindow):
         self.mainMenu = self.menuBar()
         self.funcMenu = self.mainMenu.addMenu('Practice Mode')
         self.l2lMenu = self.mainMenu.addMenu('L2L Functions')
-        # ToDo: include a help or readme button, generate new window containing some info
-        '''
         self.helpMenu = self.mainMenu.addMenu('Help')
-        
-        self.readmebut = QAction('Open Readme', self)
-        self.readmebut.triggered.connect(self.StartReadme)
-        self.helpMenu.addAction(self.readmebut)
-        '''
+
         self.fltButton = QAction('First Layer Trainer', self)
         self.fltButton.setShortcut('F')
         self.fltButton.triggered.connect(self.StartFirstLayerTrainer)
@@ -681,9 +834,145 @@ class WindowL2LT(QMainWindow):
         self.l2ltEnterButton.triggered.connect(self.ScramblePlusColour)
         self.l2lMenu.addAction(self.l2ltEnterButton)
 
+        self.l2ltSpaceBut = QAction('Start / Pause Timer', self)
+        self.l2ltSpaceBut.setShortcut(Qt.Key_Space)
+        self.l2ltSpaceBut.triggered.connect(self.whattodowithspace)
+        self.l2lMenu.addAction(self.l2ltSpaceBut)
+
+        self.l2ltRBut = QAction('Reset Timer', self)
+        self.l2ltRBut.setShortcut('R')
+        self.l2ltRBut.triggered.connect(self.do_reset)
+        self.l2lMenu.addAction(self.l2ltRBut)
+
+        self.l2ltall = QAction('Select / Unselect all Cases', self)
+        self.l2ltall.setShortcut(Qt.Key_T)
+        self.l2ltall.triggered.connect(self.whattodowitht)
+        self.l2lMenu.addAction(self.l2ltall)
+
+        self.l2ltallPI = QAction('Select / Unselect all Pi Cases', self)
+        self.l2ltallPI.setShortcut('I')
+        self.l2ltallPI.triggered.connect(self.whattodowithi)
+        self.l2lMenu.addAction(self.l2ltallPI)
+
+        self.l2ltallPEANUT = QAction('Select / Unselect all Peanut Cases', self)
+        self.l2ltallPEANUT.setShortcut('U')
+        self.l2ltallPEANUT.triggered.connect(self.whattodowithu)
+        self.l2lMenu.addAction(self.l2ltallPEANUT)
+
+        self.l2ltallL45 = QAction('Select / Unselect all L4C / L5C Cases', self)
+        self.l2ltallL45.setShortcut('L')
+        self.l2ltallL45.triggered.connect(self.whattodowithl)
+        self.l2lMenu.addAction(self.l2ltallL45)
+
+        self.helpbut = QAction('How to use it?', self)
+        self.helpbut.setShortcut('H')
+        self.helpbut.triggered.connect(self.do_h)
+        self.helpMenu.addAction(self.helpbut)
+
         self.central = QWidget()
         self.CreateLayout()
         self.setCentralWidget(self.central)
+
+    def do_h(self):
+        self.helpwind = Help()
+        self.helpwind.show()
+
+    def whattodowitht(self):
+        self.whattodowithi()
+        self.whattodowithu()
+        self.whattodowithl()
+
+    def whattodowithi(self):
+        if self.piswirl.isChecked():
+            self.piswirl.setChecked(False)
+        else:
+            self.piswirl.setChecked(True)
+        if self.piwat.isChecked():
+            self.piwat.setChecked(False)
+        else:
+            self.piwat.setChecked(True)
+        if self.pix.isChecked():
+            self.pix.setChecked(False)
+        else:
+            self.pix.setChecked(True)
+        if self.pihu.isChecked():
+            self.pihu.setChecked(False)
+        else:
+            self.pihu.setChecked(True)
+        if self.pivu.isChecked():
+            self.pivu.setChecked(False)
+        else:
+            self.pivu.setChecked(True)
+        if self.pio.isChecked():
+            self.pio.setChecked(False)
+        else:
+            self.pio.setChecked(True)
+        if self.pizconj.isChecked():
+            self.pizconj.setChecked(False)
+        else:
+            self.pizconj.setChecked(True)
+        if self.pi3s.isChecked():
+            self.pi3s.setChecked(False)
+        else:
+            self.pi3s.setChecked(True)
+        if self.pihz.isChecked():
+            self.pihz.setChecked(False)
+        else:
+            self.pihz.setChecked(True)
+
+    def whattodowithu(self):
+        if self.pswirl.isChecked():
+            self.pswirl.setChecked(False)
+        else:
+            self.pswirl.setChecked(True)
+        if self.pwat.isChecked():
+            self.pwat.setChecked(False)
+        else:
+            self.pwat.setChecked(True)
+        if self.px.isChecked():
+            self.px.setChecked(False)
+        else:
+            self.px.setChecked(True)
+        if self.phu.isChecked():
+            self.phu.setChecked(False)
+        else:
+            self.phu.setChecked(True)
+        if self.pvu.isChecked():
+            self.pvu.setChecked(False)
+        else:
+            self.pvu.setChecked(True)
+        if self.po.isChecked():
+            self.po.setChecked(False)
+        else:
+            self.po.setChecked(True)
+        if self.pzconj.isChecked():
+            self.pzconj.setChecked(False)
+        else:
+            self.pzconj.setChecked(True)
+        if self.p3s.isChecked():
+            self.p3s.setChecked(False)
+        else:
+            self.p3s.setChecked(True)
+        if self.phzpure.isChecked():
+            self.phzpure.setChecked(False)
+        else:
+            self.phzpure.setChecked(True)
+
+    def whattodowithl(self):
+        if self.l4c.isChecked():
+            self.l4c.setChecked(False)
+        else:
+            self.l4c.setChecked(True)
+        if self.l5c.isChecked():
+            self.l5c.setChecked(False)
+        else:
+            self.l5c.setChecked(True)
+
+    def whattodowithspace(self):
+        if self.start.text() == "Start (SPACE)":
+            self.do_start()
+        else:
+            self.do_pause()
 
     def ReadAllScrambles(self):
         self.scrpiswirl = []
@@ -923,7 +1212,6 @@ class WindowL2LT(QMainWindow):
         self.scramblegenbutton.setFocusPolicy(Qt.StrongFocus)
         self.scramblegenbutton.setToolTip("Generates a scramble to a L2L case of the defined type(s).")
         self.scramblegenbutton.clicked.connect(self.ScramblePlusColour)
-        #self.scramblegenbutton.setShortcut(QtGui.QKeySequence(Qt.Key_Return))
         self.gridLayout.addWidget(self.scramblegenbutton, 9, 0)
 
         # this label shows the scramble
@@ -937,13 +1225,11 @@ class WindowL2LT(QMainWindow):
         self.start.setMinimumHeight(50)
         self.start.setToolTip("Starts (or stops) the timer.")
         self.start.clicked.connect(self.do_start)
-        self.start.setShortcut(QtGui.QKeySequence(Qt.Key_Space))
         self.gridLayout.addWidget(self.start, 10, 0)
 
         self.reset = QPushButton("Reset (R)", self)
         self.reset.setMinimumHeight(50)
         self.reset.setToolTip("Resets the timer.")
-        self.reset.setShortcut('R')
         self.reset.clicked.connect(self.do_reset)
         self.gridLayout.addWidget(self.reset, 10, 2)
 
@@ -964,7 +1250,7 @@ class WindowL2LT(QMainWindow):
 
         # this label shows some info about the creator
         self.creatorlabel = QLabel(self)
-        self.creatorlabel.setText("© Annika Stein")
+        self.creatorlabel.setText("© 2019, Annika Stein")
         self.creatorlabel.setMinimumHeight(50)
         self.gridLayout.addWidget(self.creatorlabel, 11, 2)
 
@@ -1080,7 +1366,6 @@ class WindowL2LT(QMainWindow):
     def do_start(self):
         self.timer.start()
         self.start.setText("Pause (SPACE)")
-        self.start.setShortcut(QtGui.QKeySequence(Qt.Key_Space))
         self.start.clicked.disconnect()
         self.start.clicked.connect(self.do_pause)
 
@@ -1088,7 +1373,6 @@ class WindowL2LT(QMainWindow):
     def do_pause(self):
         self.timer.stop()
         self.start.setText("Start (SPACE)")
-        self.start.setShortcut(QtGui.QKeySequence(Qt.Key_Space))
         self.start.clicked.disconnect()
         self.start.clicked.connect(self.do_start)
 
@@ -1320,6 +1604,92 @@ class WindowL2LT(QMainWindow):
         # ToDo
         pass
     '''
+
+class Help(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.title = "Skewb Skills: Help"
+        self.top = 50
+        self.left = 50
+        self.width = 1000
+        self.height = 800
+
+        self.setWindowIcon(QtGui.QIcon("logoicon.png"))
+
+        self.setWindowTitle(self.title)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+
+        self.central2 = QWidget()
+        self.CreateLayout()
+        self.setCentralWidget(self.central2)
+
+    def CreateLayout(self):
+        self.central2.groupBox2 = QGroupBox("Help")
+        self.central2.groupBox2.setFont(QtGui.QFont("Sansserif", 13))
+        self.gridLayout2 = QGridLayout()
+
+        self.textlabel = QLabel(self)
+        self.textlabel.setFont(QtGui.QFont("Sansserif", 12))
+        self.textlabel.setText("How to use SkewbSkills?")
+        self.gridLayout2.addWidget(self.textlabel, 0, 0)
+
+        self.textlabel2 = QLabel(self)
+        self.textlabel2.setFont(QtGui.QFont("Sansserif", 11))
+        self.textlabel2.setText("Choose one of the practicing modes by pressing the "
+                               "corresponding button in the starting window\nor by choosing "
+                               "the corresponding keys: press 'F' to start the "
+                               "First Layer Trainer,\nor press 'A' to start the L2L Alg Trainer.")
+        self.gridLayout2.addWidget(self.textlabel2, 1, 0)
+
+        self.textlabel3 = QLabel(self)
+        self.textlabel3.setFont(QtGui.QFont("Sansserif", 12))
+        self.textlabel3.setText("How to use the First Layer Trainer?")
+        self.gridLayout2.addWidget(self.textlabel3, 2, 0)
+
+        self.textlabel4 = QLabel(self)
+        self.textlabel4.setFont(QtGui.QFont("Sansserif", 11))
+        self.textlabel4.setText("Choose whether you want to receive a shuffled set of scrambles "
+                                "by (un-)selecting the checkbox. This feature can also be toggled"
+                                " with the 'S' key.\n"
+                                "Decide if you want to use all six colours as your starting "
+                                "colour. Because the colours are attached onto the scrambles list,"
+                                " you need to shuffle the scrambles to use this feature.\n"
+                                "Use the slider or one of the keys between '1' and '7' to choose"
+                                " the scramble length.\n"
+                                "Press RETURN or click the button 'Generate Scramble + Colour',"
+                                " and a new scramble appears. You then have the option to time"
+                                " yourself by pressing the 'Start' button (or use the spacebar).\n"
+                                "If you need to reset the timer, use the 'Reset' button or"
+                                " the 'R' key on yout keyboard.")
+        self.gridLayout2.addWidget(self.textlabel4, 3, 0)
+
+        self.textlabel5 = QLabel(self)
+        self.textlabel5.setFont(QtGui.QFont("Sansserif", 12))
+        self.textlabel5.setText("How to use the Alg Trainer?")
+        self.gridLayout2.addWidget(self.textlabel5, 4, 0)
+
+        self.textlabel6 = QLabel(self)
+        self.textlabel6.setFont(QtGui.QFont("Sansserif", 11))
+        self.textlabel6.setText("Choose which alg sets you want to practice "
+                                "by (un-)selecting the checkboxes.\n"
+                                "There are several options to choose, but if you want to quickly"
+                                " (un-)select several alg sets, you can press 'T' to toggle all"
+                                " alg sets.\n"
+                                "Pressing 'U' toggles all Peanut cases, 'I' toggles all Pi cases"
+                                " and 'L' toggles L4C / L5C cases.\n"
+                                "Press RETURN or click the button 'Generate L2L Case',"
+                                " and a new scramble appears. You then have the option to time"
+                                " yourself by pressing the 'Start' button (or use the spacebar).\n"
+                                "If you need to reset the timer, use the 'Reset' button or"
+                                " the 'R' key on yout keyboard.")
+        self.gridLayout2.addWidget(self.textlabel6, 5, 0)
+
+        self.central2.groupBox2.setLayout(self.gridLayout2)
+
+        vbox = QVBoxLayout()
+        vbox.addWidget(self.central2.groupBox2)
+        self.central2.setLayout(vbox)
 
 class ScrambleDrawing(QWidget):
     def __init__(self, stickers):
