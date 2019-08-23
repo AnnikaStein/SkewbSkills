@@ -133,7 +133,7 @@ class WindowFLT(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent=parent)
 
-        self.title = "Skewb Skills"
+        self.title = "Skewb Skills: First Layer Trainer"
         self.top = 100
         self.left = 500
         self.width = 1000
@@ -277,164 +277,42 @@ class WindowFLT(QMainWindow):
         # all possible starting colours, the next few lines of code generate a list of all lines
         # in the scrambles.txt-File and append groups of two elements of this list to the
         # final scramblelist
-        # ToDo:
-        # simplify the scramble files by only using each sequence once, without saving
-        # the colours in the file
-        self.scramble1list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles1.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble1list.append(kombi)
 
-        self.scramble2list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles2.txt', 'r', encoding='utf-8')
+        self.newscramble1list = []
+        datei = open('newscrambles1.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble2list.append(kombi)
+            self.newscramble1list.append(line[:-1])
+        self.scramblelist = self.newscramble1list.copy()
 
-        self.scramble3list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles3.txt', 'r', encoding='utf-8')
+        self.newscramble2list = []
+        datei = open('newscrambles2.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble3list.append(kombi)
+            self.newscramble2list.append(line[:-1])
 
-        self.scramble4list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles4.txt', 'r', encoding='utf-8')
+        self.newscramble3list = []
+        datei = open('newscrambles3.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble4list.append(kombi)
+            self.newscramble3list.append(line[:-1])
 
-        self.scramble5list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles5.txt', 'r', encoding='utf-8')
+        self.newscramble4list = []
+        datei = open('newscrambles4.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble5list.append(kombi)
+            self.newscramble4list.append(line[:-1])
 
-        self.scramble6list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles6.txt', 'r', encoding='utf-8')
+        self.newscramble5list = []
+        datei = open('newscrambles5.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble6list.append(kombi)
+            self.newscramble5list.append(line[:-1])
 
-        self.scramble7list = []
-        self.kombiscramblelist = []
-        datei = open('scrambles7.txt', 'r', encoding='utf-8')
+        self.newscramble6list = []
+        datei = open('newscrambles6.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble7list.append(kombi)
+            self.newscramble6list.append(line[:-1])
 
-        #### ONLY WHITE
-        self.scramble1wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles1w.txt', 'r', encoding='utf-8')
+        self.newscramble7list = []
+        datei = open('newscrambles7.txt', 'r', encoding='utf-8')
         for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble1wlist.append(kombi)
-        self.scramblelist = self.scramble1wlist.copy()
-
-        self.scramble2wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles2w.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble2wlist.append(kombi)
-
-        self.scramble3wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles3w.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble3wlist.append(kombi)
-
-        self.scramble4wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles4w.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble4wlist.append(kombi)
-
-        self.scramble5wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles5w.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble5wlist.append(kombi)
-
-        self.scramble6wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles6w.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble6wlist.append(kombi)
-
-        self.scramble7wlist = []
-        self.kombiscramblelist = []
-        datei = open('scrambles7w.txt', 'r', encoding='utf-8')
-        for line in datei:
-            self.kombiscramblelist.append(line[:-1])
-        for i in range(0, len(self.kombiscramblelist), 2):
-            s = self.kombiscramblelist[i]
-            c = self.kombiscramblelist[i + 1]
-            kombi = [s, c]
-            self.scramble7wlist.append(kombi)
+            self.newscramble7list.append(line[:-1])
 
     def CreateLayout(self):
         # starting to define the layout of the CentralWidget
@@ -460,7 +338,6 @@ class WindowFLT(QMainWindow):
         self.anycolourchecker.setToolTip("If enabled, the upcoming scrambles will use all "
                                          "colours.\nIf you only want to practice on a single "
                                          "colour (e.g. white), do not activate this checkbox.")
-        self.anycolourchecker.stateChanged.connect(self.changescrlen)
         self.gridLayout.addWidget(self.anycolourchecker, 0, 2)
 
         # slider to define the scramble length
@@ -536,116 +413,59 @@ class WindowFLT(QMainWindow):
         self.central.setLayout(vbox)
 
     def changescrlen(self):
-        # ToDo: faster way to get the scrambles (do not use the huge files but only put in the
-        #  scrambles once per scramble length and generate a random colour while the main program
-        #  is running)
         scrlen = self.scrlenslider.value()
 
         if scrlen == 1:
-            if self.anycolourchecker.isChecked():
-                self.auxscrl = self.scramble1list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscrl)
-                    self.scramblelist = self.auxscrl
-                else:
-                    self.scramblelist = self.auxscrl
+            self.auxscr1 = self.newscramble1list[:]
+            if self.shufflescrchecker.isChecked():
+                random.shuffle(self.auxscr1)
+                self.scramblelist = self.auxscr1
             else:
-                self.auxscrl = self.scramble1wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscrl)
-                    self.scramblelist = self.auxscrl
-                else:
-                    self.scramblelist = self.auxscrl
+                self.scramblelist = self.auxscr1
+
         elif scrlen == 2:
-            if self.anycolourchecker.isChecked():
-                self.auxscr2 = self.scramble2list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr2)
-                    self.scramblelist = self.auxscr2
-                else:
-                    self.scramblelist = self.auxscr2
+            self.auxscr2 = self.newscramble2list[:]
+            if self.shufflescrchecker.isChecked():
+                random.shuffle(self.auxscr2)
+                self.scramblelist = self.auxscr2
             else:
-                self.auxscr2 = self.scramble2wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr2)
-                    self.scramblelist = self.auxscr2
-                else:
-                    self.scramblelist = self.auxscr2
+                self.scramblelist = self.auxscr2
+
         elif scrlen == 3:
-            if self.anycolourchecker.isChecked():
-                self.auxscr3 = self.scramble3list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr3)
-                    self.scramblelist = self.auxscr3
-                else:
-                    self.scramblelist = self.auxscr3
+            self.auxscr3 = self.newscramble3list[:]
+            if self.shufflescrchecker.isChecked():
+                random.shuffle(self.auxscr3)
+                self.scramblelist = self.auxscr3
             else:
-                self.auxscr3 = self.scramble3wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr3)
-                    self.scramblelist = self.auxscr3
-                else:
-                    self.scramblelist = self.auxscr3
+                self.scramblelist = self.auxscr3
+
         elif scrlen == 4:
-            if self.anycolourchecker.isChecked():
-                self.auxscr4 = self.scramble4list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr4)
-                    self.scramblelist = self.auxscr4
-                else:
-                    self.scramblelist = self.auxscr4
+            self.auxscr4 = self.newscramble4list[:]
+            if self.shufflescrchecker.isChecked():
+                random.shuffle(self.auxscr4)
+                self.scramblelist = self.auxscr4
             else:
-                self.auxscr4 = self.scramble4wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr4)
-                    self.scramblelist = self.auxscr4
-                else:
-                    self.scramblelist = self.auxscr4
+                self.scramblelist = self.auxscr4
+
         elif scrlen == 5:
-            if self.anycolourchecker.isChecked():
-                self.auxscr5 = self.scramble5list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr5)
-                    self.scramblelist = self.auxscr5
-                else:
-                    self.scramblelist = self.auxscr5
+            self.auxscr5 = self.newscramble5list[:]
+            if self.shufflescrchecker.isChecked():
+                random.shuffle(self.auxscr5)
+                self.scramblelist = self.auxscr5
             else:
-                self.auxscr5 = self.scramble5wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr5)
-                    self.scramblelist = self.auxscr5
-                else:
-                    self.scramblelist = self.auxscr5
+                self.scramblelist = self.auxscr5
+
         elif scrlen == 6:
-            if self.anycolourchecker.isChecked():
-                self.auxscr6 = self.scramble6list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr6)
-                    self.scramblelist = self.auxscr6
-                else:
-                    self.scramblelist = self.auxscr6
+            if self.shufflescrchecker.isChecked():
+                self.scramblelist = random.sample(self.newscramble6list,len(self.newscramble6list))
             else:
-                self.auxscr6 = self.scramble6wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr6)
-                    self.scramblelist = self.auxscr6
-                else:
-                    self.scramblelist = self.auxscr6
+                self.scramblelist = self.newscramble6list[:]
+
         else:
-            if self.anycolourchecker.isChecked():
-                self.auxscr7 = self.scramble7list.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr7)
-                    self.scramblelist = self.auxscr7
-                else:
-                    self.scramblelist = self.auxscr7
+            if self.shufflescrchecker.isChecked():
+                self.scramblelist = random.sample(self.newscramble7list,len(self.newscramble7list))
             else:
-                self.auxscr7 = self.scramble7wlist.copy()
-                if self.shufflescrchecker.isChecked():
-                    random.shuffle(self.auxscr7)
-                    self.scramblelist = self.auxscr7
-                else:
-                    self.scramblelist = self.auxscr7
+                self.scramblelist = self.newscramble7list[:]
 
     def ScramblePlusColour(self):
 
@@ -654,24 +474,31 @@ class WindowFLT(QMainWindow):
 
         scramblezumanzeigen = self.scramblelist[-1]
         self.scramblelist.pop()
-        self.scramblelabel.setText(scramblezumanzeigen[0])
+        self.scramblelabel.setText(scramblezumanzeigen)
 
         # generate scramble drawing
 
-        self.ShowScramble(scramblezumanzeigen[0])
+        self.ShowScramble(scramblezumanzeigen)
 
-        if scramblezumanzeigen[1] == "w":
-            self.colourlabel.setStyleSheet('background-color : white')
-        elif scramblezumanzeigen[1] == "y":
-            self.colourlabel.setStyleSheet('background-color : yellow')
-        elif scramblezumanzeigen[1] == "g":
-            self.colourlabel.setStyleSheet('background-color : green')
-        elif scramblezumanzeigen[1] == "r":
-            self.colourlabel.setStyleSheet('background-color : red')
-        elif scramblezumanzeigen[1] == "b":
-            self.colourlabel.setStyleSheet('background-color : blue')
+        # decide which colour one has to use as the starting colour
+
+        if self.anycolourchecker.isChecked():
+            cl = random.choice(["w", "y", "g", "r", "b", "o"])
+            if cl == "w":
+                self.colourlabel.setStyleSheet('background-color : white')
+            elif cl == "y":
+                self.colourlabel.setStyleSheet('background-color : yellow')
+            elif cl == "g":
+                self.colourlabel.setStyleSheet('background-color : green')
+            elif cl == "r":
+                self.colourlabel.setStyleSheet('background-color : red')
+            elif cl == "b":
+                self.colourlabel.setStyleSheet('background-color : blue')
+            else:
+                self.colourlabel.setStyleSheet('background-color : orange')
         else:
-            self.colourlabel.setStyleSheet('background-color : orange')
+            self.colourlabel.setStyleSheet('background-color : white')
+
 
     def ShowScramble(self, scramble):
         stickercol = ["o", "o", "o", "o", "o", "g", "g", "g", "g", "g", "y", "y", "y", "y", "y",
@@ -679,64 +506,48 @@ class WindowFLT(QMainWindow):
         scrsplit = scramble.split()
         for i in scrsplit:
             if i == "R":
-                #(4, 8, 17)(11, 21, 26)(12, 22, 28)(13, 23, 29)(14, 24, 30)
-                #(3, 7, 16)(10, 20, 25)(11, 21, 27)(12, 22, 28)(13, 23, 29)
                 threeswap(stickercol, 3, 7, 16)
                 threeswap(stickercol, 10, 20, 25)
                 threeswap(stickercol, 11, 21, 27)
                 threeswap(stickercol, 12, 22, 28)
                 threeswap(stickercol, 13, 23, 29)
             elif i == "R'":
-                #
-                #(16, 7, 3)(25, 20, 10)(27, 21, 11)(28, 22, 12)(29, 23, 13)
                 threeswap(stickercol, 16, 7, 3)
                 threeswap(stickercol, 25, 20, 10)
                 threeswap(stickercol, 27, 21, 11)
                 threeswap(stickercol, 28, 22, 12)
                 threeswap(stickercol, 29, 23, 13)
             elif i == "L":
-                #(1, 6, 11)(2, 8, 14)(3, 9, 15)(4, 10, 12)(19, 24, 28)
-                #(0, 5, 10)(1, 7, 13)(2, 8, 14)(3, 9, 11)(18, 23, 27)
                 threeswap(stickercol, 0, 5, 10)
                 threeswap(stickercol, 1, 7, 13)
                 threeswap(stickercol, 2, 8, 14)
                 threeswap(stickercol, 3, 9, 11)
                 threeswap(stickercol, 18, 23, 27)
             elif i == "L'":
-                #
-                #(10, 5, 0)(13, 7, 1)(14, 8, 2)(11, 9, 3)(27, 23, 18)
                 threeswap(stickercol, 10, 5, 0)
                 threeswap(stickercol, 13, 7, 1)
                 threeswap(stickercol, 14, 8, 2)
                 threeswap(stickercol, 11, 9, 3)
                 threeswap(stickercol, 27, 23, 18)
             elif i == "U":
-                #(1, 26, 16)(2, 28, 17)(4, 30, 19)(5, 27, 20)(10, 14, 22)
-                #(0, 25, 15)(1, 27, 16)(3, 29, 18)(4, 26, 19)(9, 13, 21)
                 threeswap(stickercol, 0, 25, 15)
                 threeswap(stickercol, 1, 27, 16)
                 threeswap(stickercol, 3, 29, 18)
                 threeswap(stickercol, 4, 26, 19)
                 threeswap(stickercol, 9, 13, 21)
             elif i == "U'":
-                #
-                #(15, 25, 0)(16, 27, 1)(18, 29, 3)(19, 26, 4)(21, 13, 9)
                 threeswap(stickercol, 15, 25, 0)
                 threeswap(stickercol, 16, 27, 1)
                 threeswap(stickercol, 18, 29, 3)
                 threeswap(stickercol, 19, 26, 4)
                 threeswap(stickercol, 21, 13, 9)
             elif i == "B":
-                #(1, 11, 26)(3, 13, 27)(4, 14, 28)(5, 15, 29)(9, 23, 20)
-                #(0, 10, 25)(2, 12, 26)(3, 13, 27)(4, 14, 28)(8, 22, 19)
                 threeswap(stickercol, 0, 10, 25)
                 threeswap(stickercol, 2, 12, 26)
                 threeswap(stickercol, 3, 13, 27)
                 threeswap(stickercol, 4, 14, 28)
                 threeswap(stickercol, 8, 22, 19)
             else:
-                #
-                #(25, 10, 0)(26, 12, 2)(27, 13, 3)(28, 14, 4)(19, 22, 8)
                 threeswap(stickercol, 25, 10, 0)
                 threeswap(stickercol, 26, 12, 2)
                 threeswap(stickercol, 27, 13, 3)
@@ -800,7 +611,7 @@ class WindowL2LT(QMainWindow):
     def __init__(self, parent=None):
         super(WindowL2LT, self).__init__(parent=parent)
 
-        self.title = "Skewb Skills"
+        self.title = "Skewb Skills: Last 2 Layer Alg Trainer"
         self.top = 50
         self.left = 50
         self.width = 1600
@@ -816,7 +627,7 @@ class WindowL2LT(QMainWindow):
 
         self.mainMenu = self.menuBar()
         self.funcMenu = self.mainMenu.addMenu('Practice Mode')
-        self.l2lMenu = self.mainMenu.addMenu('L2L Functions')
+        self.l2lMenu = self.mainMenu.addMenu('Alg Trainer Functions')
         self.helpMenu = self.mainMenu.addMenu('Help')
 
         self.fltButton = QAction('First Layer Trainer', self)
