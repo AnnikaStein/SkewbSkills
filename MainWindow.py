@@ -395,7 +395,7 @@ class WindowFLT(QMainWindow):
         self.lcd.setDigitCount(10)
         self.gridLayout.addWidget(self.lcd, 3, 1)
         self.timer = QTimer()
-        self.timer.setInterval(2 ** 6)
+        self.timer.setInterval(2 ** 0)
         self.timer.timeout.connect(self.tick)
 
         self.do_reset()
@@ -565,8 +565,8 @@ class WindowFLT(QMainWindow):
 
     @pyqtSlot()
     def tick(self):
-        # currently update the time, every 2**6/1000 ms, show it on the lcd
-        self.time += 2**6/1000
+        # currently update the time, every 2**0/1000 ms, show it on the lcd
+        self.time += 2**0/1000
         self.display()
 
     @pyqtSlot()
@@ -689,95 +689,118 @@ class WindowL2LT(QMainWindow):
         self.helpwind.show()
 
     def whattodowitht(self):
-        self.whattodowithi()
-        self.whattodowithu()
-        self.whattodowithl()
+        if self.pi3s.isChecked() == False or \
+                self.pihu.isChecked() == False or self.pihz.isChecked() == False or \
+                self.pio.isChecked() == False or self.piswirl.isChecked() == False or \
+                self.pivu.isChecked() == False or self.piwat.isChecked() == False or \
+                self.pix.isChecked() == False or self.pizconj.isChecked() == False or\
+                self.p3s.isChecked() == False or \
+                self.phu.isChecked() == False or self.phzpure.isChecked() == False or \
+                self.po.isChecked() == False or self.pswirl.isChecked() == False or \
+                self.pvu.isChecked() == False or self.pwat.isChecked() == False or \
+                self.px.isChecked() == False or self.pzconj.isChecked() == False or \
+                self.l4c.isChecked() == False or self.l5c.isChecked() == False:
+            self.pi3s.setChecked(True)
+            self.pihu.setChecked(True)
+            self.pihz.setChecked(True)
+            self.pio.setChecked(True)
+            self.piswirl.setChecked(True)
+            self.pivu.setChecked(True)
+            self.piwat.setChecked(True)
+            self.pix.setChecked(True)
+            self.pizconj.setChecked(True)
+            self.p3s.setChecked(True)
+            self.phu.setChecked(True)
+            self.phzpure.setChecked(True)
+            self.po.setChecked(True)
+            self.pswirl.setChecked(True)
+            self.pvu.setChecked(True)
+            self.pwat.setChecked(True)
+            self.px.setChecked(True)
+            self.pzconj.setChecked(True)
+            self.l4c.setChecked(True)
+            self.l5c.setChecked(True)
+        else:
+            self.pi3s.setChecked(False)
+            self.pihu.setChecked(False)
+            self.pihz.setChecked(False)
+            self.pio.setChecked(False)
+            self.piswirl.setChecked(False)
+            self.pivu.setChecked(False)
+            self.piwat.setChecked(False)
+            self.pix.setChecked(False)
+            self.pizconj.setChecked(False)
+            self.p3s.setChecked(False)
+            self.phu.setChecked(False)
+            self.phzpure.setChecked(False)
+            self.po.setChecked(False)
+            self.pswirl.setChecked(False)
+            self.pvu.setChecked(False)
+            self.pwat.setChecked(False)
+            self.px.setChecked(False)
+            self.pzconj.setChecked(False)
+            self.l4c.setChecked(False)
+            self.l5c.setChecked(False)
 
     def whattodowithi(self):
-        if self.piswirl.isChecked():
-            self.piswirl.setChecked(False)
-        else:
-            self.piswirl.setChecked(True)
-        if self.piwat.isChecked():
-            self.piwat.setChecked(False)
-        else:
-            self.piwat.setChecked(True)
-        if self.pix.isChecked():
-            self.pix.setChecked(False)
-        else:
-            self.pix.setChecked(True)
-        if self.pihu.isChecked():
-            self.pihu.setChecked(False)
-        else:
-            self.pihu.setChecked(True)
-        if self.pivu.isChecked():
-            self.pivu.setChecked(False)
-        else:
-            self.pivu.setChecked(True)
-        if self.pio.isChecked():
-            self.pio.setChecked(False)
-        else:
-            self.pio.setChecked(True)
-        if self.pizconj.isChecked():
-            self.pizconj.setChecked(False)
-        else:
-            self.pizconj.setChecked(True)
-        if self.pi3s.isChecked():
-            self.pi3s.setChecked(False)
-        else:
+        if self.pi3s.isChecked() == False or \
+                self.pihu.isChecked() == False or self.pihz.isChecked() == False or \
+                self.pio.isChecked() == False or self.piswirl.isChecked() == False or \
+                self.pivu.isChecked() == False or self.piwat.isChecked() == False or \
+                self.pix.isChecked() == False or self.pizconj.isChecked() == False:
             self.pi3s.setChecked(True)
-        if self.pihz.isChecked():
-            self.pihz.setChecked(False)
-        else:
+            self.pihu.setChecked(True)
             self.pihz.setChecked(True)
+            self.pio.setChecked(True)
+            self.piswirl.setChecked(True)
+            self.pivu.setChecked(True)
+            self.piwat.setChecked(True)
+            self.pix.setChecked(True)
+            self.pizconj.setChecked(True)
+        else:
+            self.pi3s.setChecked(False)
+            self.pihu.setChecked(False)
+            self.pihz.setChecked(False)
+            self.pio.setChecked(False)
+            self.piswirl.setChecked(False)
+            self.pivu.setChecked(False)
+            self.piwat.setChecked(False)
+            self.pix.setChecked(False)
+            self.pizconj.setChecked(False)
 
     def whattodowithu(self):
-        if self.pswirl.isChecked():
-            self.pswirl.setChecked(False)
-        else:
-            self.pswirl.setChecked(True)
-        if self.pwat.isChecked():
-            self.pwat.setChecked(False)
-        else:
-            self.pwat.setChecked(True)
-        if self.px.isChecked():
-            self.px.setChecked(False)
-        else:
-            self.px.setChecked(True)
-        if self.phu.isChecked():
-            self.phu.setChecked(False)
-        else:
-            self.phu.setChecked(True)
-        if self.pvu.isChecked():
-            self.pvu.setChecked(False)
-        else:
-            self.pvu.setChecked(True)
-        if self.po.isChecked():
-            self.po.setChecked(False)
-        else:
-            self.po.setChecked(True)
-        if self.pzconj.isChecked():
-            self.pzconj.setChecked(False)
-        else:
-            self.pzconj.setChecked(True)
-        if self.p3s.isChecked():
-            self.p3s.setChecked(False)
-        else:
+        if self.p3s.isChecked() == False or \
+                self.phu.isChecked() == False or self.phzpure.isChecked() == False or \
+                self.po.isChecked() == False or self.pswirl.isChecked() == False or \
+                self.pvu.isChecked() == False or self.pwat.isChecked() == False or \
+                self.px.isChecked() == False or self.pzconj.isChecked() == False:
             self.p3s.setChecked(True)
-        if self.phzpure.isChecked():
-            self.phzpure.setChecked(False)
-        else:
+            self.phu.setChecked(True)
             self.phzpure.setChecked(True)
+            self.po.setChecked(True)
+            self.pswirl.setChecked(True)
+            self.pvu.setChecked(True)
+            self.pwat.setChecked(True)
+            self.px.setChecked(True)
+            self.pzconj.setChecked(True)
+        else:
+            self.p3s.setChecked(False)
+            self.phu.setChecked(False)
+            self.phzpure.setChecked(False)
+            self.po.setChecked(False)
+            self.pswirl.setChecked(False)
+            self.pvu.setChecked(False)
+            self.pwat.setChecked(False)
+            self.px.setChecked(False)
+            self.pzconj.setChecked(False)
 
     def whattodowithl(self):
-        if self.l4c.isChecked():
-            self.l4c.setChecked(False)
-        else:
+        if self.l4c.isChecked() == False or self.l5c.isChecked() == False:
             self.l4c.setChecked(True)
-        if self.l5c.isChecked():
-            self.l5c.setChecked(False)
-        else:
             self.l5c.setChecked(True)
+        else:
+            self.l4c.setChecked(False)
+            self.l5c.setChecked(False)
 
     def whattodowithspace(self):
         if self.start.text() == "Start (SPACE)":
@@ -1049,7 +1072,7 @@ class WindowL2LT(QMainWindow):
         self.lcd.setDigitCount(10)
         self.gridLayout.addWidget(self.lcd, 10, 1)
         self.timer = QTimer()
-        self.timer.setInterval(2**6)
+        self.timer.setInterval(2**0)
         self.timer.timeout.connect(self.tick)
 
         self.do_reset()
@@ -1170,7 +1193,7 @@ class WindowL2LT(QMainWindow):
     @pyqtSlot()
     def tick(self):
         # currently update the time, every 2**6/1000 ms, show it on the lcd
-        self.time += 2**6/1000
+        self.time += 2**0/1000
         self.display()
 
     @pyqtSlot()
@@ -1204,7 +1227,7 @@ class WindowL2LT(QMainWindow):
         # each line represents one orbit of stickers where the cycle happens
         # upper- and lowercase characters are supported, as well as rotations and double moves
         for i in scrsplit:
-            if i ==  "x":
+            if i == "x":
                 fourswap(stickercol, 15, 25, 10, 5)
                 fourswap(stickercol, 24, 21, 22, 23)
                 fourswap(stickercol, 2, 1, 4, 3)
@@ -1298,16 +1321,12 @@ class WindowL2LT(QMainWindow):
                 fourswap(stickercol, 3, 12, 21, 19)
                 fourswap(stickercol, 4, 13, 22, 16)
             elif i == "r" or i == "r'2":
-                #(4, 8, 17)(11, 21, 26)(12, 22, 28)(13, 23, 29)(14, 24, 30)
-                #(3, 7, 16)(10, 20, 25)(11, 21, 27)(12, 22, 28)(13, 23, 29)
                 threeswap(stickercol, 3, 7, 16)
                 threeswap(stickercol, 10, 20, 25)
                 threeswap(stickercol, 11, 21, 27)
                 threeswap(stickercol, 12, 22, 28)
                 threeswap(stickercol, 13, 23, 29)
             elif i == "r'" or i == "r2":
-                #
-                #(16, 7, 3)(25, 20, 10)(27, 21, 11)(28, 22, 12)(29, 23, 13)
                 threeswap(stickercol, 16, 7, 3)
                 threeswap(stickercol, 25, 20, 10)
                 threeswap(stickercol, 27, 21, 11)
@@ -1326,16 +1345,12 @@ class WindowL2LT(QMainWindow):
                 threeswap(stickercol, 28, 19, 24)
                 threeswap(stickercol, 12, 4, 6)
             elif i == "l" or i == "L" or i == "l'2" or i == "L'2":
-                #(1, 6, 11)(2, 8, 14)(3, 9, 15)(4, 10, 12)(19, 24, 28)
-                #(0, 5, 10)(1, 7, 13)(2, 8, 14)(3, 9, 11)(18, 23, 27)
                 threeswap(stickercol, 0, 5, 10)
                 threeswap(stickercol, 1, 7, 13)
                 threeswap(stickercol, 2, 8, 14)
                 threeswap(stickercol, 3, 9, 11)
                 threeswap(stickercol, 18, 23, 27)
             elif i == "l'" or i == "L'" or i == "l2" or i == "L2":
-                #
-                #(10, 5, 0)(13, 7, 1)(14, 8, 2)(11, 9, 3)(27, 23, 18)
                 threeswap(stickercol, 10, 5, 0)
                 threeswap(stickercol, 13, 7, 1)
                 threeswap(stickercol, 14, 8, 2)
@@ -1354,24 +1369,18 @@ class WindowL2LT(QMainWindow):
                 threeswap(stickercol, 8, 12, 24)
                 threeswap(stickercol, 14, 22, 6)
             elif i == "B" or i == "U" or i == "B'2" or i == "U'2":
-                #(1, 26, 16)(2, 28, 17)(4, 30, 19)(5, 27, 20)(10, 14, 22)
-                #(0, 25, 15)(1, 27, 16)(3, 29, 18)(4, 26, 19)(9, 13, 21)
                 threeswap(stickercol, 0, 25, 15)
                 threeswap(stickercol, 1, 27, 16)
                 threeswap(stickercol, 3, 29, 18)
                 threeswap(stickercol, 4, 26, 19)
                 threeswap(stickercol, 9, 13, 21)
             elif i == "B'" or i == "U'" or i == "B2" or i == "U2":
-                #
-                #(15, 25, 0)(16, 27, 1)(18, 29, 3)(19, 26, 4)(21, 13, 9)
                 threeswap(stickercol, 15, 25, 0)
                 threeswap(stickercol, 16, 27, 1)
                 threeswap(stickercol, 18, 29, 3)
                 threeswap(stickercol, 19, 26, 4)
                 threeswap(stickercol, 21, 13, 9)
             elif i == "b" or i == "b'2":
-                #(1, 11, 26)(3, 13, 27)(4, 14, 28)(5, 15, 29)(9, 23, 20)
-                #(0, 10, 25)(2, 12, 26)(3, 13, 27)(4, 14, 28)(8, 22, 19)
                 threeswap(stickercol, 0, 10, 25)
                 threeswap(stickercol, 2, 12, 26)
                 threeswap(stickercol, 3, 13, 27)
@@ -1636,7 +1645,7 @@ def corrcol(list,i):
         return Qt.yellow
 
 if __name__ == "__main__":
-    # to be executed if this module has been started directly, not thorugh another module
+    # to be executed if this module has been started directly, not through another module
     App = QApplication(sys.argv)
     startwindow = StartWindow()
     sys.exit(App.exec())
