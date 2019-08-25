@@ -36,13 +36,21 @@ a shortcut (which is pretty nice if you want to put the program on your desktop 
 *Note*: since the .exe is really new and not many people use it, you might have to allow your computer to execute it. This also
 applies to antivirus software if you use some.
 
+At the moment, SkewbSkills is only available as an .exe-file. Therefore, if you want to use SkewbSkills on a different platform
+than windows, you might want to consider using "Wine" (on macOS or Linux for example). 
+
++ [GERMAN Tutorial for macOS](https://www.youtube.com/watch?v=rINx-ojfZSU)
++ [ENGLISH Tutorial for macOS](https://www.youtube.com/watch?v=Bz-nI4LW2Jw)
++ [GERMAN Tutorial for Linux](https://www.youtube.com/watch?v=Q8vpGNje67k)
++ [ENGLISH Tutorial for Linux](https://www.youtube.com/watch?v=lI09QLkqZiE)
+
+
 # Usage
 ## Starting Window
 Choose any from the different practicing modes, by pressing the corresponding button or key, respectively. A new window appears, the
 starting window closes. Note: the First Layer Trainer takes some time to open, so be a little patient.
 
 ## First Layer Trainer
-Currently, the First Layer Trainer is pretty slow, so do not expect it to open immediately after you start it.
 There's a slider to define the length of the scrambles, you can choose between 1 and 7 moves. If you want the scrambles to be 
 shuffled, use the checkbox "Shuffle scrambles". The checkbox "Use all colours" allows SkewbSkills to show you various colours so that
 you can practice to start the first layer with every color (to become CN). When you're ready with the customization, press
