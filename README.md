@@ -79,3 +79,7 @@ This was a big influence on how the L2L-Trainer should work.
 When reading the [LICENSE](https://github.com/AnnikaStein/SkewbSkills/blob/master/LICENSE) doc, you might find out that you are not only free to use the program, but also the source code.
 This is to ensure everyone can learn something, of course I appreciate every suggestion for improvement, as I might actually be the one to learn something through this project! :)
 
+# Other links
+If you want to get to know about my other activities in cubing, visit my youtube channel:
+[HugaCuba](https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw/).
+
