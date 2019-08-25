@@ -83,6 +83,8 @@ run python files, only the package 'PyQt5' has to be installed besides the
 standard libraries (in our case: 'random' and 'sys').
 
 # Usage
+After opening SkewbSkills, type 'H' or choose Help from the menubar to get 
+(almost) the same instructions as below.
 ## Starting Window
 Choose any from the different practicing modes, by pressing the corresponding 
 button or key, respectively. A new window appears, the starting window closes. 
