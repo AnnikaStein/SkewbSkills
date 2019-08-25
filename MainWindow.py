@@ -557,6 +557,7 @@ class WindowFLT(QMainWindow):
         # draws the scramble by drawing several polygons corresponding to the scramble
         self.drawscrwidget = ScrambleDrawing(stickercol)
         self.drawscrwidget.setMinimumHeight(430)
+        self.drawscrwidget.setMinimumWidth(500)
         self.gridLayout.addWidget(self.drawscrwidget, 2, 1)
 
     def display(self):

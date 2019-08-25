@@ -272,3 +272,4 @@
         Help button / window
         Shortcuts added for both modes
         Scrambles are generated way faster, using less disk space
+    Used "pyinstaller -w -F -n SkewbSkills -i favicon.ico MainWindow.py" to generate executable
