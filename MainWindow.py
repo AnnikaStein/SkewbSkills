@@ -1,5 +1,6 @@
 import random
 import sys
+import os
 from PyQt5.QtWidgets import QLCDNumber, QAction, QApplication, QWidget,\
     QMainWindow, QCheckBox, QPushButton, QLabel, QSlider, QGroupBox, QVBoxLayout, QGridLayout
 from PyQt5 import QtGui
@@ -15,12 +16,13 @@ class StartWindow(QMainWindow):
         self.width = 1000
         self.height = 750
 
-        self.setWindowIcon(QtGui.QIcon("logoicon.png"))
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(__file__), "Icons/logoicon.png")))
 
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
         self.mainMenu = self.menuBar()
+        self.generalMenu = self.mainMenu.addMenu('General Functions')
         self.funcMenu = self.mainMenu.addMenu('Practice Mode')
         #fileMenu = mainMenu.addMenu('File')
         #editMenu = mainMenu.addMenu('Edit')
@@ -29,15 +31,18 @@ class StartWindow(QMainWindow):
         #toolsMenu = mainMenu.addMenu('Tools')
         self.helpMenu = self.mainMenu.addMenu('Help')
 
+        self.closeButton = QAction('Close Window', self)
+        self.closeButton.setShortcut(Qt.Key_Escape)
+        self.closeButton.triggered.connect(self.close)
+        self.generalMenu.addAction(self.closeButton)
+
         self.fltButton = QAction('First Layer Trainer', self)
         self.fltButton.setShortcut('F')
-        self.fltButton.setStatusTip('First Layer Trainer')
         self.fltButton.triggered.connect(self.StartFirstLayerTrainer)
         self.funcMenu.addAction(self.fltButton)
 
         self.l2ltButton = QAction('Last 2 Layer Alg Trainer', self)
         self.l2ltButton.setShortcut('A')
-        self.l2ltButton.setStatusTip('Last 2 Layer Alg Trainer')
         self.l2ltButton.triggered.connect(self.StartAlgTrainer)
         self.funcMenu.addAction(self.l2ltButton)
 
@@ -66,16 +71,18 @@ class StartWindow(QMainWindow):
         # button to start the first layer trainer
         self.firstlayerbut = QPushButton("First Layer Trainer (or press F)", self)
         self.firstlayerbut.setMinimumHeight(80)
-        self.firstlayerbut.setToolTip("Generates scrambles from 1 up to 7 moves and random "
-                                          "colours to start the first layer with, if you wish.")
+        self.firstlayerbut.setToolTip("Generates scrambles from 1 up to 7 moves. They either"
+                                      " appear shuffled or ordered (depending on your choice).\n"
+                                      "You will either see only white or random starting colours.\n"
+                                      "With stopwatch to time your solutions.")
         self.firstlayerbut.clicked.connect(self.StartFirstLayerTrainer)
         gridLayout.addWidget(self.firstlayerbut, 0, 0)
 
         # button to start the alg trainer
-        self.algbut = QPushButton("Alg Trainer (or press A)", self)
+        self.algbut = QPushButton("Last 2 Layer Alg Trainer (or press A)", self)
         self.algbut.setMinimumHeight(80)
         self.algbut.setToolTip("Shows you L2L-cases (scramble + drawing) to the sets you choose.\n"
-                               "With timer function.")
+                               "With stopwatch to time your solutions.")
         self.algbut.clicked.connect(self.StartAlgTrainer)
         gridLayout.addWidget(self.algbut, 0, 1)
 
@@ -99,7 +106,7 @@ class StartWindow(QMainWindow):
         # this label shows a picture
         self.scrpic = QLabel(self)
         self.scrpic.setMinimumHeight(50)
-        self.scrpic.setPixmap(QtGui.QPixmap("logogreen").scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
+        self.scrpic.setPixmap(QtGui.QPixmap(os.path.join(os.path.dirname(__file__), "Icons/logogreen")).scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
         gridLayout.addWidget(self.scrpic, 2, 0)
 
         # this label shows some info about the creator
@@ -139,7 +146,7 @@ class WindowFLT(QMainWindow):
         self.width = 1000
         self.height = 750
 
-        self.setWindowIcon(QtGui.QIcon("logoicon.png"))
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(__file__), "Icons/logoicon.png")))
 
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
@@ -147,6 +154,7 @@ class WindowFLT(QMainWindow):
         self.ReadAllScrambles()
 
         self.mainMenu = self.menuBar()
+        self.generalMenu = self.mainMenu.addMenu('General Functions')
         self.funcMenu = self.mainMenu.addMenu('Practice Mode')
         self.fltMenu = self.mainMenu.addMenu('FLT Functions')
         # editMenu = mainMenu.addMenu('Edit')
@@ -154,6 +162,11 @@ class WindowFLT(QMainWindow):
         # searchMenu = mainMenu.addMenu('Search')
         # toolsMenu = mainMenu.addMenu('Tools')
         self.helpMenu = self.mainMenu.addMenu('Help')
+
+        self.closeButton = QAction('Close Window', self)
+        self.closeButton.setShortcut(Qt.Key_Escape)
+        self.closeButton.triggered.connect(self.close)
+        self.generalMenu.addAction(self.closeButton)
 
         self.fltButton = QAction('First Layer Trainer', self)
         self.fltButton.setShortcut('F')
@@ -279,38 +292,38 @@ class WindowFLT(QMainWindow):
         # final scramblelist
 
         self.newscramble1list = []
-        datei = open('newscrambles1.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles1.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble1list.append(line[:-1])
         self.scramblelist = self.newscramble1list.copy()
 
         self.newscramble2list = []
-        datei = open('newscrambles2.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles2.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble2list.append(line[:-1])
 
         self.newscramble3list = []
-        datei = open('newscrambles3.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles3.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble3list.append(line[:-1])
 
         self.newscramble4list = []
-        datei = open('newscrambles4.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles4.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble4list.append(line[:-1])
 
         self.newscramble5list = []
-        datei = open('newscrambles5.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles5.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble5list.append(line[:-1])
 
         self.newscramble6list = []
-        datei = open('newscrambles6.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles6.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble6list.append(line[:-1])
 
         self.newscramble7list = []
-        datei = open('newscrambles7.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "FirstLayerScrambles/newscrambles7.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.newscramble7list.append(line[:-1])
 
@@ -375,7 +388,7 @@ class WindowFLT(QMainWindow):
 
         self.scrpic = QLabel(self)
         self.scrpic.setMinimumHeight(50)
-        self.scrpic.setPixmap(QtGui.QPixmap("logogreen").scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
+        self.scrpic.setPixmap(QtGui.QPixmap(os.path.join(os.path.dirname(__file__), "Icons/logogreen")).scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
         self.gridLayout.addWidget(self.scrpic, 4, 0)
 
         self.start = QPushButton("Start (SPACE)", self)
@@ -618,7 +631,7 @@ class WindowL2LT(QMainWindow):
         self.width = 1600
         self.height = 800
 
-        self.setWindowIcon(QtGui.QIcon("logoicon.png"))
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(__file__), "Icons/logoicon.png")))
 
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
@@ -627,9 +640,15 @@ class WindowL2LT(QMainWindow):
         self.ReadAllScrambles()
 
         self.mainMenu = self.menuBar()
+        self.generalMenu = self.mainMenu.addMenu('General Functions')
         self.funcMenu = self.mainMenu.addMenu('Practice Mode')
         self.l2lMenu = self.mainMenu.addMenu('Alg Trainer Functions')
         self.helpMenu = self.mainMenu.addMenu('Help')
+
+        self.closeButton = QAction('Close Window', self)
+        self.closeButton.setShortcut(Qt.Key_Escape)
+        self.closeButton.triggered.connect(self.close)
+        self.generalMenu.addAction(self.closeButton)
 
         self.fltButton = QAction('First Layer Trainer', self)
         self.fltButton.setShortcut('F')
@@ -811,102 +830,102 @@ class WindowL2LT(QMainWindow):
 
     def ReadAllScrambles(self):
         self.scrpiswirl = []
-        datei = open('piswirl.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/piswirl.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpiswirl.append(line[:-1])
 
         self.scrpiwat = []
-        datei = open('piwat.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/piwat.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpiwat.append(line[:-1])
 
         self.scrpix = []
-        datei = open('pix.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pix.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpix.append(line[:-1])
 
         self.scrpihu = []
-        datei = open('pihu.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pihu.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpihu.append(line[:-1])
 
         self.scrpivu = []
-        datei = open('pivu.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pivu.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpivu.append(line[:-1])
 
         self.scrpio = []
-        datei = open('pio.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pio.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpio.append(line[:-1])
 
         self.scrpizconj = []
-        datei = open('pizconj.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pizconj.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpizconj.append(line[:-1])
 
         self.scrpi3s = []
-        datei = open('pi3s.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pi3s.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpi3s.append(line[:-1])
 
         self.scrpihz = []
-        datei = open('pihz.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pihz.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpihz.append(line[:-1])
 
         self.scrpswirl = []
-        datei = open('pswirl.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pswirl.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpswirl.append(line[:-1])
 
         self.scrpwat = []
-        datei = open('pwat.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pwat.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpwat.append(line[:-1])
 
         self.scrpx = []
-        datei = open('px.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/px.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpx.append(line[:-1])
 
         self.scrphu = []
-        datei = open('phu.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/phu.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrphu.append(line[:-1])
 
         self.scrpvu = []
-        datei = open('pvu.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pvu.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpvu.append(line[:-1])
 
         self.scrpo = []
-        datei = open('po.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/po.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpo.append(line[:-1])
 
         self.scrpzconj = []
-        datei = open('pzconj.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/pzconj.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrpzconj.append(line[:-1])
 
         self.scrp3s = []
-        datei = open('p3s.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/p3s.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrp3s.append(line[:-1])
 
         self.scrphzpure = []
-        datei = open('phzpure.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/phzpure.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrphzpure.append(line[:-1])
 
         self.scrl4c = []
-        datei = open('l4c.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/l4c.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrl4c.append(line[:-1])
 
         self.scrl5c = []
-        datei = open('l5c.txt', 'r', encoding='utf-8')
+        datei = open(os.path.join(os.path.dirname(__file__), "Last2LayerScrambles/l5c.txt"), 'r', encoding='utf-8')
         for line in datei:
             self.scrl5c.append(line[:-1])
 
@@ -1080,7 +1099,7 @@ class WindowL2LT(QMainWindow):
 
         self.scrpic = QLabel(self)
         self.scrpic.setMinimumHeight(50)
-        self.scrpic.setPixmap(QtGui.QPixmap("logogreen").scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
+        self.scrpic.setPixmap(QtGui.QPixmap(os.path.join(os.path.dirname(__file__), "Icons/logogreen")).scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
         self.gridLayout.addWidget(self.scrpic, 11, 0)
 
         # this label shows some info about the creator
@@ -1436,10 +1455,18 @@ class Help(QMainWindow):
         self.width = 1000
         self.height = 800
 
-        self.setWindowIcon(QtGui.QIcon("logoicon.png"))
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(__file__), "Icons/logoicon.png")))
 
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
+
+        self.mainMenu = self.menuBar()
+        self.generalMenu = self.mainMenu.addMenu('General Functions')
+
+        self.helpbut = QAction('Close Help Window', self)
+        self.helpbut.setShortcut(Qt.Key_Escape)
+        self.helpbut.triggered.connect(self.close)
+        self.generalMenu.addAction(self.helpbut)
 
         self.central2 = QWidget()
         self.CreateLayout()

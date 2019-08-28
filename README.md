@@ -15,6 +15,8 @@ by Annika Stein (also known as HugaCuba on social media such as
 ![SkewbSkills Logo](logogreen.png)
 
 # What's new?
+Release of 1.2:
++ Create subfolders that contain the scrambles and icons
 Release of v1.1:
 + Better way to generate the first layer trainer scrambles, less code, less 
 disk space - faster in general.
@@ -80,7 +82,7 @@ Besides that, there is always the option to download the sources and run
 
 If I'm informed correctly, it should already be possible for linux users to 
 run python files, only the package 'PyQt5' has to be installed besides the 
-standard libraries (in our case: 'random' and 'sys').
+standard libraries (in our case: 'random', 'sys' and 'os').
 
 # Usage
 After opening SkewbSkills, type 'H' or choose Help from the menubar to get 

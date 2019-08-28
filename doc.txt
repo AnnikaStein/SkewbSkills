@@ -273,3 +273,10 @@
         Shortcuts added for both modes
         Scrambles are generated way faster, using less disk space
     Used "pyinstaller -w -F -n SkewbSkills -i favicon.ico MainWindow.py" to generate executable
+
+28.08.2019:
+    added 'General Functions' menu with shortcut to close the window
+    create subfolders where the .txt files are located and work with those
+        instead of having all files in only one folder (requested by Elias)
+    create new exe and release new zip-folder, marked as v1. with
+        "pyinstaller -w -F -n SkewbSkills -i Icons/favicon.ico MainWindow.py"

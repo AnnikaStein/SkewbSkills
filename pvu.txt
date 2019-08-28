@@ -1,4 +1,0 @@
-r' R r R' z' R r R' r'
-R r' R' r z r' R' r R
-r R' r' z' r' R' r z r R
-R' r R z R r R' z' R' r' 
