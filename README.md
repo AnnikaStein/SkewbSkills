@@ -12,12 +12,18 @@ by Annika Stein (also known as HugaCuba on social media such as
 + practice algs for the last two layers
 + practice programming with python and qt. ;)
 
-![SkewbSkills Logo](logogreen.png)
+![SkewbSkills Logo](Icons/logogreen.png)
 
 # What's new?
-Release of 1.2:
-+ Create subfolders that contain the scrambles and icons
-Release of v1.1:
+## Release of 1.2:
++ Create subfolders that contain the scrambles and icons (thanks to Elias for
+    the suggestion)
++ Added 'General Functions' menu with shortcut to close the window
++ Minor changes of the tooltips
+
+Download v1.2 as a .zip-folder [here](SkewbSkillsFilesv1.2.zip).
+
+## Release of v1.1:
 + Better way to generate the first layer trainer scrambles, less code, less 
 disk space - faster in general.
 + (GERMAN) Video on SkewbSkills is published 
@@ -28,12 +34,16 @@ first version
 + minimum width of the scramble drawing to prevent overlap with the third 
 column
 
-Release of v1.0:
+Download v1.1 as a .zip-folder [here](SkewbSkillsFilesv2.zip).
+
+## Release of v1.0:
 
 You can now download and use version 1.1 of SkewbSkills! Browse through 
 the source code on [github](https://github.com/AnnikaStein/SkewbSkills) or 
 simply run the executable and have fun! More info on how to install your 
 own copy of SkewbSkills down below.
+
+Download v1.0 as a .zip-folder [here](SkewbSkillsFiles.zip).
 
 # What's planned?
 + Add other practicing modes, or modify the current ones:
@@ -58,8 +68,12 @@ design purposes.
 To open the program, extract the zip-folder and open "SkewbSkills.exe" 
 (v1.1 and up) or "MainWindow.exe" (v1.0), either by using the executable 
 itself, by defining a shortcut (which is pretty nice if you want to put the 
-program on your desktop or the taskbar), or by running the MainWindow.py-code 
-(for those of you that have a python interpreter set up).
+program on your desktop or the taskbar). What you can also do is run the 
+MainWindow.py-code (for those of you that have a python interpreter set up).
+For the latter, you would have to download the sources in the repository and
+make sure all packages are installed. Therefore, this option is only recommended
+for more experienced users, because you might have to get PyQt5 etc. before you
+can run the application.
 
 *Note*: since the .exe is really new and not many people use it, you might 
 have to allow your computer to execute it. This also applies to antivirus 
@@ -81,17 +95,31 @@ Besides that, there is always the option to download the sources and run
 "MainWindow.py" on your machine using Python 3.
 
 If I'm informed correctly, it should already be possible for linux users to 
-run python files, only the package 'PyQt5' has to be installed besides the 
-standard libraries (in our case: 'random', 'sys' and 'os').
+run python files, but the package 'PyQt5' has to be installed.
+
+# Update your version
+
+Updating your version of SkewbSkills is pretty easy. Just download the newest
+.zip-folder and remove the previous one. It's also possible to use more than
+one version on the same device, if you do not mix the files into one folder
+or randomly copy/paste from one to another version.
+
+If you have modified your scrambles and want to use them in your updated
+version of SkewbSkills, download the newest version and only change each
+scramble file you have overwritten with your own algs. In newer versions, the
+files might be located in other folders, but they will be named the same way
+as before.
 
 # Usage
-After opening SkewbSkills, type 'H' or choose Help from the menubar to get 
-(almost) the same instructions as below.
+After opening SkewbSkills, type "H" or choose Help from the menubar to get 
+(almost) the same instructions as below. You can close every window inside
+SkewbSkills by pressing ESCAPE.
+
 ## Starting Window
 Choose any from the different practicing modes, by pressing the corresponding 
 button or key, respectively. A new window appears, the starting window closes. 
-Note: the First Layer Trainer might take some time to open, so be a little 
-patient.
+*Note*: the First Layer Trainer might take some time to open, so be a little 
+patient (especially for v1.0 users).
 
 ## First Layer Trainer
 There's a slider to define the length of the scrambles, you can choose 
@@ -113,15 +141,15 @@ should not be the case anymore.
 
 ## L2L Alg Trainer
 Select all the alg sets that you'd like to practice. This can be done manually
-by checking or unchecking them via mouseclicks, or by pressing T ((un-)select
-all sets), L ((un-)select L4C, L5C), I ((un-)select all Pi cases) and U 
+by checking or unchecking them via mouseclicks, or by pressing "T" ((un-)select
+all sets), "L" ((un-)select L4C, L5C), "I" ((un-)select all Pi cases) and "U" 
 ((un-)select all Peanut cases).
 SkewbSkills is going to shuffle (randomize) the order in which they appear.
-Use the "Generate L2L Scramble" Button or press Return to generate a scramble. 
+Use the "Generate L2L Scramble" Button or press RETURN to generate a scramble. 
 A drawing of the scramble appears. All scrambles are performed with the 
 White/Red/Green Corner on top/front. Start the timer with the "Start" Button 
-or press Space. After starting the timer, you can stop it again by clicking 
-the same button ("Pause") or pressing Space again. You can than reset the 
+or press SPACE. After starting the timer, you can stop it again by clicking 
+the same button ("Pause") or pressing SPACE again. You can than reset the 
 timer to zero by using the "Reset" button (or press "R").
 
 ## Your own algs
@@ -160,3 +188,10 @@ the one to learn something through this project! :)
 # Other links
 If you want to get to know about my other activities, visit my 
 youtube channel: [HugaCuba](https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw/).
+
+# Further questions?
+Feel free to write me an [E-Mail](mailto:dwnhugatv@gmail.com) 
+if you have further questions or want to suggest a new feature. Also, if you
+detect some bugs or malfunctions, this might be the way to go. Another
+possible way to ask something or comment on SkewbSkills in any way is to 
+publicly comment on this [Youtube Video](https://youtu.be/qSO3zM_-us4).
