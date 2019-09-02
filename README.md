@@ -7,7 +7,7 @@ overview on the development process.
 SkewbSkills is free to use for all skewbers out there (!) and has been created 
 by Annika Stein (also known as HugaCuba on social media such as 
 [YouTube](https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw) or 
-[Instagram](https://www.instagram.com/hugacuba/) to
+[Instagram](https://www.instagram.com/hugacuba/)) to
 + practice the first layer
 + practice algs for the last two layers
 + practice programming with python and qt. ;)
@@ -116,12 +116,18 @@ After opening SkewbSkills, type "H" or choose Help from the menubar to get
 SkewbSkills by pressing ESCAPE.
 
 ## Starting Window
+
+![SkewbSkills Starting Screen](Icons/Starting_Screen.png)
+
 Choose any from the different practicing modes, by pressing the corresponding 
 button or key, respectively. A new window appears, the starting window closes. 
 *Note*: the First Layer Trainer might take some time to open, so be a little 
 patient (especially for v1.0 users).
 
 ## First Layer Trainer
+
+![SkewbSkills FLT Screen](Icons/FLT_Screen.png)
+
 There's a slider to define the length of the scrambles, you can choose 
 between 1 and 7 moves. This can also be done with the keys 1 to 7 on your 
 keyboard, if you're using v1.1 and up. If you want the scrambles to be 
@@ -140,6 +146,9 @@ until the process is completed. In further versions such as v1.1 and up, this
 should not be the case anymore.
 
 ## L2L Alg Trainer
+
+![SkewbSkills L2LT Screen](Icons/L2LT_Screen.png)
+
 Select all the alg sets that you'd like to practice. This can be done manually
 by checking or unchecking them via mouseclicks, or by pressing "T" ((un-)select
 all sets), "L" ((un-)select L4C, L5C), "I" ((un-)select all Pi cases) and "U" 
@@ -153,9 +162,12 @@ the same button ("Pause") or pressing SPACE again. You can than reset the
 timer to zero by using the "Reset" button (or press "R").
 
 ## Your own algs
+
+![Folder_Scr_Structure_Screen](Icons/Folder_Scr_Structure_Screen.png)
+
 You do not need to change anything on any file anymore once you've extracted 
 the folder. But: if you find that you'd like other scrambles to be displayed 
-than the current ones, open any of the .txt-Docs and modify the scrambles to 
+than the current ones, open any of the .txt-docs and modify the scrambles to 
 your liking. If you want to keep track of which scrambles generate which case, 
 see [this document](https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo/edit#gid=1743463298)
 (credits: Elias Malomgré and Carter Cucala). I use the same terms for the 
@@ -185,6 +197,8 @@ also the source code. This is to ensure everyone can learn something, of
 course I appreciate every suggestion for improvement, as I might actually be 
 the one to learn something through this project! :)
 
+![Skewb](Icons/Skewb.png)
+
 # Other links
 If you want to get to know about my other activities, visit my 
 youtube channel: [HugaCuba](https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw/).
@@ -193,5 +207,5 @@ youtube channel: [HugaCuba](https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3t
 Feel free to write me an [E-Mail](mailto:dwnhugatv@gmail.com) 
 if you have further questions or want to suggest a new feature. Also, if you
 detect some bugs or malfunctions, this might be the way to go. Another
-possible way to ask something or comment on SkewbSkills in any way is to 
+possible way to ask something about SkewbSkills in any way is to 
 publicly comment on this [Youtube Video](https://youtu.be/qSO3zM_-us4).

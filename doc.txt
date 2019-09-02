@@ -280,3 +280,6 @@
         instead of having all files in only one folder (requested by Elias)
     create new exe and release new zip-folder, marked as v1. with
         "pyinstaller -w -F -n SkewbSkills -i Icons/favicon.ico MainWindow.py"
+
+02.09.2019:
+    modified webpage / readme a bit, added a few screenshots
