@@ -1,5 +1,7 @@
 ---
 ---
+
+@import "{{ site.theme }}";
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -50,8 +52,6 @@
     }
   }
 }
-
-@import "{{ site.theme }}";
 
 .pbtn {
   display: inline-block;
