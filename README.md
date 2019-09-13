@@ -172,10 +172,18 @@ your liking. If you want to keep track of which scrambles generate which case,
 see [this document](https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo/edit#gid=1743463298)
 (credits: Elias Malomgré and Carter Cucala). I use the same terms for the 
 cases to indicate them, as well as the same order.
+
+Keep in mind that you need to write scrambles, not solutions for the different
+cases. You need to inverse your preferred solution to get the scramble you want.
+I chose the not so common solutions as scrambles, because than you can't see your
+solution by staring at the scramble and simply reading it backwards. That way you
+are forced to come up with a solution yourself. ;)
+
 When modifying the scrambles in the .txt-Files, note that the very last 
 character of the file must be one space in the line of the last scramble. 
 So do not make any additional line break after the last scramble, but end 
 the line of the last scramble with a space.
+
 In almost the same manner, do not use a space or anything else to end the 
 previous scrambles. All lines that are not the last line should only contain 
 the scramble itself, ending with the last move. If you do not apply the steps 
