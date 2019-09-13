@@ -214,3 +214,5 @@ publicly comment on this [Youtube Video](https://youtu.be/qSO3zM_-us4).
 Feel free to donate via PayPal, I'd be more than happy to learn
 new techniques, make SkewbSkills available to other platforms
 or do whatever I can to help you improve in the skewb event!
+[<img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png">
+](http://paypal.me/hugacuba)
