@@ -79,19 +79,20 @@
   }
 
   @include large {
-    padding: 0.75rem 1rem;
+    padding: 0rem 1rem;
+    font-size: 1.75rem;
   }
 
   @include medium {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.9rem;
+    padding: 0rem 0.9rem;
+    font-size: 1.5rem;
   }
 
   @include small {
     display: block;
     width: 100%;
-    padding: 0.75rem;
-    font-size: 0.9rem;
+    padding: 0rem;
+    font-size: 1.65rem;
 
     + .pbtn {
       margin-top: 1rem;
