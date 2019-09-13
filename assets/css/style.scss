@@ -8,7 +8,9 @@
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.7);
   background-image: url("https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png");
-  background-size: 100%;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
   border-color: rgba(255, 255, 255, 0.2);
   border-style: solid;
   border-width: 1px;
