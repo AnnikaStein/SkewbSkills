@@ -7,7 +7,8 @@
   display: inline-block;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-image: url("https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png");
+
   border-color: rgba(255, 255, 255, 0.2);
   border-style: solid;
   border-width: 1px;
@@ -17,31 +18,30 @@
   &:hover {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
   }
 
-  + .pbtn {
+  + .btn {
     margin-left: 1rem;
   }
 
   @include large {
-    padding: 0rem;
+    padding: 0.75rem 1rem;
   }
 
   @include medium {
-    padding: 0rem;
-    font-size: 1.5rem;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
   }
 
   @include small {
     display: block;
     width: 100%;
-    padding: 0rem;
-    font-size: 1.5rem;
+    padding: 0.75rem;
+    font-size: 0.9rem;
 
-    + .pbtn {
-      margin-top: 1.5rem;
+    + .btn {
+      margin-top: 1rem;
       margin-left: 0;
     }
   }
