@@ -1,9 +1,28 @@
 ---
 layout: default
 ---
+<!--Load JavaScript-->
 <script src="skewbskillsscripts.js"></script>
+
+<!--
+    Content
+-->
+
+<h1>
+    SkewbSkillsWeb
+</h1>
+
+<h3>
+    The HTML / CSS / JavaScript solution for all non windows users and / or those that do not want to download
+    anything!
+</h3>
+
+<!--Buttons-->
+<a href="https://annikastein.github.io/SkewbSkills/"><button type="button">Back to Mainpage</button></a>
 <button type="button" onclick="toggleFLT()">First Layer Trainer</button>
 <button type="button" onclick="toggleAlgT()">L2L Alg Trainer</button>
+
+
 
 <!--
     First Layer Trainer
@@ -16,7 +35,7 @@ layout: default
     L2L Alg Trainer
 -->
 <div id="AlgT" style="display:none">
-    <table style="width:100%">
+    <table style="width:100%" align="left">
         <tr>
             <th><input type="checkbox" id="piswirl" onclick="changescrlen()">Pi + Swirl Perm</th>
             <th><input type="checkbox" id="pswirl" onclick="changescrlen()">Peanut + Swirl Perm</th>
