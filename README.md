@@ -209,3 +209,8 @@ if you have further questions or want to suggest a new feature. Also, if you
 detect some bugs or malfunctions, this might be the way to go. Another
 possible way to ask something about SkewbSkills in any way is to 
 publicly comment on this [Youtube Video](https://youtu.be/qSO3zM_-us4).
+
+# Donate
+Feel free to donate via PayPal, I'd be more than happy to learn
+new techniques, make SkewbSkills available to other platforms
+or do whatever I can to help you improve in the skewb event!
