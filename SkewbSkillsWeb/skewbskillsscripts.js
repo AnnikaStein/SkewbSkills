@@ -91,6 +91,21 @@ function whattodowitht() {
      }
 
 }
+function decrMoves() {
+
+}
+function incrMoves() {
+
+}
 function changescrlen() {
+
+}
+function changescrlenAlg() {
+
+}
+function ScramblePlusColour() {
+
+}
+function ScramblePlusColourAlg() {
 
 }

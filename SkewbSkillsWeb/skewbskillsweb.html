@@ -28,7 +28,28 @@ layout: default
     First Layer Trainer
 -->
 <div id="FLT" style="display:none">
-
+    <input type="checkbox" id="shufflescrchecker" onclick="changescrlen()">&nbsp;Shuffle scrambles &nbsp;
+    <input type="checkbox" id="anycolourchecker">&nbsp;Use all colours
+    <ul>
+        <tr>
+            <th>
+                <button type="button" onclick="decrMoves()">-</button>
+            </th>
+            <th id="scrlennumber">1</th>
+            <th>
+                <button type="button" onclick="incrMoves()">+</button>
+            </th>
+        </tr>
+    </ul>
+    <ul>
+        <tr>
+            <th>
+                <button type="button" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
+            </th>
+            <th id="scramblelabel">&nbsp;</th>
+            <th id="">&nbsp;</th>
+        </tr>
+    </ul>
 </div>
 
 <!--
@@ -39,47 +60,47 @@ layout: default
     <button type="button" onclick="toggleSelectAlgs()">Select Algs</button><br><br>
     <table id="selectAlgs" style="display:none; width:100%; text-align=:left">
         <tr>
-            <th><input type="checkbox" id="piswirl" onclick="changescrlen()">&nbsp;Pi + Swirl Perm</th>
-            <th><input type="checkbox" id="pswirl" onclick="changescrlen()">&nbsp;Peanut + Swirl Perm</th>
-            <th><input type="checkbox" id="l4c" onclick="changescrlen()">&nbsp;L4C</th>
+            <th><input type="checkbox" id="piswirl" onclick="changescrlenAlg()">&nbsp;Pi + Swirl Perm</th>
+            <th><input type="checkbox" id="pswirl" onclick="changescrlenAlg()">&nbsp;Peanut + Swirl Perm</th>
+            <th><input type="checkbox" id="l4c" onclick="changescrlenAlg()">&nbsp;L4C</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="piwat" onclick="changescrlen()">&nbsp;Pi + Wat Perm</th>
-            <th><input type="checkbox" id="pwat" onclick="changescrlen()">&nbsp;Peanut + Wat Perm</th>
-            <th><input type="checkbox" id="l5c" onclick="changescrlen()">&nbsp;L5C</th>
+            <th><input type="checkbox" id="piwat" onclick="changescrlenAlg()">&nbsp;Pi + Wat Perm</th>
+            <th><input type="checkbox" id="pwat" onclick="changescrlenAlg()">&nbsp;Peanut + Wat Perm</th>
+            <th><input type="checkbox" id="l5c" onclick="changescrlenAlg()">&nbsp;L5C</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pix" onclick="changescrlen()">&nbsp;Pi + X Perm</th>
-            <th><input type="checkbox" id="px" onclick="changescrlen()">&nbsp;Peanut + X Perm</th>
+            <th><input type="checkbox" id="pix" onclick="changescrlenAlg()">&nbsp;Pi + X Perm</th>
+            <th><input type="checkbox" id="px" onclick="changescrlenAlg()">&nbsp;Peanut + X Perm</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pihu" onclick="changescrlen()">&nbsp;Pi + Horizontal U Perm</th>
-            <th><input type="checkbox" id="phu" onclick="changescrlen()">&nbsp;Peanut + Horizontal U Perm</th>
+            <th><input type="checkbox" id="pihu" onclick="changescrlenAlg()">&nbsp;Pi + Horizontal U Perm</th>
+            <th><input type="checkbox" id="phu" onclick="changescrlenAlg()">&nbsp;Peanut + Horizontal U Perm</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pivu" onclick="changescrlen()">&nbsp;Pi + Vertical U Perm</th>
-            <th><input type="checkbox" id="pvu" onclick="changescrlen()">&nbsp;Peanut + Vertical U Perm</th>
+            <th><input type="checkbox" id="pivu" onclick="changescrlenAlg()">&nbsp;Pi + Vertical U Perm</th>
+            <th><input type="checkbox" id="pvu" onclick="changescrlenAlg()">&nbsp;Peanut + Vertical U Perm</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pio" onclick="changescrlen()">&nbsp;Pi + O Perm</th>
-            <th><input type="checkbox" id="po" onclick="changescrlen()">&nbsp;Peanut + O Perm</th>
+            <th><input type="checkbox" id="pio" onclick="changescrlenAlg()">&nbsp;Pi + O Perm</th>
+            <th><input type="checkbox" id="po" onclick="changescrlenAlg()">&nbsp;Peanut + O Perm</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pizconj" onclick="changescrlen()">&nbsp;Pi + Z Perm Conjugates</th>
-            <th><input type="checkbox" id="pzconj" onclick="changescrlen()">&nbsp;Peanut + Z Perm Conjugates</th>
+            <th><input type="checkbox" id="pizconj" onclick="changescrlenAlg()">&nbsp;Pi + Z Perm Conjugates</th>
+            <th><input type="checkbox" id="pzconj" onclick="changescrlenAlg()">&nbsp;Peanut + Z Perm Conjugates</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pi3s" onclick="changescrlen()">&nbsp;Pi + Triple Sledge</th>
-            <th><input type="checkbox" id="p3s" onclick="changescrlen()">&nbsp;Peanut + Triple Sledge</th>
+            <th><input type="checkbox" id="pi3s" onclick="changescrlenAlg()">&nbsp;Pi + Triple Sledge</th>
+            <th><input type="checkbox" id="p3s" onclick="changescrlenAlg()">&nbsp;Peanut + Triple Sledge</th>
         </tr>
         <tr>
-            <th><input type="checkbox" id="pihz" onclick="changescrlen()">&nbsp;Pi + H or Z Perm</th>
-            <th><input type="checkbox" id="phzpure" onclick="changescrlen()">&nbsp;Peanut + H or Z Perm and Pure Peanut</th>
+            <th><input type="checkbox" id="pihz" onclick="changescrlenAlg()">&nbsp;Pi + H or Z Perm</th>
+            <th><input type="checkbox" id="phzpure" onclick="changescrlenAlg()">&nbsp;Peanut + H or Z Perm and Pure Peanut</th>
         </tr>
     </table>
-
-    <button type="button" onclick="ScramblePlusColour()">Generate L2L Case</button>
-    <p id="scramblelabel">&nbsp;</p>
+    <br>
+    <button type="button" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
+    <p id="scramblelabelAlg">&nbsp;</p>
     <button type="button" onclick="do_start()">Start</button>
     <button type="button" onclick="do_reset()">Reset</button>
 </div>
