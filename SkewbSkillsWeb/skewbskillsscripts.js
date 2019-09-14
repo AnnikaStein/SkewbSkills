@@ -334,13 +334,22 @@ function ReadAllScramblesAlg() {
 
 
 // testen ab hier
-/*
-function decrMoves() {
 
+function decrMoves() {
+    var scrlen = parseInt(document.getElementById("scrlenlabel").innerHTML);
+    if (scrlen > 1) {
+        scrlen -= 1;
+        document.getElementById("scrlenlabel").innerHTML = scrlen;
+    }
 }
 function incrMoves() {
-
+    var scrlen = parseInt(document.getElementById("scrlenlabel").innerHTML);
+    if (scrlen < 7) {
+        scrlen += 1;
+        document.getElementById("scrlenlabel").innerHTML = scrlen;
+    }
 }
+/*
 function changescrlen() {
 
 }
