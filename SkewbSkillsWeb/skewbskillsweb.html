@@ -45,17 +45,21 @@ layout: default
             <th>
                 <button type="button" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
             </th>
-            <th id="scramblelabel">&nbsp;</th>
-            <th id="">&nbsp;</th>
+            <th><label id="scramblelabel">&nbsp;</label></th>
+            <th><label id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></th>
         </tr>
     </ul>
+    <canvas id="scrDrawing" width="600" height="530"></canvas>
 </div>
 
 <!--
     L2L Alg Trainer
 -->
 <div id="AlgT" style="display:none">
-    <input type="checkbox" id="selectAllAlgs" onclick="whattodowitht()">&nbsp;All Algs or &nbsp;
+    <button type="button" id="toggleAll" onclick="whattodowitht()">Toggle All Algs</button>
+    <button type="button" id="togglePi" onclick="whattodowithi()">Toggle Pi Cases</button>
+    <button type="button" id="togglePeanut" onclick="whattodowithu()">Toggle Peanut Cases</button>
+    <button type="button" id="toggleL" onclick="whattodowithl()">Toggle L4C / L5C Cases</button>
     <button type="button" onclick="toggleSelectAlgs()">Select Algs</button><br><br>
     <table id="selectAlgs" style="display:none; width:100%; text-align=:left">
         <tr>
@@ -99,9 +103,10 @@ layout: default
     </table>
     <br>
     <button type="button" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
-    <p id="scramblelabelAlg">&nbsp;</p>
+    <label id="scramblelabelAlg">&nbsp;</label><br><br>
     <button type="button" onclick="do_start()">Start</button>
     <button type="button" onclick="do_reset()">Reset</button>
+    <canvas id="scrDrawingAlg" width="600" height="530"></canvas>
 </div>
 
 <!--Load JavaScript-->
