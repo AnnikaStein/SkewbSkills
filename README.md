@@ -4,6 +4,10 @@ Practice and learn skewb algs, first layer and more!
 This description intends to show you how to use SkewbSkills and give a quick 
 overview on the development process.
 
+*NEW NEW NEW: SkewbSkills is now available as a [webpage](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html) 
+and can be downloaded as a [.zip folder](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesv1.2.zip),
+containing an .exe.* Read more about installation below.
+
 SkewbSkills is free to use for all skewbers out there (!) and has been created 
 by Annika Stein (also known as HugaCuba on social media such as 
 [YouTube](https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw) or 
@@ -11,10 +15,22 @@ by Annika Stein (also known as HugaCuba on social media such as
 + practice the first layer
 + practice algs for the last two layers
 + practice programming with python and qt. ;)
++ *new: practice html, css and javascript!*
 
 ![SkewbSkills Logo](Icons/logogreen.png)
 
 # What's new?
+## Release of SkewbSkillsWeb
+Yes, you've heard correctly, SkewbSkills is now available as a webpage! This very first
+web-based release might look a little ugly and lack a stopwatch, but it WORKS, apart 
+from that! :)
+
+Believe me or not, getting everything done in JavaScript was a bit of a mess as a 
+complete .js newbie, but using my python scripts saved me a lot of time. Tbh, it took me
+not more than three days (the last time using anything like html / css must have
+been several years ago).
+
+Seems like learning new languages is much easier than learning your first one. ;) (yOu DOn'T sAY?!)
 ## Release of 1.2:
 + Create subfolders that contain the scrambles and icons (thanks to Elias for
     the suggestion)
@@ -53,6 +69,10 @@ Download v1.0 as a .zip-folder [here](SkewbSkillsFiles.zip).
   without downloading anything once it's done. ;)
   If your browser is able to cache .js, you will be able
   to use it offline for a while, at least. :)
+  
+  I'm adding more functions to it, and hopefully it will be as functional as the .exe
+  version. At the moment it's lacking a stopwatch and the possibility to include your
+  own algs. Some shortcuts could be added as well, and the design needs some improvement.
 + Add other practicing modes, or modify the current ones:
    + I'd like the user to identify weak algs and put them on a special pile 
    to work on particularly
@@ -65,7 +85,13 @@ Download v1.0 as a .zip-folder [here](SkewbSkillsFiles.zip).
 + Make SkewbSkills available to more platforms than Windows (see paragraph 
 below for more information)
 
-# Installation
+# Download and Installation (as webpage)
+You don't need to worry about downloading or installing anything, you can access
+SkewbSkills now directly from the web, as a [webbased application](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html)!
+
+If you want to, grab yourself a browser that is able to store websites (save all data
+required, e.g. by pressing Ctrl + S) and use SkewbSkills offline, as well!
+# Download and Installation (as desktop application)
 ## Windows
 Download the zip-file, containing the .exe, some pictures and .txt files. 
 Do not move the .txt-files out of the directory, they contain the scrambles.
