@@ -198,12 +198,12 @@ for (j = 0; j < newscramble1list.length; j++) {
 var newscramble3list = [];
 for (j = 0; j < newscramble2list.length; j++) {
     for (i = 0; i < posschars.length; i++) {
-        if (newscramble2list[j][-2] == " ") {
-            if (newscramble2list[j][-1] == posschars[i][0]) {
+        if ((newscramble2list[j]).charAt(newscramble2list[j].length - 2) == " ") {
+            if ((newscramble2list[j]).charAt(newscramble2list[j].length - 1) == (posschars[i]).charAt(0)) {
                 continue;
             }
         } else {
-            if (newscramble2list[j][-2] == posschars[i][0]) {
+            if ((newscramble2list[j]).charAt(newscramble2list[j].length - 2) == (posschars[i]).charAt(0)) {
                 continue;
             }
         }
@@ -214,12 +214,12 @@ for (j = 0; j < newscramble2list.length; j++) {
 var newscramble4list = [];
 for (j = 0; j < newscramble3list.length; j++) {
     for (i = 0; i < posschars.length; i++) {
-        if (newscramble3list[j][-2] == " ") {
-            if (newscramble3list[j][-1] == posschars[i][0]) {
+        if ((newscramble3list[j]).charAt(newscramble3list[j].length - 2) == " ") {
+            if ((newscramble3list[j]).charAt(newscramble3list[j].length - 1) == (posschars[i]).charAt(0)) {
                 continue;
             }
         } else {
-            if (newscramble3list[j][-2] == posschars[i][0]) {
+            if ((newscramble3list[j]).charAt(newscramble3list[j].length - 2) == (posschars[i]).charAt(0)) {
                 continue;
             }
         }
@@ -230,12 +230,12 @@ for (j = 0; j < newscramble3list.length; j++) {
 var newscramble5list = [];
 for (j = 0; j < newscramble4list.length; j++) {
     for (i = 0; i < posschars.length; i++) {
-        if (newscramble4list[j][-2] == " ") {
-            if (newscramble4list[j][-1] == posschars[i][0]) {
+        if ((newscramble4list[j]).charAt(newscramble4list[j].length - 2) == " ") {
+            if ((newscramble4list[j]).charAt(newscramble4list[j].length - 1) == (posschars[i]).charAt(0)) {
                 continue;
             }
         } else {
-            if (newscramble4list[j][-2] == posschars[i][0]) {
+            if ((newscramble4list[j]).charAt(newscramble4list[j].length - 2) == (posschars[i]).charAt(0)) {
                 continue;
             }
         }
@@ -246,12 +246,12 @@ for (j = 0; j < newscramble4list.length; j++) {
 var newscramble6list = [];
 for (j = 0; j < newscramble5list.length; j++) {
     for (i = 0; i < posschars.length; i++) {
-        if (newscramble5list[j][-2] == " ") {
-            if (newscramble5list[j][-1] == posschars[i][0]) {
+        if ((newscramble5list[j]).charAt(newscramble5list[j].length - 2) == " ") {
+            if ((newscramble5list[j]).charAt(newscramble5list[j].length - 1) == (posschars[i]).charAt(0)) {
                 continue;
             }
         } else {
-            if (newscramble5list[j][-2] == posschars[i][0]) {
+            if ((newscramble5list[j]).charAt(newscramble5list[j].length - 2) == (posschars[i]).charAt(0)) {
                 continue;
             }
         }
@@ -262,12 +262,12 @@ for (j = 0; j < newscramble5list.length; j++) {
 var newscramble7list = [];
 for (j = 0; j < newscramble6list.length; j++) {
     for (i = 0; i < posschars.length; i++) {
-        if (newscramble6list[j][-2] == " ") {
-            if (newscramble6list[j][-1] == posschars[i][0]) {
+        if ((newscramble6list[j]).charAt(newscramble6list[j].length - 2) == " ") {
+            if ((newscramble6list[j]).charAt(newscramble6list[j].length - 1) == (posschars[i]).charAt(0)) {
                 continue;
             }
         } else {
-            if (newscramble6list[j][-2] == posschars[i][0]) {
+            if ((newscramble6list[j]).charAt(newscramble6list[j].length - 2) == (posschars[i]).charAt(0)) {
                 continue;
             }
         }
