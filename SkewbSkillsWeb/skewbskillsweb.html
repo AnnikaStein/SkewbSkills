@@ -49,10 +49,11 @@ layout: default
             </th>
         </tr>
     </ul>
+    <br>
     <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
     <label class="resp" id="scramblelabel">&nbsp;</label>
     <label class="resp" id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-
+    <br><br>
     <canvas id="scrDrawing" width="600" height="530"></canvas>
 </div>
 
@@ -60,11 +61,14 @@ layout: default
     L2L Alg Trainer
 -->
 <div id="AlgT" style="display:none">
-    <button type="button" class="resp" id="toggleAll" onclick="whattodowitht()">Toggle All Algs</button>
-    <button type="button" class="resp" id="togglePi" onclick="whattodowithi()">Toggle Pi Cases</button>
-    <button type="button" class="resp" id="togglePeanut" onclick="whattodowithu()">Toggle Peanut Cases</button>
-    <button type="button" class="resp" id="toggleL" onclick="whattodowithl()">Toggle L4C / L5C Cases</button>
-    <button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs</button><br><br>
+    <div style="width=100%; margin:auto;">
+        <button type="button" class="resp" id="toggleAll" onclick="whattodowitht()">Toggle All Algs</button>
+        <button type="button" class="resp" id="togglePi" onclick="whattodowithi()">Toggle Pi Cases</button>
+        <button type="button" class="resp" id="togglePeanut" onclick="whattodowithu()">Toggle Peanut Cases</button>
+        <button type="button" class="resp" id="toggleL" onclick="whattodowithl()">Toggle L4C / L5C Cases</button>
+        <br><br>
+        <button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs</button>
+    </div><br><br>
     <table id="selectAlgs" style="display:none; width:100%; text-align=:left">
         <tr>
             <th><input type="checkbox" id="piswirl" onclick="changescrlenAlg()">&nbsp;Pi + Swirl Perm</th>
