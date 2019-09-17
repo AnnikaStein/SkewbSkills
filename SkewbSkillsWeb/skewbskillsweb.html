@@ -17,7 +17,7 @@ layout: default
 </h3>
 
 <!--Buttons-->
-<a href="https://annikastein.github.io/SkewbSkills/" class="resp"><button type="button">Back to Mainpage</button></a>
+<button type="button" class="resp" onclick="window.location='https://annikastein.github.io/SkewbSkills/'">Back to Mainpage</button>
 <button type="button" class="resp" onclick="toggleFLT()">First Layer Trainer</button>
 <button type="button" class="resp" onclick="toggleAlgT()">L2L Alg Trainer</button><br><br>
 
@@ -30,22 +30,22 @@ layout: default
     <ul>
         <tr>
             <th>
-                <input type="checkbox" id="shufflescrchecker" onclick="changescrlen()">Shuffle scrambles
+                <input type="checkbox" id="shufflescrchecker" onclick="changescrlen()"> Shuffle scrambles
             </th>
             <th>
-                <input type="checkbox" id="anycolourchecker">Use all colours
+                <input type="checkbox" id="anycolourchecker"> Use all colours
             </th>
         </tr>
     </ul>
     <ul>
         <tr>
             <th>
-                <button type="button" onclick="decrMoves()">-</button>
+                <button type="button" onclick="decrMoves()"> - </button>
             </th>
             <th>
-                <label id="scrlenlabel">1</label></th>
+                <label id="scrlenlabel"> 1 </label></th>
             <th>
-                <button type="button" onclick="incrMoves()">+</button>
+                <button type="button" onclick="incrMoves()"> + </button>
             </th>
         </tr>
     </ul>
@@ -54,7 +54,7 @@ layout: default
     <label class="resp" id="scramblelabel">&nbsp;</label>
     <label class="resp" id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <br><br>
-    <canvas id="scrDrawing" width="600" height="530"></canvas>
+    <canvas id="scrDrawing" width="500" height="450"></canvas>
 </div>
 
 <!--
