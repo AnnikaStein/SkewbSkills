@@ -964,9 +964,11 @@ function ShowScramble(scramble) {
         var canvas = document.getElementById("scrDrawing");
     }
     var ctx = canvas.getContext('2d');
+    ctx.translate(10, 10);
     ctx.strokeStyle = "black";
     ctx.lineWidth = 3;
     ctx.lineJoin = "round";
+    ctx.lineCap = "round";
     ctx.fillStyle = corrcol(stickercol, 0);
     ctx.beginPath();
     ctx.moveTo(0.0, 75.0);
@@ -1243,6 +1245,7 @@ function ShowScramble(scramble) {
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
+    ctx.translate(-10, -10);
 }
 
 // permute the selected entries of the list cyclically
