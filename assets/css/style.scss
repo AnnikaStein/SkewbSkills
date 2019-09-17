@@ -105,13 +105,13 @@ th, td {
 .resp {
     display: inline-block;
     + .resp {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
     }
     @include small {
         display: block;
         width: 100%;
         + .resp {
-            margin-top: 1rem;
+            margin-top: 0.5rem;
             margin-left: 0;
     }
     }
