@@ -101,3 +101,17 @@ th, td {
     }
   }
 }
+
+.resp {
+  display: inline-block;
+
+  @include small {
+    display: block;
+    width: 100%;
+  }
+}
+
+#scrDrawing,
+#scrDrawingAlg {
+    width: 100%;
+}
