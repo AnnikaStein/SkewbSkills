@@ -1281,3 +1281,182 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
   }
+
+// timer
+var x;
+var startstop = 0;
+
+function startStop() { /* Toggle StartStop */
+
+  startstop = startstop + 1;
+
+  if (startstop === 1) {
+    start();
+    document.getElementById("start").innerHTML = "Stop";
+  } else if (startstop === 2) {
+    document.getElementById("start").innerHTML = "Start";
+    startstop = 0;
+    stop();
+  }
+
+}
+
+
+function start() {
+  x = setInterval(timer, 10);
+  document.getElementById("reset").style.display = "none";
+} /* Start */
+
+function stop() {
+  clearInterval(x);
+  var stil = getComputedStyle(document.getElementById("start"), null).display;
+  if (stil === "inline-block") {
+    document.getElementById("reset").style.display = "inline-block";
+  } else if (stil === "block") {
+    document.getElementById("reset").style.display = "block";
+  }
+} /* Stop */
+
+var milisec = 0;
+var sec = 0; /* holds incrementing value */
+var min = 0;
+
+/* Contains and outputs returned value of  function checkTime */
+
+var miliSecOut = 0;
+var secOut = 0;
+var minOut = 0;
+
+/* Output variable End */
+
+function timer() {
+  /* Main Timer */
+
+  miliSecOut = checkTime(milisec);
+  secOut = checkTime(sec);
+  minOut = checkTime(min);
+
+  milisec = ++milisec;
+
+  if (milisec === 100) {
+    milisec = 0;
+    sec = ++sec;
+  }
+  if (sec == 60) {
+    min = ++min;
+    sec = 0;
+  }
+
+  document.getElementById("milisec").innerHTML = miliSecOut;
+  document.getElementById("sec").innerHTML = secOut;
+  document.getElementById("min").innerHTML = minOut;
+}
+
+/* Adds 0 when value is <10 */
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function reset() {
+  /*Reset*/
+  milisec = 0;
+  sec = 0;
+  min = 0
+
+  document.getElementById("milisec").innerHTML = "00";
+  document.getElementById("sec").innerHTML = "00";
+  document.getElementById("min").innerHTML = "00";
+}
+
+// timerAlg
+var xAlg;
+var startstopAlg = 0;
+
+function startStopAlg() { /* Toggle StartStop */
+
+  startstopAlg = startstopAlg + 1;
+
+  if (startstopAlg === 1) {
+    startAlg();
+    document.getElementById("startAlg").innerHTML = "Stop";
+  } else if (startstopAlg === 2) {
+    document.getElementById("startAlg").innerHTML = "Start";
+    startstopAlg = 0;
+    stopAlg();
+  }
+}
+
+
+function startAlg() {
+  xAlg = setInterval(timerAlg, 10);
+  document.getElementById("resetAlg").style.display = "none";
+} /* Start */
+
+function stopAlg() {
+  clearInterval(xAlg);
+  var stilAlg = getComputedStyle(document.getElementById("startAlg"), null).display;
+  if (stilAlg === "inline-block") {
+    document.getElementById("resetAlg").style.display = "inline-block";
+  } else if (stilAlg === "block") {
+    document.getElementById("resetAlg").style.display = "block";
+  }
+} /* Stop */
+
+var milisecAlg = 0;
+var secAlg = 0; /* holds incrementing value */
+var minAlg = 0;
+
+/* Contains and outputs returned value of  function checkTime */
+
+var miliSecOutAlg = 0;
+var secOutAlg = 0;
+var minOutAlg = 0;
+
+/* Output variable End */
+
+function timerAlg() {
+  /* Main Timer */
+
+  miliSecOutAlg = checkTimeAlg(milisecAlg);
+  secOutAlg = checkTimeAlg(secAlg);
+  minOutAlg = checkTimeAlg(minAlg);
+
+  milisecAlg = ++milisecAlg;
+
+  if (milisecAlg === 100) {
+    milisecAlg = 0;
+    secAlg = ++secAlg;
+  }
+  if (secAlg == 60) {
+    minAlg = ++minAlg;
+    secAlg = 0;
+  }
+
+  document.getElementById("milisecAlg").innerHTML = miliSecOutAlg;
+  document.getElementById("secAlg").innerHTML = secOutAlg;
+  document.getElementById("minAlg").innerHTML = minOutAlg;
+}
+
+/* Adds 0 when value is <10 */
+
+function checkTimeAlg(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function resetAlg() {
+  /*Reset*/
+  milisecAlg = 0;
+  secAlg = 0;
+  minAlg = 0
+
+  document.getElementById("milisecAlg").innerHTML = "00";
+  document.getElementById("secAlg").innerHTML = "00";
+  document.getElementById("minAlg").innerHTML = "00";
+}

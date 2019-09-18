@@ -54,6 +54,14 @@ layout: default
     <label class="resp" id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <label class="resp" id="scramblelabel">&nbsp;</label>
     <br><br>
+    <h1>
+      <span id="min">00</span> :
+      <span id="sec">00</span> :
+      <span id="milisec">00</span>
+    </h1>
+
+    <button class="resp" onclick="startStop()" id="start">Start</button>
+    <button class="resp" onclick="reset()" id="reset" style="display:none;">Reset</button><br><br>
     <canvas id="scrDrawing" width="500" height="450"></canvas>
 </div>
 
@@ -112,8 +120,14 @@ layout: default
     <br>
     <button type="button" class="resp" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
     <label class="resp" id="scramblelabelAlg">&nbsp;</label><br><br>
-    <!--<button type="button" onclick="do_start()">Start</button>
-    <button type="button" onclick="do_reset()">Reset</button>-->
+    <h1>
+      <span id="minAlg">00</span> :
+      <span id="secAlg">00</span> :
+      <span id="milisecAlg">00</span>
+    </h1>
+
+    <button class="resp" onclick="startStopAlg()" id="startAlg">Start</button>
+    <button class="resp" onclick="resetAlg()" id="resetAlg" style="display:none;">Reset</button><br><br>
     <canvas id="scrDrawingAlg" width="500" height="450"></canvas>
 </div>
 
