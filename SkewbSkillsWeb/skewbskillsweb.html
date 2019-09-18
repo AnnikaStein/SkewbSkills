@@ -27,32 +27,32 @@ layout: default
     First Layer Trainer
 -->
 <div id="FLT" style="display:none">
-    <ul>
-        <tr>
-            <th>
-                <input type="checkbox" id="shufflescrchecker" onclick="changescrlen()"> Shuffle scrambles
-            </th>
-            <th>
-                <input type="checkbox" id="anycolourchecker"> Use all colours
-            </th>
-        </tr>
-    </ul>
-    <ul>
-        <tr>
-            <th>
-                <button type="button" onclick="decrMoves()"> - </button>
-            </th>
-            <th>
-                <label id="scrlenlabel"> 1 </label></th>
-            <th>
-                <button type="button" onclick="incrMoves()"> + </button>
-            </th>
-        </tr>
-    </ul>
+    <tr>
+        <th>
+            <input type="checkbox" id="shufflescrchecker" onclick="changescrlen()"> Shuffle scrambles
+        </th>
+    </tr>
     <br>
+    <tr>
+        <th>
+            <input type="checkbox" id="anycolourchecker"> Use all colours
+        </th>
+    </tr>
+    <br><br>
+    <tr>
+        <th>
+            <button type="button" onclick="decrMoves()"> - </button>
+        </th>
+        <th>
+            <label id="scrlenlabel"> 1 </label></th>
+        <th>
+            <button type="button" onclick="incrMoves()"> + </button>
+        </th>
+    </tr>
+    <br><br>
     <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
-    <label class="resp" id="scramblelabel">&nbsp;</label>
     <label class="resp" id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <label class="resp" id="scramblelabel">&nbsp;</label>
     <br><br>
     <canvas id="scrDrawing" width="500" height="450"></canvas>
 </div>
@@ -69,7 +69,7 @@ layout: default
     <br><br>
     <button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs</button>
     <br><br>
-    <table id="selectAlgs" style="display:none; width:100%; text-align=:left">
+    <table id="selectAlgs" style="display:none; width:100%; text-align=:left; font-size: 0.75rem;">
         <tr>
             <th><input type="checkbox" id="piswirl" onclick="changescrlenAlg()">&nbsp;Pi + Swirl Perm</th>
             <th><input type="checkbox" id="pswirl" onclick="changescrlenAlg()">&nbsp;Peanut + Swirl Perm</th>
