@@ -119,7 +119,8 @@ th, td {
 
 #scrDrawing,
 #scrDrawingAlg {
-    margin: auto;
-    width: 100%;
-    max-width: 500;
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    display: block;
 }

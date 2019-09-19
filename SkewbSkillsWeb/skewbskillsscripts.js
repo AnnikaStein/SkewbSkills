@@ -1315,6 +1315,7 @@ function stop() {
   } else if (stil === "block") {
     document.getElementById("reset").style.display = "block";
   }
+  checkPB();
 } /* Stop */
 
 var milisec = 0;
@@ -1370,4 +1371,24 @@ function reset() {
   document.getElementById("milisec").innerHTML = "00";
   document.getElementById("sec").innerHTML = "00";
   document.getElementById("min").innerHTML = "00";
+  document.getElementById("pbLabel").innerHTML = "";
+}
+
+var dict = {};
+
+function checkPB() {
+    if (document.getElementById("AlgT").style.display != "none") {
+        if (dict.hasOwnProperty(document.getElementById("scramblelabelAlg").innerHTML)) {
+            if (miliSecOut + secOut * 100 + minOut * 60 * 100 <= dict[document.getElementById("scramblelabelAlg").innerHTML]) {
+                dict[document.getElementById("scramblelabelAlg").innerHTML] = miliSecOut + secOut * 100 + minOut * 60 * 100;
+                document.getElementById("pbLabel").innerHTML = "That's a PB!";
+            } else {
+                document.getElementById("pbLabel").innerHTML = "";
+            }
+        } else {
+            dict[document.getElementById("scramblelabelAlg").innerHTML] = miliSecOut + secOut * 100 + minOut * 60 * 100;
+            document.getElementById("pbLabel").innerHTML = "That's a PB!";
+        }
+        document.getElementById("pbLabel").style.display = "inline-block";
+    }
 }
