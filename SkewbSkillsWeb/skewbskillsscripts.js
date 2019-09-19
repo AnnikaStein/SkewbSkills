@@ -1309,9 +1309,8 @@ function start() {
 
 function stop() {
   clearInterval(x);
-  var stil = getComputedStyle(document.getElementById("start"), null).display;
-  document.getElementById("reset").className = "resp";
-  /*document.getElementById("reset").toggleClass('resp');
+  document.getElementById("reset").style.display = "block";
+  /*var stil = getComputedStyle(document.getElementById("start"), null).display;
   if (stil === "inline-block") {
     document.getElementById("reset").style.display = "inline-block";
   } else if (stil === "block") {
