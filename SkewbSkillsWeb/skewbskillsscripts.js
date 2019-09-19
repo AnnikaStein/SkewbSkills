@@ -1310,11 +1310,13 @@ function start() {
 function stop() {
   clearInterval(x);
   var stil = getComputedStyle(document.getElementById("start"), null).display;
+  document.getElementById("reset").className = "resp";
+  /*document.getElementById("reset").toggleClass('resp');
   if (stil === "inline-block") {
     document.getElementById("reset").style.display = "inline-block";
   } else if (stil === "block") {
     document.getElementById("reset").style.display = "block";
-  }
+  }*/
   checkPB();
 } /* Stop */
 
@@ -1372,6 +1374,7 @@ function reset() {
   document.getElementById("sec").innerHTML = "00";
   document.getElementById("min").innerHTML = "00";
   document.getElementById("pbLabel").innerHTML = "";
+  document.getElementById("reset").style.display = "none";
 }
 
 var dict = {};
