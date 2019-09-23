@@ -1310,12 +1310,6 @@ function start() {
 function stop() {
   clearInterval(x);
   document.getElementById("reset").style.display = "block";
-  /*var stil = getComputedStyle(document.getElementById("start"), null).display;
-  if (stil === "inline-block") {
-    document.getElementById("reset").style.display = "inline-block";
-  } else if (stil === "block") {
-    document.getElementById("reset").style.display = "block";
-  }*/
   checkPB();
 } /* Stop */
 
@@ -1376,6 +1370,7 @@ function reset() {
   document.getElementById("reset").style.display = "none";
 }
 
+// prompt if you get a pb on a l2l case
 var dict = {};
 
 function checkPB() {

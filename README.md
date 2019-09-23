@@ -20,6 +20,21 @@ by Annika Stein (also known as HugaCuba on social media such as
 ![SkewbSkills Logo](Icons/logogreen.png)
 
 # What's new?
+## Some improvements on SkewbSkillsWeb
+You can now use a stopwatch on SkewbSkillsWeb, on any mobile device
+or on a laptop / computer / whatever! The responsive design of the jekyll
+theme allows us to adjust the size and appearance of buttons and content,
+giving us a nice layout everywhere.
+
+And if you improve your best time for each L2L case, a prompt
+is going to tell you that you got a PB!
+
+You might not be able to change / adjust the scrambles atm, but the
+feature mentioned above is SkewbSkiilsWeb-only and kind of a
+compensation. ;)
+
+Hopefully, someday more statistics will be implemented to get
+detailed insight in your improvement.
 ## Release of SkewbSkillsWeb
 Yes, you've heard correctly, SkewbSkills is now available as a webpage! This very first
 web-based release might look a little ugly and lack a stopwatch, but it WORKS, apart 
