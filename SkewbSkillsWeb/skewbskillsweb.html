@@ -49,8 +49,11 @@ layout: default
             <button type="button" onclick="incrMoves()"> + </button>
         </th>
     </tr>
+    <tr>
+        <th><input type="checkbox" id="showscrimageFLT">&nbsp;Show Scramble Image (from next scramble on)</th>
+    </tr>
     <br><br>
-    <canvas id="scrDrawing" width="500" height="450"></canvas><br><br>
+    <canvas id="scrDrawing" width="500" height="450" style="display:none"></canvas><br><br>
     <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
     <label class="resp" id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <label class="resp" id="scramblelabel">&nbsp;</label>
@@ -108,8 +111,11 @@ layout: default
             <th><input type="checkbox" id="phzpure" onclick="changescrlenAlg()">&nbsp;Peanut + H or Z Perm and Pure Peanut</th>
         </tr>
     </table>
+    <tr>
+        <th><input type="checkbox" id="showscrimageAlg">&nbsp;Show Scramble Image (from next scramble on)</th>
+    </tr>
     <br>
-    <canvas id="scrDrawingAlg" width="500" height="450"></canvas><br><br>
+    <canvas id="scrDrawingAlg" width="500" height="450" style="display:none"></canvas><br><br>
     <button type="button" class="resp" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
     <label class="resp" id="scramblelabelAlg">&nbsp;</label>
 

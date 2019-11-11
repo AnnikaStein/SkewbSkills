@@ -696,6 +696,12 @@ function ScramblePlusColour() {
     scramblelist.pop();
     document.getElementById("scramblelabel").innerHTML = scramblezumanzeigen;
 
+    if (showscrimageFLT.checked == true) {
+        document.getElementById("scrDrawing").style.display = "block";
+    } else {
+        document.getElementById("scrDrawing").style.display = "none";
+    }
+
     ShowScramble(scramblezumanzeigen);
 
     if (document.getElementById("anycolourchecker").checked === true) {
@@ -726,6 +732,11 @@ function ScramblePlusColourAlg() {
     scramblelistAlg.pop();
     document.getElementById("scramblelabelAlg").innerHTML = scramblezumanzeigenAlg;
 
+    if (showscrimageAlg.checked == true) {
+        document.getElementById("scrDrawingAlg").style.display = "block";
+    } else {
+        document.getElementById("scrDrawingAlg").style.display = "none";
+    }
     ShowScramble(scramblezumanzeigenAlg);
 }
 
