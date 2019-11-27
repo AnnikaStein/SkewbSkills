@@ -25,6 +25,17 @@ function toggleSelectAlgs() {
   var x = document.getElementById("selectAlgs");
   if (x.style.display === "none") {
     x.style.display = "block";
+    document.getElementById("selectAlgsbyID").style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+}
+// show or hide all alg sets available
+function toggleSelectAlgsbyID() {
+  var x = document.getElementById("selectAlgsbyID");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    document.getElementById("selectAlgs").style.display = "none";
   } else {
     x.style.display = "none";
   }
@@ -402,6 +413,9 @@ var scrl5c = ["R' b R r' R' r R' b R r' R' r",
         "r B' r' R r R' r z2 r' R r' R' r",
         "R' r R B' r B R' B r' R r",
         "r' B R r R' B r' z r' R' r"];
+var allAlgs = scrpiswirl.concat(scrpiwat, scrpix, scrpihu, scrpivu, scrpio, scrpizconj, scrpi3s,
+            scrpihz, scrpswirl, scrpwat, scrpx, scrphu, scrpvu, scrpo, scrpzconj, scrp3s,
+            scrphzpure, scrl4c, scrl5c);
 
 var scramblelistAlg = ["R R'"];
 
@@ -579,8 +593,19 @@ function changescrlenAlg() {
      && document.getElementById("pwat").checked == false
      && document.getElementById("px").checked == false
      && document.getElementById("pzconj").checked == false) {
-        auxscrl.push("R R'");
+        var buttons = document.getElementsByName("btngroup");
+        var atleastonechecked = false;
+        for (var i=0; i<buttons.length; i++) {
+            if (buttons[i].checked === true) {
+                atleastonechecked = true;
+                break;
+            }
+        }
+        if (atleastonechecked === false) {
+            auxscrl.push("R R'");
+            }
     }
+
     if (document.getElementById("l4c").checked === true) {
         for (var i = 0; i < scrl4c.length; i++) {
             auxscrl.push((scrl4c.slice(0))[i]);
@@ -681,6 +706,12 @@ function changescrlenAlg() {
             auxscrl.push((scrpzconj.slice(0))[i]);
         }
     }
+    var group = document.getElementsByName("btngroup");
+        for (var i=0; i<group.length; i++) {
+            if (group[i].checked === true) {
+                auxscrl.push((allAlgs.slice(0))[i]);
+            }
+        }
     shuffle(auxscrl);
     scramblelistAlg = auxscrl;
 }

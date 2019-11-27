@@ -69,7 +69,7 @@ layout: default
     <button type="button" class="resp" id="togglePeanut" onclick="whattodowithu()">Toggle Peanut</button>
     <button type="button" class="resp" id="toggleL" onclick="whattodowithl()">Toggle L4C / L5C</button>
     <br><br>
-    <button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs</button>
+    <button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs by Category</button>
     <br><br>
     <table id="selectAlgs" style="display:none; width:100%; font-size: 0.75rem;">
         <tr>
@@ -109,6 +109,210 @@ layout: default
         <tr>
             <th><input type="checkbox" id="pihz" onclick="changescrlenAlg()">&nbsp;Pi + H or Z Perm</th>
             <th><input type="checkbox" id="phzpure" onclick="changescrlenAlg()">&nbsp;Peanut + H or Z Perm and Pure Peanut</th>
+        </tr>
+    </table>
+    <br><br>
+    <button type="button" class="resp" onclick="toggleSelectAlgsbyID()">Select Algs by Case ID</button>
+    <br><br>
+    <table id="selectAlgsbyID" style="display:none; width:100%; font-size: 0.75rem;">
+        <tr>
+            <th><input type="checkbox" id="1a" name="btngroup" onclick="changescrlenAlg()">&nbsp;1a</th>
+            <th><input type="checkbox" id="1b" name="btngroup" onclick="changescrlenAlg()">&nbsp;1b</th>
+            <th><input type="checkbox" id="2a" name="btngroup" onclick="changescrlenAlg()">&nbsp;2a</th>
+            <th><input type="checkbox" id="2b" name="btngroup" onclick="changescrlenAlg()">&nbsp;2b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="1c" name="btngroup" onclick="changescrlenAlg()">&nbsp;1c</th>
+            <th><input type="checkbox" id="1d" name="btngroup" onclick="changescrlenAlg()">&nbsp;1d</th>
+            <th><input type="checkbox" id="2c" name="btngroup" onclick="changescrlenAlg()">&nbsp;2c</th>
+            <th><input type="checkbox" id="2d" name="btngroup" onclick="changescrlenAlg()">&nbsp;2d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="3a" name="btngroup" onclick="changescrlenAlg()">&nbsp;3a</th>
+            <th><input type="checkbox" id="3b" name="btngroup" onclick="changescrlenAlg()">&nbsp;3b</th>
+            <th><input type="checkbox" id="4a" name="btngroup" onclick="changescrlenAlg()">&nbsp;4a</th>
+            <th><input type="checkbox" id="4b" name="btngroup" onclick="changescrlenAlg()">&nbsp;4b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="3c" name="btngroup" onclick="changescrlenAlg()">&nbsp;3c</th>
+            <th><input type="checkbox" id="3d" name="btngroup" onclick="changescrlenAlg()">&nbsp;3d</th>
+            <th><input type="checkbox" id="4c" name="btngroup" onclick="changescrlenAlg()">&nbsp;4c</th>
+            <th><input type="checkbox" id="4d" name="btngroup" onclick="changescrlenAlg()">&nbsp;4d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="5a" name="btngroup" onclick="changescrlenAlg()">&nbsp;5a</th>
+            <th><input type="checkbox" id="5b" name="btngroup" onclick="changescrlenAlg()">&nbsp;5b</th>
+            <th><input type="checkbox" id="6a" name="btngroup" onclick="changescrlenAlg()">&nbsp;6a</th>
+            <th><input type="checkbox" id="6b" name="btngroup" onclick="changescrlenAlg()">&nbsp;6b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="5c" name="btngroup" onclick="changescrlenAlg()">&nbsp;5c</th>
+            <th><input type="checkbox" id="5d" name="btngroup" onclick="changescrlenAlg()">&nbsp;5d</th>
+            <th><input type="checkbox" id="6c" name="btngroup" onclick="changescrlenAlg()">&nbsp;6c</th>
+            <th><input type="checkbox" id="6d" name="btngroup" onclick="changescrlenAlg()">&nbsp;6d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="7a" name="btngroup" onclick="changescrlenAlg()">&nbsp;7a</th>
+            <th><input type="checkbox" id="7b" name="btngroup" onclick="changescrlenAlg()">&nbsp;7b</th>
+            <th><input type="checkbox" id="7c" name="btngroup" onclick="changescrlenAlg()">&nbsp;7c</th>
+            <th><input type="checkbox" id="7d" name="btngroup" onclick="changescrlenAlg()">&nbsp;7d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="8a" name="btngroup" onclick="changescrlenAlg()">&nbsp;8a</th>
+            <th><input type="checkbox" id="8b" name="btngroup" onclick="changescrlenAlg()">&nbsp;8b</th>
+            <th><input type="checkbox" id="8c" name="btngroup" onclick="changescrlenAlg()">&nbsp;8c</th>
+            <th><input type="checkbox" id="8d" name="btngroup" onclick="changescrlenAlg()">&nbsp;8d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="9a" name="btngroup" onclick="changescrlenAlg()">&nbsp;9a</th>
+            <th><input type="checkbox" id="9b" name="btngroup" onclick="changescrlenAlg()">&nbsp;9b</th>
+            <th><input type="checkbox" id="10a" name="btngroup" onclick="changescrlenAlg()">&nbsp;10a</th>
+            <th><input type="checkbox" id="10b" name="btngroup" onclick="changescrlenAlg()">&nbsp;10b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="11a" name="btngroup" onclick="changescrlenAlg()">&nbsp;11a</th>
+            <th><input type="checkbox" id="11b" name="btngroup" onclick="changescrlenAlg()">&nbsp;11b</th>
+            <th><input type="checkbox" id="12a" name="btngroup" onclick="changescrlenAlg()">&nbsp;12a</th>
+            <th><input type="checkbox" id="12b" name="btngroup" onclick="changescrlenAlg()">&nbsp;12b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="11c" name="btngroup" onclick="changescrlenAlg()">&nbsp;11c</th>
+            <th><input type="checkbox" id="11d" name="btngroup" onclick="changescrlenAlg()">&nbsp;11d</th>
+            <th><input type="checkbox" id="12c" name="btngroup" onclick="changescrlenAlg()">&nbsp;12c</th>
+            <th><input type="checkbox" id="12d" name="btngroup" onclick="changescrlenAlg()">&nbsp;12d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="13a" name="btngroup" onclick="changescrlenAlg()">&nbsp;13a</th>
+            <th><input type="checkbox" id="13b" name="btngroup" onclick="changescrlenAlg()">&nbsp;13b</th>
+            <th><input type="checkbox" id="13c" name="btngroup" onclick="changescrlenAlg()">&nbsp;13c</th>
+            <th><input type="checkbox" id="13d" name="btngroup" onclick="changescrlenAlg()">&nbsp;13d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="14a" name="btngroup" onclick="changescrlenAlg()">&nbsp;14a</th>
+            <th><input type="checkbox" id="14b" name="btngroup" onclick="changescrlenAlg()">&nbsp;14b</th>
+            <th><input type="checkbox" id="14c" name="btngroup" onclick="changescrlenAlg()">&nbsp;14c</th>
+            <th><input type="checkbox" id="14d" name="btngroup" onclick="changescrlenAlg()">&nbsp;14d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="15a" name="btngroup" onclick="changescrlenAlg()">&nbsp;15a</th>
+            <th><input type="checkbox" id="15b" name="btngroup" onclick="changescrlenAlg()">&nbsp;15b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="16" name="btngroup" onclick="changescrlenAlg()">&nbsp;16</th>
+            <th><input type="checkbox" id="17a" name="btngroup" onclick="changescrlenAlg()">&nbsp;17a</th>
+            <th><input type="checkbox" id="17b" name="btngroup" onclick="changescrlenAlg()">&nbsp;17b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="18a" name="btngroup" onclick="changescrlenAlg()">&nbsp;18a</th>
+            <th><input type="checkbox" id="18b" name="btngroup" onclick="changescrlenAlg()">&nbsp;18b</th>
+            <th><input type="checkbox" id="18c" name="btngroup" onclick="changescrlenAlg()">&nbsp;18c</th>
+            <th><input type="checkbox" id="18d" name="btngroup" onclick="changescrlenAlg()">&nbsp;18d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="18e" name="btngroup" onclick="changescrlenAlg()">&nbsp;18e</th>
+            <th><input type="checkbox" id="18f" name="btngroup" onclick="changescrlenAlg()">&nbsp;18f</th>
+            <th><input type="checkbox" id="18g" name="btngroup" onclick="changescrlenAlg()">&nbsp;18g</th>
+            <th><input type="checkbox" id="18h" name="btngroup" onclick="changescrlenAlg()">&nbsp;18h</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="19a" name="btngroup" onclick="changescrlenAlg()">&nbsp;19a</th>
+            <th><input type="checkbox" id="19b" name="btngroup" onclick="changescrlenAlg()">&nbsp;19b</th>
+            <th><input type="checkbox" id="19c" name="btngroup" onclick="changescrlenAlg()">&nbsp;19c</th>
+            <th><input type="checkbox" id="19d" name="btngroup" onclick="changescrlenAlg()">&nbsp;19d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="19e" name="btngroup" onclick="changescrlenAlg()">&nbsp;19e</th>
+            <th><input type="checkbox" id="19f" name="btngroup" onclick="changescrlenAlg()">&nbsp;19f</th>
+            <th><input type="checkbox" id="19g" name="btngroup" onclick="changescrlenAlg()">&nbsp;19g</th>
+            <th><input type="checkbox" id="19h" name="btngroup" onclick="changescrlenAlg()">&nbsp;19h</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="20a" name="btngroup" onclick="changescrlenAlg()">&nbsp;20a</th>
+            <th><input type="checkbox" id="20b" name="btngroup" onclick="changescrlenAlg()">&nbsp;20b</th>
+            <th><input type="checkbox" id="20c" name="btngroup" onclick="changescrlenAlg()">&nbsp;20c</th>
+            <th><input type="checkbox" id="20d" name="btngroup" onclick="changescrlenAlg()">&nbsp;20d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="20e" name="btngroup" onclick="changescrlenAlg()">&nbsp;20e</th>
+            <th><input type="checkbox" id="20f" name="btngroup" onclick="changescrlenAlg()">&nbsp;20f</th>
+            <th><input type="checkbox" id="20g" name="btngroup" onclick="changescrlenAlg()">&nbsp;20g</th>
+            <th><input type="checkbox" id="20h" name="btngroup" onclick="changescrlenAlg()">&nbsp;20h</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="21a" name="btngroup" onclick="changescrlenAlg()">&nbsp;21a</th>
+            <th><input type="checkbox" id="21b" name="btngroup" onclick="changescrlenAlg()">&nbsp;21b</th>
+            <th><input type="checkbox" id="21c" name="btngroup" onclick="changescrlenAlg()">&nbsp;21c</th>
+            <th><input type="checkbox" id="21d" name="btngroup" onclick="changescrlenAlg()">&nbsp;21d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="21e" name="btngroup" onclick="changescrlenAlg()">&nbsp;21e</th>
+            <th><input type="checkbox" id="21f" name="btngroup" onclick="changescrlenAlg()">&nbsp;21f</th>
+            <th><input type="checkbox" id="21g" name="btngroup" onclick="changescrlenAlg()">&nbsp;21g</th>
+            <th><input type="checkbox" id="21h" name="btngroup" onclick="changescrlenAlg()">&nbsp;21h</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="22a" name="btngroup" onclick="changescrlenAlg()">&nbsp;22a</th>
+            <th><input type="checkbox" id="22b" name="btngroup" onclick="changescrlenAlg()">&nbsp;22b</th>
+            <th><input type="checkbox" id="22c" name="btngroup" onclick="changescrlenAlg()">&nbsp;22c</th>
+            <th><input type="checkbox" id="22d" name="btngroup" onclick="changescrlenAlg()">&nbsp;22d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="23a" name="btngroup" onclick="changescrlenAlg()">&nbsp;23a</th>
+            <th><input type="checkbox" id="23b" name="btngroup" onclick="changescrlenAlg()">&nbsp;23b</th>
+            <th><input type="checkbox" id="23c" name="btngroup" onclick="changescrlenAlg()">&nbsp;23c</th>
+            <th><input type="checkbox" id="23d" name="btngroup" onclick="changescrlenAlg()">&nbsp;23d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="23e" name="btngroup" onclick="changescrlenAlg()">&nbsp;23e</th>
+            <th><input type="checkbox" id="23f" name="btngroup" onclick="changescrlenAlg()">&nbsp;23f</th>
+            <th><input type="checkbox" id="23g" name="btngroup" onclick="changescrlenAlg()">&nbsp;23g</th>
+            <th><input type="checkbox" id="23h" name="btngroup" onclick="changescrlenAlg()">&nbsp;23h</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="24a" name="btngroup" onclick="changescrlenAlg()">&nbsp;24a</th>
+            <th><input type="checkbox" id="24b" name="btngroup" onclick="changescrlenAlg()">&nbsp;24b</th>
+            <th><input type="checkbox" id="24c" name="btngroup" onclick="changescrlenAlg()">&nbsp;24c</th>
+            <th><input type="checkbox" id="24d" name="btngroup" onclick="changescrlenAlg()">&nbsp;24d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="25a" name="btngroup" onclick="changescrlenAlg()">&nbsp;25a</th>
+            <th><input type="checkbox" id="25b" name="btngroup" onclick="changescrlenAlg()">&nbsp;25b</th>
+            <th><input type="checkbox" id="25c" name="btngroup" onclick="changescrlenAlg()">&nbsp;25c</th>
+            <th><input type="checkbox" id="25d" name="btngroup" onclick="changescrlenAlg()">&nbsp;25d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="26a" name="btngroup" onclick="changescrlenAlg()">&nbsp;26a</th>
+            <th><input type="checkbox" id="26b" name="btngroup" onclick="changescrlenAlg()">&nbsp;26b</th>
+            <th><input type="checkbox" id="26c" name="btngroup" onclick="changescrlenAlg()">&nbsp;26c</th>
+            <th><input type="checkbox" id="26d" name="btngroup" onclick="changescrlenAlg()">&nbsp;26d</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="27" name="btngroup" onclick="changescrlenAlg()">&nbsp;27</th>
+            <th><input type="checkbox" id="28" name="btngroup" onclick="changescrlenAlg()">&nbsp;28</th>
+            <th><input type="checkbox" id="29a" name="btngroup" onclick="changescrlenAlg()">&nbsp;29a</th>
+            <th><input type="checkbox" id="29b" name="btngroup" onclick="changescrlenAlg()">&nbsp;29b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="30a" name="btngroup" onclick="changescrlenAlg()">&nbsp;30a</th>
+            <th><input type="checkbox" id="30b" name="btngroup" onclick="changescrlenAlg()">&nbsp;30b</th>
+            <th><input type="checkbox" id="31" name="btngroup" onclick="changescrlenAlg()">&nbsp;31</th>
+            <th><input type="checkbox" id="UPerm" name="btngroup" onclick="changescrlenAlg()">&nbsp;U-Perm</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="32" name="btngroup" onclick="changescrlenAlg()">&nbsp;32</th>
+            <th><input type="checkbox" id="33" name="btngroup" onclick="changescrlenAlg()">&nbsp;33</th>
+            <th><input type="checkbox" id="34a" name="btngroup" onclick="changescrlenAlg()">&nbsp;34a</th>
+            <th><input type="checkbox" id="34b" name="btngroup" onclick="changescrlenAlg()">&nbsp;34b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="35a" name="btngroup" onclick="changescrlenAlg()">&nbsp;35a</th>
+            <th><input type="checkbox" id="35b" name="btngroup" onclick="changescrlenAlg()">&nbsp;35b</th>
+            <th><input type="checkbox" id="36a" name="btngroup" onclick="changescrlenAlg()">&nbsp;36a</th>
+            <th><input type="checkbox" id="36b" name="btngroup" onclick="changescrlenAlg()">&nbsp;36b</th>
+        </tr>
+        <tr>
+            <th><input type="checkbox" id="37a" name="btngroup" onclick="changescrlenAlg()">&nbsp;37a</th>
+            <th><input type="checkbox" id="37b" name="btngroup" onclick="changescrlenAlg()">&nbsp;37b</th>
         </tr>
     </table>
     <tr>
