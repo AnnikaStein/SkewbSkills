@@ -20,6 +20,17 @@ by Annika Stein (also known as HugaCuba on social media such as
 ![SkewbSkills Logo](Icons/logogreen.png)
 
 # What's new?
+## As of 27.11.2019
+... I added some buttons (for each case!) that make you select exactly
+the cases you want to practice. Also, the possibility to select groups
+of algs is still there, so using both approaches, you can at least
+increase the probability to receive certain cases up to a factor of 2.
+
+Another minor improvement is a simple button that lets you show or hide
+the scramble image as has been requested some time ago in the
+FB group "Cyoubx's Friends" and / or "Skewbers". Thank you all for 
+your ideas and critique, it helped a lot! Sorry that it took longer
+than expected, physics is time consuming. ;)
 ## Some improvements on SkewbSkillsWeb
 You can now use a stopwatch on SkewbSkillsWeb, on any mobile device
 or on a laptop / computer / whatever! The responsive design of the jekyll
