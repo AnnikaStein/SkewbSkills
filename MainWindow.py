@@ -2,7 +2,7 @@ import random
 import sys
 import os
 from PyQt5.QtWidgets import QLCDNumber, QAction, QApplication, QWidget,\
-    QMainWindow, QCheckBox, QPushButton, QLabel, QSlider, QGroupBox, QVBoxLayout, QGridLayout
+    QMainWindow, QStackedWidget, QCheckBox, QPushButton, QLabel, QSlider, QGroupBox, QVBoxLayout, QGridLayout
 from PyQt5 import QtGui
 from PyQt5.QtCore import Qt, QPoint, QTimer, pyqtSlot
 
@@ -1059,6 +1059,10 @@ class WindowL2LT(QMainWindow):
         self.pihz.stateChanged.connect(self.changescrlen)
         self.gridLayout.addWidget(self.pihz, 8, 0)
 
+        # checkbox: showscramble
+        self.showscr = QCheckBox("Show Scramble (from next time on)", self)
+        self.showscr.setMaximumHeight(50)
+        self.gridLayout.addWidget(self.showscr, 8, 2)
 
         # button to generate a scramble
         self.scramblegenbutton = QPushButton("Generate L2L Case (RETURN)", self)
@@ -1205,6 +1209,11 @@ class WindowL2LT(QMainWindow):
         self.scramblelabel.setText(scramblezumanzeigen)
 
         self.ShowScramble(scramblezumanzeigen)
+
+        if self.showscr.isChecked():
+            self.stack.setCurrentIndex(0)
+        else:
+            self.stack.setCurrentIndex(1)
 
     def display(self):
         # shows the current time (since zero / or zero itself) on the lcd
@@ -1420,9 +1429,20 @@ class WindowL2LT(QMainWindow):
         # (using variable stickercol)
         # define geometry, placement inside Layout
         self.drawscrwidget = ScrambleDrawing(stickercol)
-        self.drawscrwidget.setMinimumHeight(430)
-        self.drawscrwidget.setMinimumWidth(500)
-        self.gridLayout.addWidget(self.drawscrwidget, 9, 2)
+
+
+        self.alternativepic = QLabel(" ")
+        self.alternativepic.setAutoFillBackground(True)
+
+        # stacked widget: switch between scramble image
+        # and no image is made possible
+        self.stack = QStackedWidget()
+        self.stack.setFixedHeight(430)
+        self.stack.setFixedWidth(500)
+        self.stack.addWidget(self.drawscrwidget)
+        self.stack.addWidget(self.alternativepic)
+        self.stack.setCurrentIndex(0)
+        self.gridLayout.addWidget(self.stack, 9, 2)
 
     def StartFirstLayerTrainer(self):
         # close the current window and open the one requested
