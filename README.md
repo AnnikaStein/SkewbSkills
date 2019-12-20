@@ -114,17 +114,6 @@ own copy of SkewbSkills down below.
 Download v1.0 as a .zip-folder [here](SkewbSkillsFiles.zip).
 
 # What's planned?
-+ I'm working on a web-based SkewbSkills! You can find
-  out how far I've come [here](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html).
-  The languages in use are html, css and javascript. You
-  can expect it to work on most of the devices out there
-  without downloading anything once it's done. ;)
-  If your browser is able to cache .js, you will be able
-  to use it offline for a while, at least. :)
-  
-  I'm adding more functions to it, and hopefully it will be as functional as the .exe
-  version. At the moment it's lacking a stopwatch and the possibility to include your
-  own algs. Some shortcuts could be added as well, and the design needs some improvement.
 + Add other practicing modes, or modify the current ones:
    + I'd like the user to identify weak algs and put them on a special pile 
    to work on particularly
