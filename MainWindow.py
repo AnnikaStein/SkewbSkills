@@ -1,3 +1,4 @@
+import transftoWCA
 import random
 import sys
 import os
@@ -371,7 +372,7 @@ class WindowFLT(QMainWindow):
         self.scramblegenbutton.setToolTip("Generates a scramble of the defined length and "
                                      "a random colour to start the first layer with.")
         self.scramblegenbutton.clicked.connect(self.ScramblePlusColour)
-        self.gridLayout.addWidget(self.scramblegenbutton, 1, 0)
+        self.gridLayout.addWidget(self.scramblegenbutton, 2, 0)
 
         # this label shows the scramble
         self.scramblelabel = QLabel(self)
@@ -390,6 +391,11 @@ class WindowFLT(QMainWindow):
         self.scrpic.setMinimumHeight(50)
         self.scrpic.setPixmap(QtGui.QPixmap(os.path.join(os.path.dirname(__file__), "Icons/logogreen")).scaled(50, 50, Qt.KeepAspectRatio, Qt.FastTransformation))
         self.gridLayout.addWidget(self.scrpic, 4, 0)
+
+        # checkbox: showscramble
+        self.showscr = QCheckBox("Show Scramble (from next time on)", self)
+        self.showscr.setMaximumHeight(50)
+        self.gridLayout.addWidget(self.showscr, 1, 0)
 
         self.start = QPushButton("Start (SPACE)", self)
         self.start.setMinimumHeight(50)
@@ -493,6 +499,11 @@ class WindowFLT(QMainWindow):
 
         self.ShowScramble(scramblezumanzeigen)
 
+        if self.showscr.isChecked():
+            self.stack.setCurrentIndex(0)
+        else:
+            self.stack.setCurrentIndex(1)
+
         # decide which colour one has to use as the starting colour
 
         if self.anycolourchecker.isChecked():
@@ -569,9 +580,25 @@ class WindowFLT(QMainWindow):
 
         # draws the scramble by drawing several polygons corresponding to the scramble
         self.drawscrwidget = ScrambleDrawing(stickercol)
-        self.drawscrwidget.setMinimumHeight(430)
-        self.drawscrwidget.setMinimumWidth(500)
-        self.gridLayout.addWidget(self.drawscrwidget, 2, 1)
+        # self.drawscrwidget.setMinimumHeight(430)
+        # self.drawscrwidget.setMinimumWidth(500)
+        # self.gridLayout.addWidget(self.drawscrwidget, 2, 1)
+
+        self.alternativepic = QLabel(" ")
+        self.alternativepic.setAutoFillBackground(True)
+
+
+
+        # stacked widget: switch between scramble image
+        # and no image is made possible
+        self.stack = QStackedWidget()
+        self.stack.setFixedHeight(430)
+        self.stack.setFixedWidth(500)
+        self.stack.addWidget(self.drawscrwidget)
+        self.stack.addWidget(self.alternativepic)
+        self.stack.setCurrentIndex(0)
+        self.gridLayout.addWidget(self.stack, 2, 1)
+
 
     def display(self):
         # shows the current time (since zero / or zero itself) on the lcd
@@ -929,6 +956,13 @@ class WindowL2LT(QMainWindow):
         for line in datei:
             self.scrl5c.append(line[:-1])
 
+        allalgs = list(self.scrpiswirl) + list(self.scrpiwat) + list(self.scrpix) + \
+                  list(self.scrpihu) + list(self.scrpivu) + list(self.scrpio) + \
+                  list(self.scrpizconj) + list(self.scrpi3s) + list(self.scrpihz) + \
+                  list(self.scrpswirl) + list(self.scrpwat) + list(self.scrpx) + \
+                  list(self.scrphu) + list(self.scrpvu) + list(self.scrpo) + list(self.scrpzconj) + \
+                  list(self.scrp3s) + list(self.scrphzpure) + list(self.scrl4c) + list(self.scrl5c)
+
 
         self.scramblelist = ["R R'"]
 
@@ -950,6 +984,14 @@ class WindowL2LT(QMainWindow):
         self.l5c.setMaximumHeight(50)
         self.l5c.stateChanged.connect(self.changescrlen)
         self.gridLayout.addWidget(self.l5c, 1, 2)
+
+        # label: manually select single cases e.g. 1a (write as in Skewb Resources doc)
+
+        # textbox:
+
+        # add to list / remove
+
+        # current list of selected cases
 
         # checkbox: pswirl
         self.pswirl = QCheckBox("Peanut + Swirl Perm", self)
@@ -1204,9 +1246,11 @@ class WindowL2LT(QMainWindow):
             self.changescrlen()
 
         # take the last scramble in the list, use it, delete the last scramble on the list
+        # transform the scramble to WCA notation by using the module transftoWCA with it's
+        # function transftoWCA(scr)
         scramblezumanzeigen = self.scramblelist[-1]
         self.scramblelist.pop()
-        self.scramblelabel.setText(scramblezumanzeigen)
+        self.scramblelabel.setText(scramblezumanzeigen + "\n" + transftoWCA.transftoWCA(scramblezumanzeigen))
 
         self.ShowScramble(scramblezumanzeigen)
 
@@ -1303,7 +1347,7 @@ class WindowL2LT(QMainWindow):
                 fourswap(stickercol, 4, 9, 24, 29)
                 fourswap(stickercol, 28, 3, 8, 23)
                 fourswap(stickercol, 2, 7, 22, 27)
-            elif i == "y'":
+            elif i == "y2":
                 fourswap(stickercol, 18, 17, 16, 19)
                 fourswap(stickercol, 11, 12, 13, 14)
                 fourswap(stickercol, 0, 5, 20, 25)

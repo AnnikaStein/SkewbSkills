@@ -1,12 +1,5 @@
-# define list carrying all stickers of the skewb and the color that is placed there initially
-
-# note that for this subprogram of SkewbSkills, we only need the centers and can therefore
-# use arbitrary letters for all other facelets
-
-# might be improved in the future so that there are only 6 elements in the list
-# but right know it does not matter (we only have to do it once and never again, in principle)
-stickercol = ["o", "a", "a", "a", "a", "g", "a", "a", "a", "a", "y", "a", "a", "a", "a",
-              "w", "a", "a", "a", "a", "r", "a", "a", "a", "a", "b", "a", "a", "a", "a"]
+# this module can convert Rubiksskewb algs to WCA notation, given that the algs use the moves
+# specified down below
 
 # the two algs as in SkewbSkills itself to swap three or four stickers cyclically
 # each permutation is split up into transpositions of pairs
@@ -31,6 +24,18 @@ def fourswap(listname, i, j, k, l):
 
 
 def transftoWCA(scr):
+    # define list carrying all stickers of the skewb and the color that is placed there initially
+
+    # note that for this subprogram of SkewbSkills, we only need the centers and can therefore
+    # use arbitrary letters for all other facelets
+
+    # might be improved in the future so that there are only 6 elements in the list
+    # but right know it does not matter (we only have to do it once and never again, in principle)
+    stickercol = ["o", "a", "a", "a", "a", "g", "a", "a", "a", "a", "y", "a", "a", "a", "a",
+                  "w", "a", "a", "a", "a", "r", "a", "a", "a", "a", "b", "a", "a", "a", "a"]
+
+    # define a string carrying the WCA notation scramble
+    finalscr = ""
 
     # split the scramble sequence into distinct moves (default split character space)
     scrsplit = scr.split()
@@ -177,41 +182,43 @@ def transftoWCA(scr):
         # to proceed with the next real move
         if ((first, second, third) in ((20,25,10),(25,10,20),(10,20,25),
                                       (0,15,5),(15,5,0),(5,0,15))):
-            print("R")
+            finalscr += "R "
             threeswap(stickercolWCA, 10, 20, 25)
         elif ((first, second, third) in ((10,25,20),(20,10,25),(25,20,10),
                                       (5,15,0),(0,5,15),(15,0,5))):
-            print("R'")
+            finalscr += "R' "
             threeswap(stickercolWCA, 25, 20, 10)
         elif ((first, second, third) in ((0,5,10),(5,10,0),(10,0,5),
                                       (15,25,20),(25,20,15),(20,15,25))):
-            print("L")
+            finalscr += "L "
             threeswap(stickercolWCA, 0, 5, 10)
         elif (first, second, third) in ((10,5,0),(0,10,5),(5,0,10),
                                       (20,25,15),(15,20,25),(25,15,20)):
-            print("L'")
+            finalscr += "L' "
             threeswap(stickercolWCA, 10, 5, 0)
         elif (first, second, third) in ((15,0,25),(0,25,15),(25,15,0),
                                       (5,20,10),(20,10,5),(10,5,20)):
-            print("U")
+            finalscr += "U "
             threeswap(stickercolWCA, 0, 25, 15)
         elif (first, second, third) in ((25,0,15),(15,25,0),(0,15,25),
                                       (10,20,5),(5,10,20),(20,5,10)):
-            print("U'")
+            finalscr += "U' "
             threeswap(stickercolWCA, 15, 25, 0)
         elif (first, second, third) in ((25,0,10),(0,10,25),(10,25,0),
                                       (15,20,5),(20,5,15),(5,15,20)):
-            print("B")
+            finalscr += "B "
             threeswap(stickercolWCA, 0, 10, 25)
         elif (first, second, third) in ((10,0,25),(25,10,0),(0,25,10),
                                       (5,20,15),(15,5,20),(20,15,5)):
-            print("B'")
+            finalscr += "B' "
             threeswap(stickercolWCA, 25, 10, 0)
+
+    return(finalscr)
 
 
 # call the function by putting in a Rubiksskewb scramble sequence as a string
 
 
-transftoWCA("r R' r' B' r R r' B")
+#print(transftoWCA("r R' r' B' r R r' B"))
 
 
