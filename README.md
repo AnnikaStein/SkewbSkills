@@ -4,9 +4,9 @@ Practice and learn skewb algs, first layer and more!
 This description intends to show you how to use SkewbSkills and give a quick 
 overview on the development process.
 
-*NEW NEW NEW: SkewbSkills is now available as a [webpage](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html) 
+SkewbSkills is now available as a [webpage](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html) 
 and can be downloaded as a [.zip folder](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesv1.2.zip),
-containing an .exe.* Read more about installation below.
+containing an .exe. Read more about installation below.
 
 SkewbSkills is free to use for all skewbers out there (!) and has been created 
 by Annika Stein (also known as HugaCuba on social media such as 
@@ -14,12 +14,38 @@ by Annika Stein (also known as HugaCuba on social media such as
 [Instagram](https://www.instagram.com/hugacuba/)) to
 + practice the first layer
 + practice algs for the last two layers
-+ practice programming with python and qt. ;)
-+ *new: practice html, css and javascript!*
++ practice programming with python and qt
++ practice html, css and javascript!
 
 ![SkewbSkills Logo](Icons/logogreen.png)
 
 # What's new?
+## As of 21.12.2019
+You can now use a nice feature of SkewbSkillsWeb (and also SkewbSkills .exe in the future):
+WCA notation scrambles instead of Rubiksskewb notation for the Last 2 Layer Trainer!
+
+I wrote a python module that transforms Rubiksskewb to WCA notation, given that the
+initial scramble consists of the moves like the ones in 
+[this document](https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo/edit#gid=1743463298)
+(credits: Elias Malomgré and Carter Cucala).
+
+Although I already used it
+for both SkewbSkillsWeb (.js) and the .py version, its source code is also
+available 
+[here on my Github repository](https://github.com/AnnikaStein/SkewbSkills), as usual. You can of course also use it as a standalone notation converter,
+but right now it lacks a grafical user interface. So it is just for those of you familiar
+with either .js or .py files and such. But as I said before, you don't have to do this
+on your own to use SkewbSkills, it's already implemented for all the LL cases that were
+included already.
+
+Actually, this was the most difficult part on my programming journey so far, not
+because programming is complicated, but because even solving this problem on paper was sort
+of impossible for me at the beginning of my thought process.
+
+Now I'm wishing you all nice holidays and I'm looking forward to publishing a new .exe
+bundle soon for those of you that want to use SkewbSkills offline.
+
+And as always: feel free to comment any bugs, ideas, feature requests, experiences...
 ## As of 27.11.2019
 ... I added some buttons (for each case!) that make you select exactly
 the cases you want to practice. Also, the possibility to select groups
