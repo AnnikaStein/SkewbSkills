@@ -136,8 +136,7 @@ def transftoWCA(scr):
 
             # whole process is repeated for all moves in the Rubiksskewb notation scramble sequence
 
-    print("The cycles made by the non-WCA scramble, containing previous and current color: ",
-          allcycles)
+    # print("The cycles made by the non-WCA scramble, containing previous and current color: ", allcycles)
 
     # find out the WCA moves that permute the exact same 3-tuples of centers
 
@@ -172,7 +171,7 @@ def transftoWCA(scr):
             third = stickercolWCA.index(allcycles[o][1][0])
 
         # just for convenience and to check what's going on, I print the three indices as a tuple
-        print(first, second, third)
+        #print(first, second, third)
 
         # find out which WCA move corresponds to the permuted centers (or if this is not possible,
         # I check if the permuted centers are opposite to the normally affected centers by
