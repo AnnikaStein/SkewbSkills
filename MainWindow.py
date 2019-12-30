@@ -1,4 +1,5 @@
 import transftoWCA
+import removeDoubleMoves
 import random
 import sys
 import os
@@ -1250,7 +1251,7 @@ class WindowL2LT(QMainWindow):
         # function transftoWCA(scr)
         scramblezumanzeigen = self.scramblelist[-1]
         self.scramblelist.pop()
-        self.scramblelabel.setText(scramblezumanzeigen + "\n" + transftoWCA.transftoWCA(scramblezumanzeigen))
+        self.scramblelabel.setText(scramblezumanzeigen + "\n" + removeDoubleMoves.doubleMoveRemover(transftoWCA.transftoWCA(scramblezumanzeigen)))
 
         self.ShowScramble(scramblezumanzeigen)
 
