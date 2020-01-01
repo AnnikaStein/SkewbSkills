@@ -1,3 +1,15 @@
+# IMPORTANT
+I will be using my [new page](https://annikastein.github.io/SkewbPage) from now
+on (and you should be, too)!
+This page will remain, but will sooner or later be outdated, and only contain
+old versions of SkewbSkills.
+
+This is due to the fact that my new page will not only contain the SkewbSkills
+application, but some more content and better design. So I created a [new repository
+on github](https://github.com/AnnikaStein/SkewbPage), where you will find all
+data and files required for the website only, while the [old repo](https://github.com/AnnikaStein/SkewbSkills)
+will serve as a place to store mostly python files for the offline version.
+
 # SkewbSkills
 Practice and learn skewb algs, first layer and more!
 
@@ -5,7 +17,7 @@ This description intends to show you how to use SkewbSkills and give a quick
 overview on the development process.
 
 SkewbSkills is now available as a [webpage](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html) 
-and can be downloaded as a [.zip folder](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesV2.0.zip),
+and can be downloaded as a [.zip folder](https://github.com/AnnikaStein/SkewbSkills/releases/download/v2.0/SkewbSkillsFilesV2.0.zip),
 containing an .exe. Read more about installation below.
 
 SkewbSkills is free to use for all skewbers out there (!) and has been created 
@@ -26,7 +38,7 @@ Happy new year to all skewbers!
 Finally you can use the major improvements also in SkewbSkills .exe, we've
 got WCA scrambles, a button to hide or show the scramble image and some minor
 design updates and bugfixes. Be sure to check out the new version by downloading
-the corresponding .zip-archive [here!](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesV2.0.zip)
+the corresponding .zip-archive [here!](https://github.com/AnnikaStein/SkewbSkills/releases/download/v2.0/SkewbSkillsFilesV2.0.zip)
 
 Maybe you already noticed (using github) that I am working on a rebuild of my
 website, and it is already accessible under [this link.](https://annikastein.github.io/SkewbPage/)
