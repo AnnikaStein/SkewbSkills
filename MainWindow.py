@@ -113,7 +113,7 @@ class StartWindow(QMainWindow):
 
         # this label shows some info about the creator
         self.creatorlabel = QLabel(self)
-        self.creatorlabel.setText("© 2019, Annika Stein")
+        self.creatorlabel.setText("© 2020, Annika Stein")
         self.creatorlabel.setMinimumHeight(50)
         gridLayout.addWidget(self.creatorlabel, 2, 1)
 
@@ -422,7 +422,7 @@ class WindowFLT(QMainWindow):
 
         # this label shows some info about the creator
         self.creatorlabel = QLabel(self)
-        self.creatorlabel.setText("© 2019, Annika Stein")
+        self.creatorlabel.setText("© 2020, Annika Stein")
         self.creatorlabel.setMinimumHeight(50)
         self.gridLayout.addWidget(self.creatorlabel, 4, 2)
 
@@ -1151,7 +1151,7 @@ class WindowL2LT(QMainWindow):
 
         # this label shows some info about the creator
         self.creatorlabel = QLabel(self)
-        self.creatorlabel.setText("© 2019, Annika Stein")
+        self.creatorlabel.setText("© 2020, Annika Stein")
         self.creatorlabel.setMinimumHeight(50)
         self.gridLayout.addWidget(self.creatorlabel, 11, 2)
 
