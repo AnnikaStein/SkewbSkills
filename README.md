@@ -5,7 +5,7 @@ This description intends to show you how to use SkewbSkills and give a quick
 overview on the development process.
 
 SkewbSkills is now available as a [webpage](https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html) 
-and can be downloaded as a [.zip folder](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesv1.2.zip),
+and can be downloaded as a [.zip folder](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesV2.0.zip),
 containing an .exe. Read more about installation below.
 
 SkewbSkills is free to use for all skewbers out there (!) and has been created 
@@ -20,6 +20,23 @@ by Annika Stein (also known as HugaCuba on social media such as
 ![SkewbSkills Logo](Icons/logogreen.png)
 
 # What's new?
+## Say hello to 2020 and release of SkewbSkills v2.0
+Happy new year to all skewbers!
+
+Finally you can use the major improvements also in SkewbSkills .exe, we've
+got WCA scrambles, a button to hide or show the scramble image and some minor
+design updates and bugfixes. Be sure to check out the new version by downloading
+the corresponding .zip-archive [here!](https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesV2.0.zip)
+
+Maybe you already noticed (using github) that I am working on a rebuild of my
+website, and it is already accessible under [this link.](https://annikastein.github.io/SkewbPage/)
+
+The page you are using now will remain most likely as an archive of old versions,
+and serve as a redirecting page to the new one. 
+
+I recommend switching to the new website, where I will not only host 
+SkewbSkills (Web, offline etc.), but also include other topics related to 
+improving at skewb, algorithms, practicing techniques... there's a lot to come!
 ## As of 21.12.2019
 You can now use a nice feature of SkewbSkillsWeb (and also SkewbSkills .exe in the future):
 WCA notation scrambles instead of Rubiksskewb notation for the Last 2 Layer Trainer!
